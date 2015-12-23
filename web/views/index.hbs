@@ -1,0 +1,111 @@
+<div id="index" class="container">
+
+  <div class="jumbotron">
+    <h1>Appcelerator Developer</h1>
+    <p>Need Help? We're here for you!</p>
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Ask our Documentation <i class="fa fa-book pull-right"></i></h2>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start">Quick Start</a></li>
+          <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Appcelerator_Platform_Troubleshooting">Troubleshooting</a></li>
+          <li class="list-group-item"><a href="https://docs.appcelerator.com">Videos on Appcelerator University</a></li>
+          <li class="list-group-item"><a href="https://university.appcelerator.com">Videos on Appcelerator University</a></li>
+        </ul>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Check for Known Issues <i class="fa fa-bug pull-right"></i></h2>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/">Consult the Release Notes</a></li>
+          <li class="list-group-item"><a href="https://jira.appcelerator.org/issues/?jql=">Search for Issues on JIRA</a></li>
+        </ul>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Report a Bug or Request a Feature <i class="fa fa-lightbulb-o pull-right"></i></h2>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="https://jira.appcelerator.org/secure/CreateIssue!default.jspa?pid=12217">Create an Issue on JIRA</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="col-sm-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Ask our Support <i class="fa fa-support pull-right"></i></h2>
+        </div>
+        <div class="panel-body">
+          {{#compare supportMode "===" "official"}}
+            <p>The plan for
+              <em>{{user.org.name}}</em> gives you access to <a href="https://support2.appcelerator.com">Appcelerator Support</a>.</p>
+            {{else compare supportMode "===" "community"}}
+            <p>The current plan for
+              <em>{{user.org.name}}</em> does not include Appcelerator Support. Consider our <a href="http://www.appcelerator.com/pricing/">Pricing</a> and <a href="https://billing.appcelerator.com">Upgrade</a> to a plan that does.</p>
+            {{else}}
+              <p>You are not logged in, so we can't tell if you have access to Appcelerator Support. Please <a href="{{appc_platform_url}}/#/auth/signin?redirect={{baseurl}}">Sign In</a> for information on that.</p>
+          {{/compare}}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Ask the Community <i class="fa fa-stack-overflow pull-right"></i></h2>
+        </div>
+        <div class="panel-body">
+          <p>We've joined Stack Overflow - the biggest and brightest Q&amp;A for programmers! Always include <a href="https://stackoverflow.com/questions/tagged/appcelerator">#appcelerator</a> and add relevant product tags where needed.</p>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="https://stackoverflow.com/questions/ask/?tags=appcelerator">Ask a Question</a></li>
+          <li class="list-group-item"><a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest">Newest Questions</a></li>
+          <li class="list-group-item"><a href="https://stackoverflow.com/tags/appcelerator/new">Newest Answers</a></li>
+        </ul>
+      </div>
+
+      <div id="index-questions" class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Answer the Community <i class="fa fa-stack-overflow pull-right"></i></h2>
+        </div>
+        <div class="panel-body">
+          <p>Answer some <a href="https://stackoverflow.com/unanswered/tagged/appcelerator">unanswered questions</a> and join the <a href="https://stackoverflow.com/tags/appcelerator/topusers">ranks</a>!</p>
+        </div>
+        {{#if recentQuestions}}
+          <ul class="list-group">
+            {{#each recentQuestions}}
+              <li class="list-group-item">
+                <div class="media">
+                  <div class="media-left">
+                    <a href="{{owner.link}}" title="{{owner.display_name}}">
+                      <img src="{{owner.profile_image}}" class="img-rounded media-object" alt="{{owner.display_name}}" />
+                    </a>
+                  </div>
+                  <div class="media-body"><a href="{{link}}" title="{{title}}">{{title}}</a></div>
+                </div>
+              </li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

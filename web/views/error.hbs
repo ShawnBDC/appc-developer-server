@@ -1,0 +1,20 @@
+<div class="container">
+
+	<h1>{{#if message}}{{message}}{{else}}Unexpected Error{{/if}}</h1>
+
+	{{#if error}}
+
+  	<div class="alert alert-info" role="alert">Only showing the following information in development mode.</div>
+
+  	<h2>Stack Trace</h2>
+  	<p><pre style="background-color:#111;padding:10px;"><code style="color:#eee !important;">{{error}}</code></pre></p>
+
+  	<h2>Request</h2>
+  	<p><pre style="background-color:#111;padding:10px;"><code style="color:#eee !important;">{{req}}</code></pre></p>
+
+  	<h2>Environment</h2>
+  	<p><pre style="background-color:#111;padding:10px;"><code style="color:#eee !important;">{{env}}</code></pre></p>
+
+	{{/if}}
+
+</div>
