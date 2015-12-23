@@ -9,10 +9,15 @@
     "appcelerator",
     "arrow"
   ],
+  "scripts": {
+    "test": "grunt test",
+    "start": "appc run"
+  },
   "repository": {},
   "private": true,
   "dependencies": {
     "appc-platform-sdk": "^1.2.5",
+    "arrow": "^1.7.10",
     "async": "^1.4.0",
     "bootstrap": "^3.3.4",
     "cookie-parser": "^1.4.0",
