@@ -17,7 +17,7 @@ module.exports = Arrow.Router.extend({
 		var url = 'https://devlink.appcelerator.com';
 
 		if (id) {
-			url += '/profile/' + id;
+			url += '/dev/' + id;
 		}
 
 		res.redirect(301, url);
