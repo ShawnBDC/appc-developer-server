@@ -4,6 +4,8 @@
 
   <div class="container body">
 
+    <div class="alert alert-success" role="alert"><strong>Attention:</strong> We have moved to Stack Overflow for our Community Support. <a href="http://www.appcelerator.com/blog/" target="_blank">Read all about it on our Blog.</a></div>
+
     <div class="row">
 
       <div class="col-sm-8">
@@ -90,7 +92,7 @@
           <div class="panel-body">
             {{#compare supportMode "===" "official"}}
               <p>The plan for <em>{{user.org.name}}</em> gives you access to <a href="https://support.appcelerator.com">Appcelerator Support</a>.</p>
-              <a href="https://support.appcelerator.com" target="_blank" class="btn btn-danger btn-sm pull-right">Visit</a>
+              <a href="https://support.appcelerator.com" target="_blank" class="btn btn-danger pull-right">Contact Support</a>
             {{else compare supportMode "===" "community"}}
               <p>The current plan for <em>{{user.org.name}}</em> does not include Appcelerator Support. Consider our other <a href="http://www.appcelerator.com/pricing/">Plans</a> and <a href="https://billing.appcelerator.com">Upgrade</a> or <em>Ask the Community</em>.</p>
             {{else}}
