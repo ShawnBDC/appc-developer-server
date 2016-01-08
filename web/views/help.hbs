@@ -13,7 +13,8 @@
         <div class="well">
           <h2>Ask the Community <a href="https://stackoverflow.com/questions/ask/?tags=appcelerator" class="btn btn-danger pull-right">Ask a Question <i class="fa fa-stack-overflow pull-right"></i></a></h2>
           <br />
-          <p>Join us on Stack Overflow - the biggest and brightest Q&amp;A for programmers! Always include <a href="https://stackoverflow.com/tags/appcelerator" target="_blank" title="Go to our tag on Stack Overflow">#appcelerator</a> and add relevant <a href="https://stackoverflow.com/tags/appcelerator/info" target="_blank" title="Read about our product tags on Stack Overflow">product tags</a>. Check our <a href="https://docs.appcelerator.com" target="_blank" title="Go to our documentation">docs</a> and known issues on <a href="https://jira.appcelerator.org/" target="_blank" title="Go to JIRA">JIRA</a> before asking a <a href="http://stackoverflow.com/tour" target="_blank" title="Learn how to use Stack Overflow">good</a> question.</p>
+          <p>Join Stack Overflow - the biggest and brightest Q&amp;A for programmers! Always include <a href="https://stackoverflow.com/tags/appcelerator" target="_blank" title="Go to our tag on Stack Overflow">#appcelerator</a> and add <a href="https://stackoverflow.com/tags/appcelerator/info" target="_blank" title="Read about suggested additional tags on Stack Overflow">additional tags</a>. See <em>Help Yourself</em> and <em>Check for Known Issues</em> before <a href="http://stackoverflow.com/help/how-to-ask" target="_blank" title="Learn how to ask a good question on Stack Overflow">asking a good question</a>.</p>
+          <p>To hang out with other Appcelerator developers, sign up for <a href="http://tislack.org" target="_blank" title="Go to TiSlack">TiSlack</a>.</p>
         </div>
 
         <div class="panel panel-default questions">
@@ -56,12 +57,12 @@
             <h2 class="panel-title">Help Yourself <i class="fa fa-book pull-right"></i></h2>
           </div>
           <ul class="list-group">
-            <li class="list-group-item"><a href="https://web.appcelerator.com/product/studio">Getting started with Studio or the CLI</a></li>
-            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start">Quick Start Guides</a></li>
-            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Appcelerator_Platform_Troubleshooting">Troubleshooting Guides</a></li>
-            <li class="list-group-item"><a href="https://docs.appcelerator.com">Guides &amp; Reference</a></li>
-            <li class="list-group-item"><a href="http://www.appcelerator.com/cat/developer/">Developer Blog Posts</a></li>
-            <li class="list-group-item"><a href="https://university.appcelerator.com">Videos on Appcelerator University</a></li>
+            <li class="list-group-item"><a href="https://web.appcelerator.com/product/studio" target="_blank">Getting started with Studio or the CLI</a></li>
+            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start" target="_blank">Quick Start Guides</a></li>
+            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Appcelerator_Platform_Troubleshooting" target="_blank">Troubleshooting Guides</a></li>
+            <li class="list-group-item"><a href="https://docs.appcelerator.com" target="_blank">Guides &amp; Reference</a></li>
+            <li class="list-group-item"><a href="http://www.appcelerator.com/cat/developer/" target="_blank">Developer Blog Posts</a></li>
+            <li class="list-group-item"><a href="https://university.appcelerator.com" target="_blank">Videos on Appcelerator University</a></li>
           </ul>
         </div>
 
@@ -70,8 +71,9 @@
             <h2 class="panel-title">Check for Known Issues <i class="fa fa-bug pull-right"></i></h2>
           </div>
           <ul class="list-group">
-            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/">Check the Release Notes</a></li>
-            <li class="list-group-item"><a href="https://jira.appcelerator.org/issues/?jql=">Search for Issues on JIRA</a></li>
+            <li class="list-group-item"><a href="http://status.appcelerator.com" target="_blank">Check the Platform Status</a></li>
+            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/" target="_blank">Check the Release Notes</a></li>
+            <li class="list-group-item"><a href="https://jira.appcelerator.org/issues/?jql=" target="_blank">Search for Issues on JIRA</a></li>
           </ul>
         </div>
 
@@ -80,8 +82,8 @@
             <h2 class="panel-title">Report a Bug or Request a Feature <i class="fa fa-lightbulb-o pull-right"></i></h2>
           </div>
           <ul class="list-group">
-            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/How_to_Submit_a_Bug_Report">How to Submit a Bug Report</a></li>
-            <li class="list-group-item"><a href="https://jira.appcelerator.org/secure/CreateIssue!default.jspa?pid=12217">Create an Issue on JIRA</a></li>
+            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/How_to_Submit_a_Bug_Report" target="_blank">How to Submit a Bug Report</a></li>
+            <li class="list-group-item"><a href="https://jira.appcelerator.org/secure/CreateIssue!default.jspa?pid=12217" target="_blank">Create an Issue on JIRA</a></li>
           </ul>
         </div>
 
@@ -91,10 +93,10 @@
           </div>
           <div class="panel-body">
             {{#compare supportMode "===" "official"}}
-              <p>The plan for <em>{{user.org.name}}</em> gives you access to <a href="https://support.appcelerator.com">Appcelerator Support</a>.</p>
+              <p>The plan for <em>{{user.org.name}}</em> gives you access to <a href="https://support.appcelerator.com" target="_blank">Appcelerator Support</a>.</p>
               <a href="https://support.appcelerator.com" target="_blank" class="btn btn-danger pull-right">Contact Support</a>
             {{else compare supportMode "===" "community"}}
-              <p>The current plan for <em>{{user.org.name}}</em> does not include Appcelerator Support. Consider our other <a href="http://www.appcelerator.com/pricing/">Plans</a> and <a href="https://billing.appcelerator.com">Upgrade</a> or <em>Ask the Community</em>.</p>
+              <p>The current plan for <em>{{user.org.name}}</em> does not include Appcelerator Support. Consider our other <a href="http://www.appcelerator.com/pricing/" target="_blank">Plans</a> and <a href="https://billing.appcelerator.com" target="_blank">Upgrade</a> or <em>Ask the Community</em>.</p>
             {{else}}
               <p>You are not logged in, so we can't tell if you have access to Appcelerator Support. Please <a href="{{appc_platform_url}}/#/auth/signin?redirect={{baseurl}}">Sign In</a>.</p>
             {{/compare}}
