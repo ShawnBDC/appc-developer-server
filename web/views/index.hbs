@@ -1,110 +1,104 @@
-<div id="index" class="container">
+<div id="tpl-index">
 
-  <div class="jumbotron">
-    <h1>Appcelerator Developer</h1>
-    <p>Need Help? We're here for you!</p>
-  </div>
+  {{> header subtitle="Get Help"}}
 
-  <div class="row">
+  <div class="container body">
 
-    <div class="col-sm-6">
+    <div class="row">
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">Ask our Documentation <i class="fa fa-book pull-right"></i></h2>
+      <div class="col-sm-8">
+
+        <div class="well">
+          <h2>Ask the Community <a href="https://stackoverflow.com/questions/ask/?tags=appcelerator" class="btn btn-danger pull-right">Ask a Question <i class="fa fa-stack-overflow pull-right"></i></a></h2>
+          <br />
+          <p>Join us on Stack Overflow - the biggest and brightest Q&amp;A for programmers! Always include <a href="https://stackoverflow.com/tags/appcelerator" target="_blank" title="Go to our tag on Stack Overflow">#appcelerator</a> and add relevant <a href="https://stackoverflow.com/tags/appcelerator/info" target="_blank" title="Read about our product tags on Stack Overflow">product tags</a>. Check our <a href="https://docs.appcelerator.com" target="_blank" title="Go to our documentation">docs</a> and known issues on <a href="https://jira.appcelerator.org/" target="_blank" title="Go to JIRA">JIRA</a> before asking a <a href="http://stackoverflow.com/tour" target="_blank" title="Learn how to use Stack Overflow">good</a> question.</p>
         </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="https://web.appcelerator.com/product/studio">Setup</a></li>
-          <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start">Quick Start</a></li>
-          <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Appcelerator_Platform_Troubleshooting">Troubleshooting</a></li>
-          <li class="list-group-item"><a href="https://docs.appcelerator.com">Documentation</a></li>
-          <li class="list-group-item"><a href="http://www.appcelerator.com/cat/developer/">Articles</a></li>
-          <li class="list-group-item"><a href="https://university.appcelerator.com">Videos: Appcelerator University</a></li>
-        </ul>
-      </div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">Check for Known Issues <i class="fa fa-bug pull-right"></i></h2>
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/">Consult the Release Notes</a></li>
-          <li class="list-group-item"><a href="https://jira.appcelerator.org/issues/?jql=">Search for Issues on JIRA</a></li>
-        </ul>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">Report a Bug or Request a Feature <i class="fa fa-lightbulb-o pull-right"></i></h2>
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/How_to_Submit_a_Bug_Report">How to Submit a Bug Report</a></li>
-          <li class="list-group-item"><a href="https://jira.appcelerator.org/secure/CreateIssue!default.jspa?pid=12217">Create an Issue on JIRA</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="col-sm-6">
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">Ask our Support <i class="fa fa-support pull-right"></i></h2>
-        </div>
-        <div class="panel-body">
-          {{#compare supportMode "===" "official"}}
-            <p>The plan for
-              <em>{{user.org.name}}</em> gives you access to <a href="https://support2.appcelerator.com">Appcelerator Support</a>.</p>
-            {{else compare supportMode "===" "community"}}
-            <p>The current plan for
-              <em>{{user.org.name}}</em> does not include Appcelerator Support. Ask the Community or consider our other <a href="http://www.appcelerator.com/pricing/">Plans</a> and <a href="https://billing.appcelerator.com">Upgrade</a>.</p>
-            {{else}}
-              <p>You are not logged in, so we can't tell if you have access to Appcelerator Support. Please <a href="{{appc_platform_url}}/#/auth/signin?redirect={{baseurl}}">Sign In</a> for information on that.</p>
-          {{/compare}}
-        </div>
-      </div>
-
-    </div>
-
-    <div class="col-sm-6">
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">Ask the Community <i class="fa fa-stack-overflow pull-right"></i></h2>
-        </div>
-        <div class="panel-body">
-          <p>We've joined Stack Overflow - the biggest and brightest Q&amp;A for programmers! Always include <a href="https://stackoverflow.com/questions/tagged/appcelerator">#appcelerator</a> and add relevant product tags where needed.</p>
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="https://stackoverflow.com/questions/ask/?tags=appcelerator">Ask a Question</a></li>
-          <li class="list-group-item"><a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest">Newest Questions</a></li>
-          <li class="list-group-item"><a href="https://stackoverflow.com/tags/appcelerator/new">Newest Answers</a></li>
-        </ul>
-      </div>
-
-      <div id="index-questions" class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">Answer the Community <i class="fa fa-stack-overflow pull-right"></i></h2>
-        </div>
-        <div class="panel-body">
-          <p>Answer some <a href="https://stackoverflow.com/unanswered/tagged/appcelerator">unanswered questions</a> and join the <a href="https://stackoverflow.com/tags/appcelerator/topusers">ranks</a>!</p>
-        </div>
-        {{#if recentQuestions}}
-          <ul class="list-group">
+        <div class="panel panel-default questions">
+          <div class="panel-body">
+            <h2>Answer the Community</h2>
+            <p>Answer some questions and join the <a href="https://stackoverflow.com/tags/appcelerator/topusers" target="_blank" title="Meet our Top Answerers on Stack Overflow">ranks</a>!</p>
+          {{#if recentQuestions}}
+          </div>
+          <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest" target="_blank" title="Go to Stack Overflow">Newest Questions</a></li>
+            <li role="presentation"><a href="https://stackoverflow.com/unanswered/tagged/appcelerator?tab=noanswers" target="_blank" title="Go to Stack Overflow">Unanswered Answers</a></li>
+            <li role="presentation"><a href="https://stackoverflow.com/tags/appcelerator/new" target="_blank" title="Go to Stack Overflow">Newest Answers</a></li>
+  				</ul>
+          <div class="panel-body">
             {{#each recentQuestions}}
-              <li class="list-group-item">
-                <div class="media">
-                  <div class="media-left">
-                    <a href="{{owner.link}}" title="{{owner.display_name}}">
-                      <img src="{{owner.profile_image}}" class="img-rounded media-object" alt="{{owner.display_name}}" />
-                    </a>
-                  </div>
-                  <div class="media-body"><a href="{{link}}" title="{{title}}">{{title}}</a></div>
+              <div class="media">
+                <div class="media-left">
+                  <a href="{{owner.link}}" title="{{owner.display_name}}">
+                    <img src="{{owner.profile_image}}" class="img-rounded media-object" alt="{{owner.display_name}}" />
+                  </a>
                 </div>
-              </li>
+                <div class="media-body"><a href="{{link}}" target="_blank">{{title}}</a></div>
+              </div>
             {{/each}}
+          {{else}}
+            <br />
+            <a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest" class="btn btn-default">Newest Questions</a>
+            <a href="https://stackoverflow.com/unanswered/tagged/appcelerator?tab=noanswers" class="btn btn-default">Unanswered Questions</a>
+            <a href="https://stackoverflow.com/tags/appcelerator/new" class="btn btn-default">Newest Answers</a>
+          {{/if}}
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Help Yourself <i class="fa fa-book pull-right"></i></h2>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="https://web.appcelerator.com/product/studio">Getting started with Studio or the CLI</a></li>
+            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start">Quick Start Guides</a></li>
+            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Appcelerator_Platform_Troubleshooting">Troubleshooting Guides</a></li>
+            <li class="list-group-item"><a href="https://docs.appcelerator.com">Guides &amp; Reference</a></li>
+            <li class="list-group-item"><a href="http://www.appcelerator.com/cat/developer/">Developer Blog Posts</a></li>
+            <li class="list-group-item"><a href="https://university.appcelerator.com">Videos on Appcelerator University</a></li>
           </ul>
-        {{/if}}
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Check for Known Issues <i class="fa fa-bug pull-right"></i></h2>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/">Check the Release Notes</a></li>
+            <li class="list-group-item"><a href="https://jira.appcelerator.org/issues/?jql=">Search for Issues on JIRA</a></li>
+          </ul>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Report a Bug or Request a Feature <i class="fa fa-lightbulb-o pull-right"></i></h2>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/How_to_Submit_a_Bug_Report">How to Submit a Bug Report</a></li>
+            <li class="list-group-item"><a href="https://jira.appcelerator.org/secure/CreateIssue!default.jspa?pid=12217">Create an Issue on JIRA</a></li>
+          </ul>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Ask our Support <i class="fa fa-support pull-right"></i></h2>
+          </div>
+          <div class="panel-body">
+            {{#compare supportMode "===" "official"}}
+              <p>The plan for <em>{{user.org.name}}</em> gives you access to <a href="https://support.appcelerator.com">Appcelerator Support</a>.</p>
+              <a href="https://support.appcelerator.com" target="_blank" class="btn btn-danger btn-sm pull-right">Visit</a>
+            {{else compare supportMode "===" "community"}}
+              <p>The current plan for <em>{{user.org.name}}</em> does not include Appcelerator Support. Consider our other <a href="http://www.appcelerator.com/pricing/">Plans</a> and <a href="https://billing.appcelerator.com">Upgrade</a> or <em>Ask the Community</em>.</p>
+            {{else}}
+              <p>You are not logged in, so we can't tell if you have access to Appcelerator Support. Please <a href="{{appc_platform_url}}/#/auth/signin?redirect={{baseurl}}">Sign In</a>.</p>
+            {{/compare}}
+          </div>
+        </div>
+
       </div>
 
     </div>

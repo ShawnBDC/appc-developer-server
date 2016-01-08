@@ -60,6 +60,7 @@ module.exports = function (grunt) {
 		concat: {
 			default: {
 				src: [
+					'node_modules/bootstrap/js/tooltip.js',
 					'web/src/js/**/*.js'
 				],
 				dest: 'web/public/js/scripts.js'

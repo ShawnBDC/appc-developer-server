@@ -1,0 +1,29 @@
+#tpl-index {
+
+  .body {
+    padding-top: @grid-gutter-width;
+    padding-bottom: @grid-gutter-width;
+
+    .questions {
+
+      > .panel-body {
+        padding: 19px; // same padding as well
+      }
+
+      .nav-tabs {
+
+        > :first-child {
+          margin-left: 19px; // align first tab with body content
+        }
+
+        > li.active > a {
+          cursor: auto; // so that users know they can still follow the link
+        }
+      }
+
+      .media-object {
+        width: 30px;
+      }
+    }
+  }
+}

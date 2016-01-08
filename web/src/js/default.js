@@ -19,4 +19,6 @@ $(document).ready(function () {
 		return false;
 	});
 
+	$('a[title]').tooltip();
+
 });

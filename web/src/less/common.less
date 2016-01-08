@@ -1,0 +1,22 @@
+.header {
+  padding-top: floor((@grid-gutter-width / 2));
+  padding-bottom: floor((@grid-gutter-width / 2));
+
+  color: white;
+  background-color: #484950;
+  background-image: url(/images/header-bg.png);
+  background-size: cover;
+}
+
+.well,
+.panel-body {
+
+  h2:first-child {
+    margin-top: 0;
+  }
+}
+
+// transparent panel heading
+.panel-default > .panel-heading {
+  border-bottom: none;
+}

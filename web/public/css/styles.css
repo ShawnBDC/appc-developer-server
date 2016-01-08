@@ -3333,26 +3333,26 @@ fieldset[disabled] .btn-warning.focus {
 }
 .btn-danger {
   color: #fff;
-  background-color: #d9534f;
-  border-color: #d43f3a;
+  background-color: #b50d00;
+  border-color: #9c0b00;
 }
 .btn-danger:focus,
 .btn-danger.focus {
   color: #fff;
-  background-color: #c9302c;
-  border-color: #761c19;
+  background-color: #820900;
+  border-color: #1c0200;
 }
 .btn-danger:hover {
   color: #fff;
-  background-color: #c9302c;
-  border-color: #ac2925;
+  background-color: #820900;
+  border-color: #5e0700;
 }
 .btn-danger:active,
 .btn-danger.active,
 .open > .dropdown-toggle.btn-danger {
   color: #fff;
-  background-color: #c9302c;
-  border-color: #ac2925;
+  background-color: #820900;
+  border-color: #5e0700;
 }
 .btn-danger:active:hover,
 .btn-danger.active:hover,
@@ -3364,8 +3364,8 @@ fieldset[disabled] .btn-warning.focus {
 .btn-danger.active.focus,
 .open > .dropdown-toggle.btn-danger.focus {
   color: #fff;
-  background-color: #ac2925;
-  border-color: #761c19;
+  background-color: #5e0700;
+  border-color: #1c0200;
 }
 .btn-danger:active,
 .btn-danger.active,
@@ -3381,11 +3381,11 @@ fieldset[disabled] .btn-danger:focus,
 .btn-danger.disabled.focus,
 .btn-danger[disabled].focus,
 fieldset[disabled] .btn-danger.focus {
-  background-color: #d9534f;
-  border-color: #d43f3a;
+  background-color: #b50d00;
+  border-color: #9c0b00;
 }
 .btn-danger .badge {
-  color: #d9534f;
+  color: #b50d00;
   background-color: #fff;
 }
 .btn-link {
@@ -4886,11 +4886,11 @@ a.label:focus {
   background-color: #ec971f;
 }
 .label-danger {
-  background-color: #d9534f;
+  background-color: #b50d00;
 }
 .label-danger[href]:hover,
 .label-danger[href]:focus {
-  background-color: #c9302c;
+  background-color: #820900;
 }
 .badge {
   display: inline-block;
@@ -5160,7 +5160,7 @@ a.thumbnail.active {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-danger {
-  background-color: #d9534f;
+  background-color: #b50d00;
 }
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5225,7 +5225,7 @@ a.thumbnail.active {
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid transparent;
 }
 .list-group-item:first-child {
   border-top-right-radius: 4px;
@@ -5433,7 +5433,7 @@ button.list-group-item-danger.active:focus {
   padding: 15px;
 }
 .panel-heading {
-  padding: 10px 15px;
+  padding: 15px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
@@ -5455,7 +5455,7 @@ button.list-group-item-danger.active:focus {
   color: inherit;
 }
 .panel-footer {
-  padding: 10px 15px;
+  padding: 15px;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd;
   border-bottom-right-radius: 3px;
@@ -5661,14 +5661,14 @@ button.list-group-item-danger.active:focus {
 }
 .panel-default > .panel-heading {
   color: #333333;
-  background-color: #f5f5f5;
+  background-color: transparent;
   border-color: #ddd;
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #ddd;
 }
 .panel-default > .panel-heading .badge {
-  color: #f5f5f5;
+  color: transparent;
   background-color: #333333;
 }
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
@@ -6725,9 +6725,34 @@ button.close {
     display: none !important;
   }
 }
-#index .jumbotron {
-  margin-top: 50px;
+.header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+  background-color: #484950;
+  background-image: url(/images/header-bg.png);
+  background-size: cover;
 }
-#index #index-questions img {
+.well h2:first-child,
+.panel-body h2:first-child {
+  margin-top: 0;
+}
+.panel-default > .panel-heading {
+  border-bottom: none;
+}
+#tpl-index .body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#tpl-index .body .questions > .panel-body {
+  padding: 19px;
+}
+#tpl-index .body .questions .nav-tabs > :first-child {
+  margin-left: 19px;
+}
+#tpl-index .body .questions .nav-tabs > li.active > a {
+  cursor: auto;
+}
+#tpl-index .body .questions .media-object {
   width: 30px;
 }
