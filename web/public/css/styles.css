@@ -6740,19 +6740,19 @@ button.close {
 .panel-default > .panel-heading {
   border-bottom: none;
 }
-#tpl-index .body {
+#tpl-help .body {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-#tpl-index .body .questions > .panel-body {
+#tpl-help .body .questions > .panel-body {
   padding: 19px;
 }
-#tpl-index .body .questions .nav-tabs > :first-child {
+#tpl-help .body .questions .nav-tabs > :first-child {
   margin-left: 19px;
 }
-#tpl-index .body .questions .nav-tabs > li.active > a {
+#tpl-help .body .questions .nav-tabs > li.active > a {
   cursor: auto;
 }
-#tpl-index .body .questions .media-object {
+#tpl-help .body .questions .media-object {
   width: 30px;
 }
