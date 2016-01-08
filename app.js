@@ -5,19 +5,19 @@ var server = module.exports = new Arrow();
 
 var bootstrap = require('./lib/bootstrap');
 
-bootstrap.beforeRouter(server);
+bootstrap.init(server);
 
 // lifecycle examples
 server.on('starting', function () {
 	server.logger.debug('server is starting!');
 
-	bootstrap.afterRouter(server);
+	bootstrap.starting(server);
 });
 
 server.on('started', function () {
 	server.logger.debug('server started!');
 
-	bootstrap.afterAll(server);
+	bootstrap.started(server);
 });
 
 // start the server

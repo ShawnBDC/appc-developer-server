@@ -6740,6 +6740,12 @@ button.close {
 .panel-default > .panel-heading {
   border-bottom: none;
 }
+#tpl-error .row {
+  margin: 70px auto;
+}
+#tpl-error .row .fa {
+  font-size: 200px;
+}
 #tpl-help .body {
   padding-top: 30px;
   padding-bottom: 30px;

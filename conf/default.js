@@ -43,7 +43,7 @@ module.exports = {
 	// control the settings for the admin website
 	admin: {
 		// control whether the admin website is available
-		enabled: true,
+		enabled: false,
 		// the prefix to the admin website
 		prefix: '/arrow',
 		// the prefix for the public apidocs website
@@ -51,11 +51,11 @@ module.exports = {
 		// if you set disableAuth, in production only your API docs will show up
 		disableAuth: false,
 		// if you set disableAPIDoc, you APIs docs will not show up (regardless of disableAuth)
-		disableAPIDoc: false,
+		disableAPIDoc: true,
 		// set to true to allow the admin website to be accessed in production. however, you will still need a
 		// login unless disableAuth is false. if you set this to false, the admin website will not be enabled
 		// when in production (still respects enabled above)
-		enableAdminInProduction: true,
+		enableAdminInProduction: false,
 		// set the email addresses you want to enable while in production (assuming enableAdminInProduction=true)
 		validEmails: ["fzandbergen@appcelerator.com"],
 		// set the organization ids you want to enable while in production (assuming enableAdminInProduction=true)
