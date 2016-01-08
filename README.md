@@ -6,8 +6,9 @@ All [legacy routes](web/routes/legacy) to the original Q&A's questions and tags 
 
 Over time we can expand this into a proper *Developer Portal*, possibly replacing fragmented properties like [web.appcelerator.com](https://web.appcelerator.com), closely integrated (or even merged) with a browser-compatible version of [appc-studio.appcelerator.com](https://appc-studio.appcelerator.com) but most of all a portal to all relevant information for Appcelerator Developers.
 
-The full plan to transition to StackOverflow:
-https://gist.github.com/FokkeZB/73bcf2565ff9e9dfb331
+* [The Plan](https://gist.github.com/FokkeZB/73bcf2565ff9e9dfb331)
+* [Pre Production](https://4c8c27f04d9eecc6fe221311cbb43f165efc2e7d.cloudapp-enterprise-preprod.appctest.com)
+* [Production](https://8f8d7e6b6eb557ad394fb383ef9bd6075b88317e.cloudapp-enterprise.appcelerator.com)
 
 ![screenshot](screenshot.png)
 
