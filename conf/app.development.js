@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 
-var $ = module.exports = {
+module.exports = {
 	ssl: {
 		key: fs.readFileSync(path.join(__dirname, 'local.key')),
 		cert: fs.readFileSync(path.join(__dirname, 'local.crt'))
