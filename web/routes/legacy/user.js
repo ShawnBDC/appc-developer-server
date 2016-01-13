@@ -3,12 +3,12 @@ var Arrow = require('arrow');
 module.exports = Arrow.Router.extend({
 	name: __filename,
 
-	// http://127.0.0.1:8080/user/1517865/fokke-zandbergen/
-	// http://127.0.0.1:8080/user/1517865/fokke-zandbergen
-	// http://127.0.0.1:8080/user/1517865/
-	// http://127.0.0.1:8080/user/1517865
-	// http://127.0.0.1:8080/user/
-	// http://127.0.0.1:8080/user
+	// /user/1517865/fokke-zandbergen/
+	// /user/1517865/fokke-zandbergen
+	// /user/1517865/
+	// /user/1517865
+	// /user/
+	// /user
 	path: /^\/user(?:$|\/(?:([0-9]+))?)/,
 
 	method: 'GET',

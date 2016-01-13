@@ -3,14 +3,14 @@ var Arrow = require('arrow');
 module.exports = Arrow.Router.extend({
 	name: __filename,
 
-	// http://127.0.0.1:8080/devlink/profile/1517865/fokke-zandbergen/
-	// http://127.0.0.1:8080/devlink/profile/1517865/fokke-zandbergen
-	// http://127.0.0.1:8080/devlink/profile/1517865/
-	// http://127.0.0.1:8080/devlink/profile/1517865
-	// http://127.0.0.1:8080/devlink/profile/
-	// http://127.0.0.1:8080/devlink/profile
-	// http://127.0.0.1:8080/devlink/
-	// http://127.0.0.1:8080/devlink
+	// /devlink/profile/1517865/fokke-zandbergen/
+	// /devlink/profile/1517865/fokke-zandbergen
+	// /devlink/profile/1517865/
+	// /devlink/profile/1517865
+	// /devlink/profile/
+	// /devlink/profile
+	// /devlink/
+	// /devlink
 	path: /^\/devlink(?:$|\/(?:profile\/([0-9]+))?)/,
 
 	method: 'GET',
