@@ -6757,7 +6757,7 @@ html#lyt-redirect,
   height: 100%;
 }
 #lyt-redirect .vertical-center > div {
-  max-width: 100%;
+  max-width: 600px;
   display: inline-block;
   vertical-align: middle;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -6771,10 +6771,14 @@ html#lyt-redirect,
 }
 #lyt-redirect .well {
   padding: 30px;
+  margin-top: 20px;
 }
 #lyt-redirect .big-icon {
   margin-bottom: 30px;
   font-size: 8em;
+}
+#lyt-redirect .btn {
+  white-space: inherit;
 }
 #tpl-error .row {
   margin: 70px auto;

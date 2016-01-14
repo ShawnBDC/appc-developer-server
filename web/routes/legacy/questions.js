@@ -23,8 +23,7 @@ module.exports = Arrow.Router.extend({
 			opts.action = 'Browse the <em>' + tag + '</em> tag on Stack Overflow';
 
 		} else {
-			opts.url = 'https://developer.appcelerator.com';
-			opts.action = 'Continue to our new <em>Get Help</em> portal';
+			opts.url = '/';
 		}
 
 		utils.redirect(req, res, opts);

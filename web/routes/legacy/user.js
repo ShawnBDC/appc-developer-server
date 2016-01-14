@@ -27,14 +27,11 @@ module.exports = Arrow.Router.extend({
 			slug = slug.replace(/-/g, ' ');
 
 			opts.url += '/search?term=' + utils.encodeForURI(slug);
-			opts.action = 'Search for <em>"' + slug + '"</em> on DevLink 2.0';
+			opts.action = 'Search for <em>"' + slug + '"</em>';
 
 		} else if (id) {
 			opts.url += '/dev/' + id;
-			opts.action = 'Go to the profile you were looking for on DevLink 2.0';
-
-		} else {
-			opts.action = 'Continue to DevLink 2.0';
+			opts.action = 'Find the profile you were looking for';
 		}
 
 		utils.redirect(req, res, opts);
