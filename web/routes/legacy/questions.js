@@ -16,11 +16,17 @@ module.exports = Arrow.Router.extend({
 	method: 'GET',
 	action: function (req, res) {
 		var tag = req.params['0'];
+		var opts = {};
 
 		if (tag) {
-			res.redirect(301, 'https://stackoverflow.com/questions/tagged/' + utils.encodeForURI('appcelerator ' + tag));
+			opts.url = 'https://stackoverflow.com/questions/tagged/' + utils.encodeForURI('appcelerator ' + tag);
+			opts.action = 'Browse the <em>' + tag + '</em> tag on Stack Overflow';
+
 		} else {
-			res.redirect(301, 'https://developer.appcelerator.com');
+			opts.url = 'https://developer.appcelerator.com';
+			opts.action = 'Continue to our new <em>Get Help</em> portal';
 		}
+
+		utils.redirect(req, res, opts);
 	}
 });

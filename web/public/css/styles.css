@@ -6740,6 +6740,42 @@ button.close {
 .panel-default > .panel-heading {
   border-bottom: none;
 }
+html#lyt-redirect,
+#lyt-redirect body {
+  height: 100%;
+}
+#lyt-redirect .vertical-center {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font: 0/0 a;
+}
+#lyt-redirect .vertical-center:before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+#lyt-redirect .vertical-center > div {
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+@media (max-width: 768px) {
+  #lyt-redirect .vertical-center:before {
+    display: none;
+  }
+}
+#lyt-redirect .well {
+  padding: 30px;
+}
+#lyt-redirect .big-icon {
+  margin-bottom: 30px;
+  font-size: 8em;
+}
 #tpl-error .row {
   margin: 70px auto;
 }
