@@ -10,7 +10,7 @@ module.exports = Arrow.Router.extend({
 	method: 'GET',
 	action: function (req, resp, next) {
 
-		var supportMode = req.session.user ? (_.contains(['team', 'enterprise'], req.session.user.org.package) ? 'official' : 'community') : 'unknown';
+		var supportMode = (req.session.user && req.session.user.org && req.session.user.org.package) ? (_.contains(['team', 'enterprise'], req.session.user.org.package) ? 'official' : 'community') : 'unknown';
 
 		if (req.session.user && req.query.supportMode) {
 			supportMode = req.query.supportMode;
