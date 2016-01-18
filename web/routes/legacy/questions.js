@@ -20,7 +20,7 @@ module.exports = Arrow.Router.extend({
 
 		if (tag) {
 			opts.url = 'https://stackoverflow.com/questions/tagged/' + utils.encodeForURI('appcelerator ' + tag);
-			opts.action = 'Browse the <em>' + tag + '</em> tag on Stack Overflow';
+			opts.action = 'Browse the <a href="' + opts.url + '">' + tag + '</a> tag on Stack Overflow.';
 
 		} else {
 			opts.url = '/';

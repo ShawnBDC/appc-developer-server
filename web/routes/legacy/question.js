@@ -22,7 +22,7 @@ module.exports = Arrow.Router.extend({
 			slug = slug.replace(/-/g, ' ');
 
 			opts.url = 'https://www.google.com/search?q=' + utils.encodeForURI('site:stackoverflow.com +appcelerator ' + slug);
-			opts.action = 'Search for <em>"' + slug + '"</em> on Stack Overflow';
+			opts.action = 'Try <a href="http://webcache.googleusercontent.com/search?q=cache:https://developer.appcelerator.com' + req.originalUrl + '&num=1&strip=1&vwsrc=0">Google\'s cache</a> or <a href="' + opts.url + '">Search Stack Overflow</a> for <em>' + slug + '</em>.';
 
 		} else {
 			opts.url = '/';
