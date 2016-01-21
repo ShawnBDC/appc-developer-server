@@ -16,8 +16,13 @@ module.exports = Arrow.Router.extend({
 	action: function (req, res) {
 		var url = 'https://archive.appcelerator.com';
 
-		if (req.originalUrl.indexOf('/questions/top-200-experts') === 0) {
+		var path = req.originalUrl.split('/');
+
+		if (path[2] === 'top-200-experts') {
 			url += '/hall-of-fame';
+
+		} else if (path[2] === 'tag' && path[3]) {
+			url += '/search?q=' + path[3];
 		}
 
 		return res.redirect(301, url);
