@@ -1,7 +1,5 @@
 var Arrow = require('arrow');
 
-var utils = require('../../../lib/utils');
-
 module.exports = Arrow.Router.extend({
 	name: __filename,
 
@@ -11,21 +9,17 @@ module.exports = Arrow.Router.extend({
 	// /questions/tag
 	// /questions/
 	// /questions
-	path: /^\/questions(?:$|\/(?:tag\/([^\/]+))?)/,
+	// /questions/top-200-experts
+	path: /^\/questions(?:$|\/)/,
 
 	method: 'GET',
 	action: function (req, res) {
-		var tag = req.params['0'];
-		var opts = {};
+		var url = 'https://archive.appcelerator.com';
 
-		if (tag) {
-			opts.url = 'https://stackoverflow.com/questions/tagged/' + utils.encodeForURI('appcelerator ' + tag);
-			opts.action = 'Browse the <a href="' + opts.url + '">' + tag + '</a> tag on Stack Overflow.';
-
-		} else {
-			opts.url = '/';
+		if (req.originalUrl.indexOf('/questions/top-200-experts') === 0) {
+			url += '/hall-of-fame';
 		}
 
-		utils.redirect(req, res, opts);
+		return res.redirect(301, url);
 	}
 });

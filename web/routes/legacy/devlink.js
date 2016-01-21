@@ -1,7 +1,5 @@
 var Arrow = require('arrow');
 
-var utils = require('../../../lib/utils');
-
 module.exports = Arrow.Router.extend({
 	name: __filename,
 
@@ -13,29 +11,17 @@ module.exports = Arrow.Router.extend({
 	// /devlink/profile
 	// /devlink/
 	// /devlink
-	path: /^\/devlink(?:$|\/(?:profile\/([0-9]+))?)(?:$|\/(?:([^\/]+))?)/,
+	path: /^\/devlink(?:$|\/)(?:profile\/([0-9]+))?/,
 
 	method: 'GET',
 	action: function (req, res) {
 		var id = req.params['0'];
-		var slug = req.params['1'];
+		var url = 'https://devlink.appcelerator.com';
 
-		var opts = {};
-
-		opts.template = 'redirect_dl';
-		opts.url = 'https://devlink.appcelerator.com';
-
-		if (slug) {
-			slug = slug.replace(/-/g, ' ');
-
-			opts.url += '/search?term=' + utils.encodeForURI(slug);
-			opts.action = 'Search for <em>"' + slug + '"</em>';
-
-		} else if (id) {
-			opts.url += '/dev/' + id;
-			opts.action = 'Find the profile you were looking for';
+		if (id) {
+			url += '/dev/' + id;
 		}
 
-		utils.redirect(req, res, opts);
+		return res.redirect(301, url);
 	}
 });

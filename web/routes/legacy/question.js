@@ -9,15 +9,15 @@ module.exports = Arrow.Router.extend({
 	// /question/183184
 	// /question/
 	// /question
-	path: /^\/question(?:$|\/([0-9]+)?)/,
+	path: /^\/question(?:$|\/)([0-9]+)?/,
 
 	method: 'GET',
-	action: function (req, res, next) {
+	action: function (req, res) {
+		var id = req.params['0'];
+		var url = 'https://archive.appcelerator.com';
 
-		if (req.params['0']) {
-			url = 'https://archive.appcelerator.com' + req.originalUrl;
-		} else {
-			url = '/help';
+		if (id) {
+			url += req.originalUrl;
 		}
 
 		return res.redirect(301, url);
