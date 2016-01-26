@@ -10,11 +10,11 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title"><a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest" target="_blank">Stack Overflow <i class="fa fa-stack-overflow pull-right"></i></a></h2>
+            <h2 class="panel-title"><a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest" target="_blank">Stack Overflow Newest Questions <i class="fa fa-stack-overflow pull-right"></i></a></h2>
           </div>
-          {{#if stackoverflow}}
+          {{#if so_questions}}
             <ul class="list-group">
-              {{#each stackoverflow}}
+              {{#each so_questions}}
                 <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
                   <br />
                   <small class="text-muted" title="{{formatDate creation_date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate creation_date 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter creation_date lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
@@ -28,22 +28,47 @@
           {{/if}}
         </div>
 
-        <div class="panel panel-default">
+        <div id="answerers" class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title"><a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank">JIRA Community Tickets <i class="fa fa-bug pull-right"></i></a></h2>
+            <h2 class="panel-title"><a href="http://stackoverflow.com/tags/appcelerator/topusers" target="_blank">Stack Overflow Top Answerers <i class="fa fa-stack-overflow pull-right"></i></a></h2>
           </div>
-          {{#if jira}}
+          {{#if so_users}}
+            <table class="table">
+              {{#each so_users}}
+                <tr>
+                  <td width="1%"><span data-toggle="tooltip" title="Total score last 30 days">{{score}}</span></td>
+                  <td width="1%"><a href="{{user.link}}" target="_blank"><img src="{{user.profile_image}}" class="img-thumbnail" /></a></td>
+                  <td><a href="{{user.link}}" target="_blank">{{user.display_name}}</a><br /><small>{{reputation user.reputation}}</small></td>
+                </tr>
+              {{/each}}
+            </table>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to get <a href="http://stackoverflow.com/tags/appcelerator/topusers" target="_blank">Top Answerers</a>.</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div id="samples" class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Appcelerator Sample Apps <i class="icon-rocket pull-right"></i></h2>
+          </div>
+          {{#if samples}}
             <ul class="list-group">
-              {{#each jira}}
-                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
-                  <br />
-                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+              {{#each samples}}
+                <li class="list-group-item">
+                  <div class="media-left">
+                    <a href="{{location}}" target="_blank"><img src="{{image}}" class="media-object img-thumbnail" /></a>
+                  </div>
+                  <div class="media-body">
+                    <a href="{{location}}" target="_blank">{{name}}</a><br /><small class="text-muted" title="{{formatDate created_at 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate created_at 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter created_at lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                  </div>
                 </li>
               {{/each}}
             </ul>
           {{else}}
             <div class="panel-body">
-              <p>Failed to get <a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank">Newest Tickets</a>.</p>
+              <p>Failed to get Newest Samples.</p>
             </div>
           {{/if}}
         </div>
@@ -91,6 +116,26 @@
           {{/if}}
         </div>
 
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank">JIRA Community Tickets <i class="fa fa-bug pull-right"></i></a></h2>
+          </div>
+          {{#if jira}}
+            <ul class="list-group">
+              {{#each jira}}
+                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
+                  <br />
+                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to get <a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank">Newest Tickets</a>.</p>
+            </div>
+          {{/if}}
+        </div>
+
       </div>
       <div class="col-sm-4">
 
@@ -124,7 +169,7 @@
               {{#each university}}
                 <li class="list-group-item">
                   <div class="media-left">
-                    <a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank"><img src="http://assets-jp.jwpsrv.com/thumbs/{{id}}-320.jpg" class="media-object" /></a>
+                    <a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank"><img src="http://assets-jp.jwpsrv.com/thumbs/{{id}}-320.jpg" class="media-object img-thumbnail" /></a>
                   </div>
                   <div class="media-body">
                     <a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank">{{title}}</a><br /><small class="text-muted" title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter date lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>

@@ -39,13 +39,23 @@ module.exports = Arrow.Router.extend({
 					callback(null, lastViewedHome);
 				});
 			},
-			stackoverflow: function (callback) {
-				req.server.getAPI('/api/feeds/stackoverflow').execute(function (err, results) {
+			so_questions: function (callback) {
+				req.server.getAPI('/api/feeds/so_questions').execute(function (err, results) {
+					callback(null, results ? results[results.key].slice(0, 5) : null);
+				});
+			},
+			so_users: function (callback) {
+				req.server.getAPI('/api/feeds/so_users').execute(function (err, results) {
 					callback(null, results ? results[results.key].slice(0, 5) : null);
 				});
 			},
 			university: function (callback) {
 				req.server.getAPI('/api/feeds/university').execute(function (err, results) {
+					callback(null, results ? results[results.key].slice(0, 5) : null);
+				});
+			},
+			samples: function (callback) {
+				req.server.getAPI('/api/feeds/samples').execute(function (err, results) {
 					callback(null, results ? results[results.key].slice(0, 5) : null);
 				});
 			},

@@ -9,11 +9,11 @@ var cachedAt;
 
 module.exports = Arrow.API.extend({
 	group: 'feeds',
-	path: '/api/feeds/stackoverflow',
+	path: '/api/feeds/samples',
 	method: 'GET',
-	description: 'Newest Appcelerator Stack Overflow Questions',
-	plural: 'questions',
-	singular: 'question',
+	description: 'Newest Sample Apps',
+	plural: 'samples',
+	singular: 'sample',
 	action: function (req, res, next) {
 
 		// even if it's expired, we won't wait for the new data
@@ -25,20 +25,30 @@ module.exports = Arrow.API.extend({
 		if (!cache || (Date.now() - cachedAt > (1000 * 60 * utils.getRandom(10, 15)))) {
 
 			request({
-				url: 'https://api.stackexchange.com/2.2/questions/unanswered?order=desc&sort=creation&pagesize=10&tagged=appcelerator&filter=default&site=stackoverflow',
+				url: 'https://appc-studio.appcelerator.com/api/studio_sample_app',
+				auth: {
+					user: 'NWfNh57WwowynSoEodT34qS5sULbe42h'
+				},
 				json: true,
 				gzip: true
 			}, function (error, response, body) {
 
-				if (!error && _.isObject(body) && body.items && body.items.length > 0) {
+				if (!error && _.isObject(body) && body.success && body[body.key] && body[body.key].length > 0) {
+
+					var samples = _.map(body[body.key], function(sample) {
+						if (sample.image.indexOf('://') === -1) {
+							sample.image = 'https://appc-studio.appcelerator.com/' + sample.image;
+						}
+						return sample;
+					});
 
 					// first time, so we still have to respond
 					if (!cache) {
-						res.success(body.items, next);
+						res.success(samples, next);
 					}
 
 					cachedAt = Date.now();
-					cache = body.items;
+					cache = samples;
 
 				} else {
 

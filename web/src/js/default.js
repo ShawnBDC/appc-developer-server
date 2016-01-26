@@ -19,6 +19,6 @@ $(document).ready(function () {
 		return false;
 	});
 
-	$('a[title]').tooltip();
+	$('a[title],[data-toggle="tooltip"]').tooltip();
 
 });
