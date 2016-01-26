@@ -1,5 +1,7 @@
 {
-	"type": "api",
-	"group": "arrow",
-	"dependencies": {}
+  "type": "api",
+  "group": "arrow",
+  "dependencies": {
+    "connector/appc.arrowdb": "^1.1.8"
+  }
 }

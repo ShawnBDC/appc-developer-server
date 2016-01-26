@@ -1,0 +1,124 @@
+<div id="tpl-help">
+
+  {{> header subtitle="Stay Informed"}}
+
+  <div class="container body">
+
+    <div class="row">
+
+      <div class="col-sm-4">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest" target="_blank">Stack Overflow <i class="fa fa-stack-overflow pull-right"></i></a></h2>
+          </div>
+          {{#if stackoverflow}}
+            <ul class="list-group">
+              {{#each stackoverflow}}
+                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
+                  <br />
+                  <small class="text-muted" title="{{formatDate creation_date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate creation_date 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter creation_date lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to get <a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest" target="_blank">Newest Questions</a>.</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank">JIRA Community Tickets <i class="fa fa-bug pull-right"></i></a></h2>
+          </div>
+          {{#if jira}}
+            <ul class="list-group">
+              {{#each jira}}
+                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
+                  <br />
+                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to get <a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank">Newest Tickets</a>.</p>
+            </div>
+          {{/if}}
+        </div>
+
+      </div>
+      <div class="col-sm-4">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="http://www.appcelerator.com/cat/developer/" target="_blank">Appcelerator Developer Blog <i class="fa fa-rss pull-right"></i></a></h2>
+          </div>
+          {{#if blog}}
+            <ul class="list-group">
+              {{#each blog}}
+                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
+                  <br />
+                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to get <a href="http://www.appcelerator.com/cat/developer/" target="_blank">Newest Posts</a>.</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="https://medium.com/all-titanium" target="_blank">All Titanium @ Medium <i class="fa fa-medium pull-right"></i></a></h2>
+          </div>
+          {{#if medium}}
+            <ul class="list-group">
+              {{#each medium}}
+                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
+                  <br />
+                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to get <a href="https://medium.com/all-titanium" target="_blank">Newest Letters</a>.</p>
+            </div>
+          {{/if}}
+        </div>
+
+      </div>
+      <div class="col-sm-4">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="http://gitt.io/" target="_blank">gitTio Modules &amp; Widgets <i class="fa fa-github pull-right"></i></a></h2>
+          </div>
+          {{#if gittio}}
+            <ul class="list-group">
+              {{#each gittio}}
+                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
+                  <br />
+                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}
+                  </small>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to get <a href="http://gitt.io/" target="_blank">Newest Components</a>.</p>
+            </div>
+          {{/if}}
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

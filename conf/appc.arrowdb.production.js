@@ -3,7 +3,6 @@
  */
 module.exports = {
   "connectors": {
-    /*
     "appc.arrowdb": {
       "enabled": true,
       "connector": "appc.arrowdb",
@@ -13,6 +12,5 @@ module.exports = {
       "username": "appc_app_user",
       "password": "QzXCbA7AXtSHkhsdeU"
     }
-    */
   }
 };
