@@ -32,13 +32,18 @@ module.exports = Arrow.API.extend({
 
 				if (!error && _.isObject(body) && body.items && body.items.length > 0) {
 
+					var questions = _.map(body.items, function(question) {
+						question.creation_date = question.creation_date * 1000;
+						return question;
+					});
+
 					// first time, so we still have to respond
 					if (!cache) {
-						res.success(body.items, next);
+						res.success(questions, next);
 					}
 
 					cachedAt = Date.now();
-					cache = body.items;
+					cache = questions;
 
 				} else {
 
