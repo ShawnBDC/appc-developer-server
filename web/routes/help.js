@@ -14,7 +14,7 @@ module.exports = Arrow.Router.extend({
 			supportMode = req.query.supportMode;
 		}
 
-		req.server.getAPI('/api/feeds/stackoverflow').execute(function (err, results) {
+		req.server.getAPI('/api/feeds/so_questions').execute(function (err, results) {
 
 			res.render('help', {
 				title: 'Get Help',
