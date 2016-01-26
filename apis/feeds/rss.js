@@ -1,9 +1,9 @@
 var Arrow = require('arrow');
 var feed = require('feed-read');
 
-var cache = {};
+var utils = require('../../lib/utils');
 
-var TTL = 1000 * 60 * 10;
+var cache = {};
 
 module.exports = Arrow.API.extend({
 	group: 'feeds',
@@ -19,15 +19,15 @@ module.exports = Arrow.API.extend({
 		}
 	},
 	action: function (req, res, next) {
-    var url = req.params.url;
+		var url = req.params.url;
 
 		// even if it's expired, we won't wait for the new data
 		if (cache[url]) {
 			res.success(cache[url].data, next);
 		}
 
-		// time to request (new) data
-		if (!cache[url] || (Date.now() - cache[url].date > TTL)) {
+		// time to request (new) data (random to not do all together)
+		if (!cache[url] || (Date.now() - cache[url].date > (1000 * 60 * utils.getRandom(10, 15)))) {
 
 			feed(url, function (error, articles) {
 

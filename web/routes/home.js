@@ -44,6 +44,11 @@ module.exports = Arrow.Router.extend({
 					callback(null, results ? results[results.key].slice(0, 5) : null);
 				});
 			},
+			university: function (callback) {
+				req.server.getAPI('/api/feeds/university').execute(function (err, results) {
+					callback(null, results ? results[results.key].slice(0, 5) : null);
+				});
+			},
 			blog: function (callback) {
 				req.server.getAPI('/api/feeds/rss').execute({
 					url: 'http://www.appcelerator.com/cat/developer/feed/'
@@ -73,7 +78,9 @@ module.exports = Arrow.Router.extend({
 				});
 			}
 		}, function (err, results) {
-			res.render('home', results);
+			res.render('home', _.extend({
+				title: 'Stay Informed'
+			}, results));
 			next();
 		});
 	}

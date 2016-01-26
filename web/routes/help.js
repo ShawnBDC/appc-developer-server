@@ -17,6 +17,7 @@ module.exports = Arrow.Router.extend({
 		req.server.getAPI('/api/feeds/stackoverflow').execute(function (err, results) {
 
 			res.render('help', {
+				title: 'Get Help',
 				recentQuestions: results[results.key],
 				supportMode: supportMode
 			});

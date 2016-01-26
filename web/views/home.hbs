@@ -1,4 +1,4 @@
-<div id="tpl-help">
+<div id="tpl-home">
 
   {{> header subtitle="Stay Informed"}}
 
@@ -111,6 +111,30 @@
           {{else}}
             <div class="panel-body">
               <p>Failed to get <a href="http://gitt.io/" target="_blank">Newest Components</a>.</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div id="university" class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="http://university.appcelerator.com/" target="_blank">Appcelerator University Videos <i class="icon-graduation-cap pull-right"></i></a></h2>
+          </div>
+          {{#if university}}
+            <ul class="list-group">
+              {{#each university}}
+                <li class="list-group-item">
+                  <div class="media-left">
+                    <a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank"><img src="http://assets-jp.jwpsrv.com/thumbs/{{id}}-320.jpg" class="media-object" /></a>
+                  </div>
+                  <div class="media-body">
+                    <a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank">{{title}}</a><br /><small class="text-muted" title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter date lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to get <a href="http://university.appcelerator.com/" target="_blank">Newest Videos</a>.</p>
             </div>
           {{/if}}
         </div>

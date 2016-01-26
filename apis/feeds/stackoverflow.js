@@ -2,9 +2,10 @@ var _ = require('lodash');
 var Arrow = require('arrow');
 var request = require('request');
 
+var utils = require('../../lib/utils');
+
 var cache;
 var cachedAt;
-var ttl = 1000 * 60 * 10;
 
 module.exports = Arrow.API.extend({
 	group: 'feeds',
@@ -20,8 +21,8 @@ module.exports = Arrow.API.extend({
 			res.success(cache, next);
 		}
 
-		// time to request (new) data
-		if (!cache || (Date.now() - cachedAt > (1000 * 60 * 15))) {
+		// time to request (new) data (random to not do all together)
+		if (!cache || (Date.now() - cachedAt > (1000 * 60 * utils.getRandom(10, 15)))) {
 
 			request({
 				url: 'https://api.stackexchange.com/2.2/questions/unanswered?order=desc&sort=creation&pagesize=10&tagged=appcelerator&filter=default&site=stackoverflow',
