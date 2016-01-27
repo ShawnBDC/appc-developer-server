@@ -6767,7 +6767,8 @@ button.close {
   padding-bottom: 30px;
 }
 #tpl-home .body #university .media-object,
-#tpl-home .body #samples .media-object {
+#tpl-home .body #samples .media-object,
+#tpl-home .body #marketplace .media-object {
   width: 75px;
 }
 #tpl-home .body #answerers .img-thumbnail {

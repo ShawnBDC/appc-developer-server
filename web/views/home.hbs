@@ -184,6 +184,30 @@
           {{/if}}
         </div>
 
+        <div id="marketplace" class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="https://marketplace.appcelerator.com/home" target="_blank">Marketplace <i class="fa fa-shopping-cart pull-right"></i></a></h2>
+          </div>
+          {{#if marketplace}}
+            <ul class="list-group">
+              {{#each marketplace}}
+                <li class="list-group-item">
+                  <div class="media-left">
+                    <a href="{{url}}" target="_blank"><img src="{{iconUrl}}" class="media-object img-thumbnail" /></a>
+                  </div>
+                  <div class="media-body">
+                    <a href="{{url}}" target="_blank">{{name}}</a><br />{{blurb}}<br /><small class="text-muted" title="{{formatDate publishedOn 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate publishedOn 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter publishedOn lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to get <a href="https://marketplace.appcelerator.com/home" target="_blank">Newest Videos</a>.</p>
+            </div>
+          {{/if}}
+        </div>
+
       </div>
 
     </div>
