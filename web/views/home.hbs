@@ -196,7 +196,7 @@
                     <a href="{{url}}" target="_blank"><img src="{{iconUrl}}" class="media-object img-thumbnail" /></a>
                   </div>
                   <div class="media-body">
-                    <a href="{{url}}" target="_blank">{{name}}</a><br />{{blurb}}<br /><small class="text-muted" title="{{formatDate publishedOn 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate publishedOn 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter publishedOn lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                    <a href="{{url}}" target="_blank">{{name}}</a><br />{{blurb}}<br /><small class="text-muted" title="{{formatDate lastModified 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate lastModified 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter lastModified lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
                   </div>
                 </li>
               {{/each}}
