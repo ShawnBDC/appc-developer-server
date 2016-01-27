@@ -96,8 +96,10 @@
               <a href="{{supportLink}}" target="_blank" class="btn btn-danger pull-right">Contact Support</a>
             {{else if user}}
               <p>The current plan for <em>{{user.org.name}}</em> does not include Appcelerator Support. Please consider our other <a href="http://www.appcelerator.com/pricing/" target="_blank">Plans</a> or <em>Ask the Community</em>.</p>
-              <div class="alert alert-info"><small>For questions related to Account &amp; Billing contact <a href="mailto:support@appceleratior.com">support@appcelerator.com</a> from the email address linked to your account.</small></div>
               <a href="https://billing.appcelerator.com" target="_blank" class="btn btn-danger pull-right">Manage your Plan</a>
+            </div>
+            <div class="panel-body bg-info text-info">
+              For questions related to Account &amp; Billing contact <a href="mailto:support@appceleratior.com">support@appcelerator.com</a> from the email address linked to your account.
             {{else}}
               <p>You are not logged in, so we can't tell if you have access to Appcelerator Support.</p>
               <a href="{{appc_platform_url}}/#/auth/signin?redirect={{baseurl}}" class="btn btn-danger pull-right">Sign In</a>
