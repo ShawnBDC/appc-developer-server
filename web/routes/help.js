@@ -7,19 +7,16 @@ module.exports = Arrow.Router.extend({
 	path: '/help',
 	method: 'GET',
 	action: function (req, res, next) {
-
-		var supportMode = (req.session.user && req.session.user.org && req.session.user.org.package) ? (_.contains(['team', 'enterprise'], req.session.user.org.package) ? 'official' : 'community') : 'unknown';
-
-		if (req.session.user && req.query.supportMode) {
-			supportMode = req.query.supportMode;
-		}
+		var paidSupport = (req.session.user && req.session.user.entitlements && req.session.user.entitlements.paidSupport);
+		var supportLink = (req.session.user && req.session.user.entitlements && req.session.user.entitlements.supportLink) || (paidSupport ? 'http://support2.appcelerator.com' : 'https://developer.appcelerator.com/help');
 
 		req.server.getAPI('/api/feeds/so_questions').execute(function (err, results) {
 
 			res.render('help', {
 				title: 'Get Help',
 				recentQuestions: results[results.key],
-				supportMode: supportMode
+				paidSupport: paidSupport,
+				supportLink: supportLink
 			});
 
 			next();

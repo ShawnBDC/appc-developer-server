@@ -58,11 +58,9 @@
           </div>
           <ul class="list-group">
             <li class="list-group-item"><a href="https://web.appcelerator.com/product/studio" target="_blank">Getting started with Studio or the CLI</a></li>
-            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start" target="_blank">Quick Start Guides</a></li>
-            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Appcelerator_Platform_Troubleshooting" target="_blank">Troubleshooting Guides</a></li>
-            <li class="list-group-item"><a href="https://docs.appcelerator.com" target="_blank">Guides &amp; Reference</a></li>
+            <li class="list-group-item"><a href="https://docs.appcelerator.com" target="_blank">Documentation</a>: <a href="http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start" target="_blank">Quick Starts</a>, <a href="http://docs.appcelerator.com/platform/latest/#!/guide/Appcelerator_Platform_Troubleshooting" target="_blank">Troubleshooting</a></li>
             <li class="list-group-item"><a href="http://www.appcelerator.com/cat/developer/" target="_blank">Developer Blog Posts</a></li>
-            <li class="list-group-item"><a href="https://university.appcelerator.com" target="_blank">Videos on Appcelerator University</a></li>
+            <li class="list-group-item"><a href="https://university.appcelerator.com" target="_blank">Appcelerator University Videos</a></li>
             <li class="list-group-item"><a href="https://archive.appcelerator.com" target="_blank">Appcelerator Q&amp;A Archive</a> <span class="label label-warning">OUT-DATED</span></li>
           </ul>
         </div>
@@ -93,14 +91,17 @@
             <h2 class="panel-title">Ask our Support <i class="fa fa-support pull-right"></i></h2>
           </div>
           <div class="panel-body">
-            {{#compare supportMode "===" "official"}}
-              <p>The plan for <em>{{user.org.name}}</em> gives you access to <a href="https://support.appcelerator.com" target="_blank">Appcelerator Support</a>.</p>
-              <a href="https://support.appcelerator.com" target="_blank" class="btn btn-danger pull-right">Contact Support</a>
-            {{else compare supportMode "===" "community"}}
-              <p>The current plan for <em>{{user.org.name}}</em> does not include Appcelerator Support. Consider our other <a href="http://www.appcelerator.com/pricing/" target="_blank">Plans</a> and <a href="https://billing.appcelerator.com" target="_blank">Upgrade</a> or <em>Ask the Community</em>.</p>
+            {{#if paidSupport}}
+              <p>The plan for <em>{{user.org.name}}</em> gives you access to <a href="{{supportLink}}" target="_blank">Appcelerator Support</a>.</p>
+              <a href="{{supportLink}}" target="_blank" class="btn btn-danger pull-right">Contact Support</a>
+            {{else if user}}
+              <p>The current plan for <em>{{user.org.name}}</em> does not include Appcelerator Support. Please consider our other <a href="http://www.appcelerator.com/pricing/" target="_blank">Plans</a> or <em>Ask the Community</em>.</p>
+              <div class="alert alert-info"><small>For questions related to Account &amp; Billing contact <a href="mailto:support@appceleratior.com">support@appcelerator.com</a> from the email address linked to your account.</small></div>
+              <a href="https://billing.appcelerator.com" target="_blank" class="btn btn-danger pull-right">Manage your Plan</a>
             {{else}}
-              <p>You are not logged in, so we can't tell if you have access to Appcelerator Support. Please <a href="{{appc_platform_url}}/#/auth/signin?redirect={{baseurl}}">Sign In</a>.</p>
-            {{/compare}}
+              <p>You are not logged in, so we can't tell if you have access to Appcelerator Support.</p>
+              <a href="{{appc_platform_url}}/#/auth/signin?redirect={{baseurl}}" class="btn btn-danger pull-right">Sign In</a>
+            {{/if}}
           </div>
         </div>
 
