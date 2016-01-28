@@ -1,0 +1,211 @@
+<div id="tpl-start">
+
+  {{> header subtitle="Getting Strated"}}
+
+  <div class="container body">
+
+    <ul class="nav nav-tabs nav-justified">
+      <li role="presentation"><a href="#">Overview</a></li>
+      <li role="presentation" class="active"><a href="#">CLI</a></li>
+      <li role="presentation"><a href="#">Studio</a></li>
+    </ul>
+
+    <div class="row">
+      <div class="col-sm-4">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Appcelerator CLI <small class="pull-right">{{appc}}</small></h2>
+          </div>
+          <div class="panel-body">
+            <p>
+              The Appcelerator CLI is a set of command line tools that provides many capabilities such as:
+            </p>
+            <ul>
+              <li>Creating mobile and cloud based application projects</li>
+              <li>Running your mobile applications on the simulator or device and publishing for distribution</li>
+              <li>Running your server application locally for development or publishing to cloud for test or production</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Downloads</h2>
+          </div>
+          <div class="panel-body">
+
+            <div class="requirement clear">
+              <a href="http://www.nodejs.org"><img src="/images/start/nodejs.png"></a>
+
+              <div class="right small">
+                (Required Dependency)
+              </div>
+            </div>
+
+            <div class="columns columns-2">
+              <div class="col"></div>
+            </div>
+
+            {{#if userAgent.isWindows}}
+              <div class="os center half">
+                <img src="{{baseurl}}/images/start/plat_win.png" />
+
+                <a data-aa="download-nodejs-win-32bit" href="{{nodejs.x86.url}}">
+                  <div class="button_install">
+                    <span>32-bit Installer</span> <i class="fa fa-fw fa-download"></i>
+                  </div>
+                </a>
+
+                <a data-aa="download-nodejs-win-64bit" href="{{nodejs.x64.url}}">
+                  <div class="button_install">
+                    <span>64-bit Installer</span> <i class="fa fa-fw fa-download"></i>
+                  </div>
+                </a>
+              </div>
+            {{/if}}
+
+            {{#if userAgent.isLinux}}
+              <div class="os center half">
+                <img src="{{baseurl}}/images/start/plat_linux.png" />
+
+                <a data-aa="download-nodejs-linux-32bit" href="{{nodejs.x86.url}}">
+                  <div class="button_install btn-primary">
+                    <span>32-bit tar.gz</span> <i class="fa fa-fw fa-download"></i>
+                  </div>
+                </a>
+
+                <a data-aa="download-nodejs-linux-64bit" href="{{nodejs.x64.url}}">
+                  <div class="button_install btn-primary">
+                    <span>64-bit tar.gz</span> <i class="fa fa-fw fa-download"></i>
+                  </div>
+                </a>
+              </div>
+            {{/if}}
+
+            {{#if userAgent.isOSX}}
+              <div class="os center half">
+                <img src="{{baseurl}}/images/start/plat_mac.png" />
+                <a data-aa="download-nodejs-osx-64bit" href="{{nodejs.universal.url}}">
+                  <div class="button_install btn-primary">
+                    <span>Universal Installer</span> <i class="fa fa-fw fa-download"></i>
+                  </div>
+                </a>
+              </div>
+            {{/if}}
+
+            {{#if userAgent.isOSX}}
+              <strong>Latest version:</strong> {{nodejs.universal.version}}
+              <br/>
+              <strong>SHA1:</strong> <a href="{{nodejs.universal.shaurl}}">{{nodejs.universal.sha}}</a> <a href="{{nodejs.any.license}}">License</a>
+            {{else}}
+              <strong>Latest version:</strong> {{nodejs.any.version}} <a href="{{nodejs.any.license}}">License</a>
+            {{/if}}
+
+            <a href="http://docs.appcelerator.com/platform/latest/#!/guide/Appcelerator_CLI_Release_Notes">Release Notes</a>
+
+          </div>
+          <!-- .panel-body -->
+        </div>
+        <!-- .panel -->
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Resources <i class="fa fa-file-text-o pull-right"></i></h2>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="http://docs.appcelerator.com/platform/latest/#!/guide/Appcelerator_CLI" target="_blank">Documentation</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- .col-sm-4 -->
+
+      <div class="col-sm-8">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Getting Started</h2>
+          </div>
+          <div class="panel-body">
+
+            <ol>
+              <li>
+                <h5>
+									Ensure that you have Node.JS installed.
+								</h5>
+                <p>
+                  If you aren't sure, you can download above or you can verify by running the following in your console:
+                </p>
+                <p>
+                  <pre class="code">node --version</pre>
+                </p>
+                <p>
+                  If it works, you will see a version such as <strong><tt>v{{nodejs.any.version}}</tt></strong>.
+                </p>
+              </li>
+              <li>
+                <h5>
+									Install the Appcelerator CLI
+								</h5>
+                <p>
+                  The Appcelerator CLI is installed using Node's Package Manager (npm). Once installed, you can manage different versions of the Appcelerator software.
+                </p>
+                <p>
+                  {{#if userAgent.isWindows}}
+                    <pre class="code">npm install appcelerator -g</pre>
+                  {{else}}
+                    <pre class="code">sudo npm install appcelerator -g</pre>
+                  {{/if}}
+                </p>
+                <p>
+                  Once installed, you can use either <strong><tt>appcelerator</tt></strong> or the shorthand <strong><tt>appc</tt></strong> from the console to run the CLI.
+                </p>
+              </li>
+              <li>
+                <h5>
+									After installation, you need to run setup to kick things off.
+								</h5>
+                <p>
+                  <pre class="code">appc setup</pre>
+                </p>
+                <p>
+                  When you run setup, the following will happen:
+                  <ul>
+                    <li>If this is the first time installing the CLI, it will automatically download the latest version.</li>
+                    <li>Once installed, you will be prompted to login using your Appcelerator credentials.</li>
+                    <li>If this is the first time installing for a new computer, you will need to authorize with an authorization code. The authorization code will be delivered to either your email or SMS-enabled phone (if configured).</li>
+                    <li>Once you have authorized your computer, you're ready to use the CLI!</li>
+                  </ul>
+                </p>
+              </li>
+              <li>
+                <h5>
+									Once you have things setup, you're ready to create your first project!
+								</h5>
+                <p>
+                  <pre class="code">appc new</pre>
+                </p>
+                <p>
+                  A few quick notes about the CLI:
+                  <ul>
+                    <li>You can get more logging by using the <tt>-l trace</tt> option.</li>
+                    <li>If the CLI encouters an error, you should find a file named <tt>appc-problem.log</tt> in your current working directory where you ran the command. This file contains detailed diagnostic information which can help support resolve your
+                      issue.</li>
+                  </ul>
+                </p>
+              </li>
+            </ol>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- .col-sm-8 -->
+
+    </div>
+    <!-- .row -->
+  </div>
+  <!-- .container -->
+</div>
+<!-- #tpl-start -->

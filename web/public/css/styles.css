@@ -6740,6 +6740,11 @@ button.close {
 .panel-default > .panel-heading {
   border-bottom: none;
 }
+pre.code {
+  background-color: #222222;
+  color: #eeeeee;
+  border-color: #222222;
+}
 #tpl-error .row {
   margin: 70px auto;
 }
@@ -6774,4 +6779,11 @@ button.close {
 #tpl-home .body #answerers .img-thumbnail {
   width: 35px;
   max-width: none;
+}
+#tpl-start .body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#tpl-start .body > .nav {
+  margin-bottom: 30px;
 }
