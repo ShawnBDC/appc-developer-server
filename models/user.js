@@ -10,13 +10,6 @@ module.exports = Arrow.createModel('user', {
 		}
 	},
 	connector: 'appc.arrowdb',
-	// actions: [
-	// 	'create',
-	// 	'read',
-	// 	'update',
-	// 	'delete',
-	// 	'deleteAll'
-	// ],
 	singular: 'user',
 	plural: 'users',
 	metadata: {

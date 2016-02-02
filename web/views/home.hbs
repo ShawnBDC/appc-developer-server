@@ -10,48 +10,67 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title"><a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest" target="_blank">Stack Overflow Newest Questions <i class="fa fa-stack-overflow pull-right"></i></a></h2>
+            <h2 class="panel-title"><a href="http://www.appcelerator.com/cat/developer/" target="_blank"><i class="fa fa-fw fa-rss"></i> Appcelerator Developer Blog <i class="fa fa-angle-right pull-right"></i></a></h2>
           </div>
-          {{#if so_questions}}
-            <ul class="list-group">
-              {{#each so_questions}}
+          {{#if blog}}
+            {{#each blog}}
+              {{#compare @index "===" 0}}
+                {{#if image}}
+                  <a href="{{link}}" target="_blank" class="highlight-image"><img src="{{image}}" class="img-responsive" width="572" height="320" /></a>
+                {{/if}}
+                <div class="panel-body highlight">
+                  <h3><a href="{{link}}" target="_blank">{{title}}</a></h3>
+                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date>{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                </div>
+                <ul class="list-group">
+              {{else}}
                 <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
                   <br />
-                  <small class="text-muted" title="{{formatDate creation_date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate creation_date 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter creation_date lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}</date>{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
                 </li>
-              {{/each}}
+              {{/compare}}
+            {{/each}}
             </ul>
           {{else}}
             <div class="panel-body">
-              <p>Failed to get <a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest" target="_blank">Newest Questions</a>.</p>
+              <p>Failed to fetch latest posts.</p>
             </div>
           {{/if}}
         </div>
 
-        <div id="answerers" class="panel panel-default">
+        <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title"><a href="http://stackoverflow.com/tags/appcelerator/topusers" target="_blank">Stack Overflow Top Answerers <i class="fa fa-stack-overflow pull-right"></i></a></h2>
+            <h2 class="panel-title"><a href="https://medium.com/all-titanium" target="_blank"><i class="fa fa-fw fa-medium"></i> All Titanium @ Medium <i class="fa fa-angle-right pull-right"></i></a></h2>
           </div>
-          {{#if so_users}}
-            <table class="table">
-              {{#each so_users}}
-                <tr>
-                  <td width="1%"><span data-toggle="tooltip" title="Total score last 30 days">{{score}}</span></td>
-                  <td width="1%"><a href="{{user.link}}" target="_blank"><img src="{{user.profile_image}}" class="img-thumbnail" /></a></td>
-                  <td><a href="{{user.link}}" target="_blank">{{user.display_name}}</a><br /><small>{{reputation user.reputation}}</small></td>
-                </tr>
-              {{/each}}
-            </table>
+          {{#if medium}}
+            {{#each medium}}
+              {{#compare @index "===" 0}}
+                {{#if image}}
+                  <a href="{{link}}" target="_blank" class="highlight-image"><img src="{{image}}" class="img-responsive" /></a>
+                {{/if}}
+                <div class="panel-body highlight">
+                  <h3><a href="{{link}}" target="_blank">{{title}}</a></h3>
+                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date>{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                </div>
+                <ul class="list-group">
+              {{else}}
+                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
+                  <br />
+                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}</date>{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                </li>
+              {{/compare}}
+            {{/each}}
+            </ul>
           {{else}}
             <div class="panel-body">
-              <p>Failed to get <a href="http://stackoverflow.com/tags/appcelerator/topusers" target="_blank">Top Answerers</a>.</p>
+              <p>Failed to fetch latest letters.</p>
             </div>
           {{/if}}
         </div>
 
         <div id="samples" class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title">Appcelerator Sample Apps <i class="icon-rocket pull-right"></i></h2>
+            <h2 class="panel-title"><i class="fa-fw icon-rocket"></i> Appcelerator Sample Apps</h2>
           </div>
           {{#if samples}}
             <ul class="list-group">
@@ -61,14 +80,118 @@
                     <a href="{{location}}" target="_blank"><img src="{{image}}" class="media-object img-thumbnail" /></a>
                   </div>
                   <div class="media-body">
-                    <a href="{{location}}" target="_blank">{{name}}</a><br /><small class="text-muted" title="{{formatDate created_at 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate created_at 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter created_at lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                    <a href="{{location}}" target="_blank">{{name}}</a><br /><small class="text-muted"><date title="{{formatDate created_at 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate created_at 'MMMM Do, YYYY'}}</date>{{#ifAfter created_at lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
                   </div>
                 </li>
               {{/each}}
             </ul>
           {{else}}
             <div class="panel-body">
-              <p>Failed to get Newest Samples.</p>
+              <p>Failed to fetch latest samples.</p>
+            </div>
+          {{/if}}
+        </div>
+
+      </div>
+      <div class="col-sm-4">
+
+        <div id="university" class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="http://university.appcelerator.com/" target="_blank"><i class="fa-fw icon-graduation-cap"></i> Appcelerator University Videos <i class="fa fa-angle-right pull-right"></i></a></h2>
+          </div>
+          {{#if university}}
+            {{#each university}}
+              {{#compare @index "===" 0}}
+                <div class="highlight">
+                  <div id="videoPlayer"></div>
+                  <div class="panel-body">
+                    <h3><a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank">{{title}}</a></h3>
+                    <small class="text-muted"><date title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY'}}</date>{{#ifAfter date lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                  </div>
+                  <script src="//jwpsrv.com/library/s4FrhHAqEeS4CxLddj37mA.js"></script>
+                  <script type="text/javascript">
+                    jwplayer.key = "ej3s7eX5dyOsue0xmcVPD79/H+VZ9NboxvtKdg==";
+                    var protocol = ("https:" == location.protocol ? "https:" : "http:");
+                    jwplayer('videoPlayer').setup({
+                      autostart: false,
+                      controls: true,
+                      displaytitle: false,
+                      flashplayer: protocol + "//assets-jp.jwpsrv.com/player/6/6114923/jwplayer.flash.swf",
+                      html5player: protocol + "//assets-jp.jwpsrv.com/player/6/6114923/jwplayer.html5.js",
+                      image: protocol + "//assets-jp.jwpsrv.com/thumbs/{{id}}-640.jpg",
+                      file: "{{hls}}",
+                      plugins: { "https://assets-jp.jwpsrv.com/player/6/6114923/ping.js": { "pixel": "https://content.jwplatform.com/ping.gif" }},
+                      primary: "html5",
+                      repeat: false,
+                      skin: protocol + "//assets-jp.jwpsrv.com/skins/vYPfPxMe.xml",
+                      stagevideo: false,
+                      stretching: "uniform",
+                      width: '100%',
+                      aspectratio: '16:9'
+                    });
+                  </script>
+                </div>
+                <ul class="list-group">
+              {{else}}
+                <li class="list-group-item">
+                  <div class="media-left">
+                    <a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank"><img src="http://assets-jp.jwpsrv.com/thumbs/{{id}}-320.jpg" class="media-object img-thumbnail" /></a>
+                  </div>
+                  <div class="media-body">
+                    <a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank">{{title}}</a><br /><small class="text-muted"><date title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY'}}</date>{{#ifAfter date lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                  </div>
+                </li>
+              {{/compare}}
+            {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to fetch latest videos.</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div id="marketplace" class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="https://marketplace.appcelerator.com/home" target="_blank"><i class="fa fa-fw fa-shopping-cart"></i> Marketplace <i class="fa fa-angle-right pull-right"></i></a></h2>
+          </div>
+          {{#if marketplace}}
+            <ul class="list-group">
+              {{#each marketplace}}
+                <li class="list-group-item">
+                  <div class="media-left">
+                    <a href="{{url}}" target="_blank"><img src="{{iconUrl}}" class="media-object img-thumbnail" /></a>
+                  </div>
+                  <div class="media-body">
+                    <a href="{{url}}" target="_blank">{{name}}</a><br />{{blurb}}<br /><small class="text-muted"><date title="{{formatDate lastModified 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate lastModified 'MMMM Do, YYYY'}}</date>{{#ifAfter lastModified lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to fetch latest updates.</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="http://gitt.io/" target="_blank"><i class="fa fa-fw fa-github"></i> gitTio OSS Modules &amp; Widgets <i class="fa fa-angle-right pull-right"></i></a></h2>
+          </div>
+          {{#if gittio}}
+            <ul class="list-group">
+              {{#each gittio}}
+                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
+                  <br />
+                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date>{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}
+                  </small>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to fetch latest updates.</p>
             </div>
           {{/if}}
         </div>
@@ -78,47 +201,45 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title"><a href="http://www.appcelerator.com/cat/developer/" target="_blank">Appcelerator Developer Blog <i class="fa fa-rss pull-right"></i></a></h2>
+            <h2 class="panel-title"><a href="https://stackoverflow.com/questions/tagged/appcelerator?sort=newest" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i> Stack Overflow <i class="fa fa-angle-right pull-right"></i></a></h2>
           </div>
-          {{#if blog}}
+          {{#if so_questions}}
             <ul class="list-group">
-              {{#each blog}}
+              {{#each so_questions}}
                 <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
                   <br />
-                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                  <small class="text-muted"><date title="{{formatDate creation_date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate creation_date 'MMMM Do, YYYY @ h:mm a'}}</date>{{#ifAfter creation_date lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
                 </li>
               {{/each}}
             </ul>
           {{else}}
             <div class="panel-body">
-              <p>Failed to get <a href="http://www.appcelerator.com/cat/developer/" target="_blank">Newest Posts</a>.</p>
+              <p>Failed to fetch latest questions.</p>
+            </div>
+          {{/if}}
+          <div class="panel-heading sub-heading">
+            <h2 class="panel-title"><a href="http://stackoverflow.com/tags/appcelerator/topusers" target="_blank"><i class="fa fa-fw fa-trophy"></i> Top Answerers <i class="fa fa-angle-right pull-right"></i></a></h2>
+          </div>
+          {{#if so_users}}
+            <table id="answerers" class="table highlight">
+              {{#each so_users}}
+                <tr>
+                  <td width="1%"><span data-toggle="tooltip" title="Total score last 30 days">{{score}}</span></td>
+                  <td width="1%"><a href="{{user.link}}" target="_blank"><img src="{{user.profile_image}}" class="img-thumbnail" /></a></td>
+                  <td><a href="{{user.link}}" target="_blank">{{user.display_name}}</a><br /><small data-toggle="tooltip" title="Reputation">{{reputation user.reputation}}</small></td>
+                </tr>
+              {{/each}}
+            </table>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to fetch top answerers.</p>
             </div>
           {{/if}}
         </div>
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title"><a href="https://medium.com/all-titanium" target="_blank">All Titanium @ Medium <i class="fa fa-medium pull-right"></i></a></h2>
-          </div>
-          {{#if medium}}
-            <ul class="list-group">
-              {{#each medium}}
-                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
-                  <br />
-                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
-                </li>
-              {{/each}}
-            </ul>
-          {{else}}
-            <div class="panel-body">
-              <p>Failed to get <a href="https://medium.com/all-titanium" target="_blank">Newest Letters</a>.</p>
-            </div>
-          {{/if}}
-        </div>
-
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title"><a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank">JIRA Community Tickets <i class="fa fa-bug pull-right"></i></a></h2>
+            <h2 class="panel-title"><a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank"><i class="fa fa-fw fa-bug"></i> JIRA Community Tickets <i class="fa fa-angle-right pull-right"></i></a></h2>
           </div>
           {{#if jira}}
             <ul class="list-group">
@@ -131,79 +252,7 @@
             </ul>
           {{else}}
             <div class="panel-body">
-              <p>Failed to get <a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank">Newest Tickets</a>.</p>
-            </div>
-          {{/if}}
-        </div>
-
-      </div>
-      <div class="col-sm-4">
-
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title"><a href="http://gitt.io/" target="_blank">gitTio Modules &amp; Widgets <i class="fa fa-github pull-right"></i></a></h2>
-          </div>
-          {{#if gittio}}
-            <ul class="list-group">
-              {{#each gittio}}
-                <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
-                  <br />
-                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}
-                  </small>
-                </li>
-              {{/each}}
-            </ul>
-          {{else}}
-            <div class="panel-body">
-              <p>Failed to get <a href="http://gitt.io/" target="_blank">Newest Components</a>.</p>
-            </div>
-          {{/if}}
-        </div>
-
-        <div id="university" class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title"><a href="http://university.appcelerator.com/" target="_blank">Appcelerator University Videos <i class="icon-graduation-cap pull-right"></i></a></h2>
-          </div>
-          {{#if university}}
-            <ul class="list-group">
-              {{#each university}}
-                <li class="list-group-item">
-                  <div class="media-left">
-                    <a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank"><img src="http://assets-jp.jwpsrv.com/thumbs/{{id}}-320.jpg" class="media-object img-thumbnail" /></a>
-                  </div>
-                  <div class="media-body">
-                    <a href="http://university.appcelerator.com/video/{{id}}/{{slug title}}" target="_blank">{{title}}</a><br /><small class="text-muted" title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter date lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
-                  </div>
-                </li>
-              {{/each}}
-            </ul>
-          {{else}}
-            <div class="panel-body">
-              <p>Failed to get <a href="http://university.appcelerator.com/" target="_blank">Newest Videos</a>.</p>
-            </div>
-          {{/if}}
-        </div>
-
-        <div id="marketplace" class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title"><a href="https://marketplace.appcelerator.com/home" target="_blank">Marketplace <i class="fa fa-shopping-cart pull-right"></i></a></h2>
-          </div>
-          {{#if marketplace}}
-            <ul class="list-group">
-              {{#each marketplace}}
-                <li class="list-group-item">
-                  <div class="media-left">
-                    <a href="{{url}}" target="_blank"><img src="{{iconUrl}}" class="media-object img-thumbnail" /></a>
-                  </div>
-                  <div class="media-body">
-                    <a href="{{url}}" target="_blank">{{name}}</a><br />{{blurb}}<br /><small class="text-muted" title="{{formatDate lastModified 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate lastModified 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter lastModified lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
-                  </div>
-                </li>
-              {{/each}}
-            </ul>
-          {{else}}
-            <div class="panel-body">
-              <p>Failed to get <a href="https://marketplace.appcelerator.com/home" target="_blank">Newest Videos</a>.</p>
+              <p>Failed to fetch latest issues.</p>
             </div>
           {{/if}}
         </div>

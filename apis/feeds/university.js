@@ -28,7 +28,7 @@ module.exports = Arrow.API.extend({
 				url: 'https://university.appcelerator.com/api/video/query?where=' + JSON.stringify({
 					'tags': 'published',
 					'order_by': 'date:desc',
-					'result_limit': 5
+					'result_limit': 3
 				}),
 				headers: {
 					Authorization: 'Basic VGswNHhoMjdNeGlCTEdWMHU3MlVkUlBDZzNYNHd0WmI6'
@@ -39,13 +39,18 @@ module.exports = Arrow.API.extend({
 
 				if (!error && _.isObject(body) && body.success && body[body.key] && body[body.key].length > 0) {
 
+					var videos = _.map(body[body.key], function(video) {
+						video.date = video.date * 1000;
+						return video;
+					});
+
 					// first time, so we still have to respond
 					if (!cache) {
-						res.success(body[body.key], next);
+						res.success(videos, next);
 					}
 
 					cachedAt = Date.now();
-					cache = body[body.key];
+					cache = videos;
 
 				} else {
 

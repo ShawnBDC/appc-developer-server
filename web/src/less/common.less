@@ -18,7 +18,19 @@
 
 // transparent panel heading
 .panel-default > .panel-heading {
-  border-bottom: none;
+
+  > .panel-title > a {
+    display: block;
+    text-decoration: none;
+
+    > .fa-angle-right {
+      color: @table-border-color;
+    }
+  }
+
+  &.attach {
+    border-bottom-color: transparent;
+  }
 }
 
 pre.code {
