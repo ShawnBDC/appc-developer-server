@@ -53,7 +53,7 @@ module.exports = Arrow.Router.extend({
 				},
 				so_questions: function (callback) {
 					req.server.getAPI('/api/feeds/so_questions').execute(function (err, results) {
-						callback(null, results ? results[results.key] : null);
+						callback(null, results ? results[results.key].slice(0, 3) : null);
 					});
 				},
 				so_users: function (callback) {

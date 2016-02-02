@@ -6781,6 +6781,9 @@ pre.code {
 #tpl-home .body .sub-heading {
   border-top: 1px solid #ddd;
 }
+#tpl-home .body .img-responsive {
+  width: 100%;
+}
 #tpl-home .body #university .media-object,
 #tpl-home .body #samples .media-object,
 #tpl-home .body #marketplace .media-object {
