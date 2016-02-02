@@ -35,7 +35,7 @@ module.exports = Arrow.API.extend({
 
 				if (!error && _.isObject(body) && body.success && body[body.key] && body[body.key].length > 0) {
 
-					var samples = _.map(body[body.key], function(sample) {
+					var samples = _.map(body[body.key].slice(0, 3), function(sample) {
 						if (sample.image.indexOf('://') === -1) {
 							sample.image = 'https://appc-studio.appcelerator.com/' + sample.image;
 						}

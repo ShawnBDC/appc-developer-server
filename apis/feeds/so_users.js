@@ -12,8 +12,8 @@ module.exports = Arrow.API.extend({
 	path: '/api/feeds/so_users',
 	method: 'GET',
 	description: 'Top Appcelerator Stack Overflow Answerers',
-	plural: 'questions',
-	singular: 'question',
+	plural: 'users',
+	singular: 'user',
 	action: function (req, res, next) {
 
 		// even if it's expired, we won't wait for the new data
@@ -30,14 +30,15 @@ module.exports = Arrow.API.extend({
 				gzip: true
 			}, function (error, response, body) {
 				if (!error && _.isObject(body) && body.items && body.items.length > 0) {
+					var users = body.items.slice(0, 5);
 
 					// first time, so we still have to respond
 					if (!cache) {
-						res.success(body.items, next);
+						res.success(users, next);
 					}
 
 					cachedAt = Date.now();
-					cache = body.items;
+					cache = users;
 
 				} else {
 

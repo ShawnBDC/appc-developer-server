@@ -32,6 +32,7 @@ module.exports = Arrow.API.extend({
 			feed(url, function (error, articles) {
 
 				if (!error && articles && articles.length > 0) {
+					articles = articles.slice(0, 3);
 
 					// first time, so we still have to respond
 					if (!cache[url]) {

@@ -20,13 +20,13 @@
                 {{/if}}
                 <div class="panel-body highlight">
                   <h3><a href="{{link}}" target="_blank">{{title}}</a></h3>
-                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date>{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
                 </div>
                 <ul class="list-group">
               {{else}}
                 <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
                   <br />
-                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}</date>{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
                 </li>
               {{/compare}}
             {{/each}}
@@ -50,13 +50,13 @@
                 {{/if}}
                 <div class="panel-body highlight">
                   <h3><a href="{{link}}" target="_blank">{{title}}</a></h3>
-                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date>{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
                 </div>
                 <ul class="list-group">
               {{else}}
                 <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
                   <br />
-                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}</date>{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
                 </li>
               {{/compare}}
             {{/each}}
@@ -208,7 +208,7 @@
               {{#each so_questions}}
                 <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
                   <br />
-                  <small class="text-muted"><date title="{{formatDate creation_date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate creation_date 'MMMM Do, YYYY @ h:mm a'}}</date>{{#ifAfter creation_date lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                  <small class="text-muted"><date title="{{formatDate creation_date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate creation_date 'MMMM Do, YYYY @ h:mm a'}}</date> by <a href="{{owner.link}}" target="_blank">{{owner.display_name}}</a> {{#ifAfter creation_date lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
                 </li>
               {{/each}}
             </ul>
@@ -224,15 +224,38 @@
             <table id="answerers" class="table highlight">
               {{#each so_users}}
                 <tr>
-                  <td width="1%"><span data-toggle="tooltip" title="Total score last 30 days">{{score}}</span></td>
+                  <td width="1%" class="text-muted">{{concat @index 1}}.</td>
                   <td width="1%"><a href="{{user.link}}" target="_blank"><img src="{{user.profile_image}}" class="img-thumbnail" /></a></td>
                   <td><a href="{{user.link}}" target="_blank">{{user.display_name}}</a><br /><small data-toggle="tooltip" title="Reputation">{{reputation user.reputation}}</small></td>
+                  <td width="1%"><span data-toggle="tooltip" title="Total score last 30 days">{{score}}</span></td>
                 </tr>
               {{/each}}
             </table>
           {{else}}
             <div class="panel-body">
               <p>Failed to fetch top answerers.</p>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title"><a href="http://www.tislack.org" target="_blank"><i class="fa fa-fw fa-slack"></i> TiSlack Leaderboard <i class="fa fa-angle-right pull-right"></i></a></h2>
+          </div>
+          {{#if tislack}}
+            <table id="answerers" class="table highlight">
+              {{#each tislack}}
+                <tr>
+                  <td width="1%" class="text-muted">{{concat @index 1}}.</td>
+                  <td width="1%"><img src="{{pic}}" class="img-thumbnail" /></td>
+                  <td>{{#if real_name}}{{real_name}}{{else}}{{name}}{{/if}}</td>
+                  <td width="1%"><span data-toggle="tooltip" title="Total points last 30 days">{{points}}</span></td>
+                </tr>
+              {{/each}}
+            </table>
+          {{else}}
+            <div class="panel-body">
+              <p>Failed to fetch leaderboard.</p>
             </div>
           {{/if}}
         </div>
@@ -246,7 +269,7 @@
               {{#each jira}}
                 <li class="list-group-item"><a href="{{link}}" target="_blank">{{title}}</a>
                   <br />
-                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                  <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}} by {{author}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
                 </li>
               {{/each}}
             </ul>

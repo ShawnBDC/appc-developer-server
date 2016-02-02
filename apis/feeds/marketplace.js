@@ -33,13 +33,15 @@ module.exports = Arrow.API.extend({
 				if (!error && body && _.isArray(body) && body.length > 0) {
 					body.reverse();
 
+					var products = body.slice(0, 3);
+
 					// first time, so we still have to respond
 					if (!cache) {
-						res.success(body, next);
+						res.success(products, next);
 					}
 
 					cachedAt = Date.now();
-					cache = body;
+					cache = products;
 
 				} else {
 

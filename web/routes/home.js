@@ -53,27 +53,32 @@ module.exports = Arrow.Router.extend({
 				},
 				so_questions: function (callback) {
 					req.server.getAPI('/api/feeds/so_questions').execute(function (err, results) {
-						callback(null, results ? results[results.key].slice(0, 3) : null);
+						callback(null, results ? results[results.key] : null);
 					});
 				},
 				so_users: function (callback) {
 					req.server.getAPI('/api/feeds/so_users').execute(function (err, results) {
-						callback(null, results ? results[results.key].slice(0, 5) : null);
+						callback(null, results ? results[results.key] : null);
 					});
 				},
 				marketplace: function (callback) {
 					req.server.getAPI('/api/feeds/marketplace').execute(function (err, results) {
-						callback(null, results ? results[results.key].slice(0, 3) : null);
+						callback(null, results ? results[results.key] : null);
+					});
+				},
+				tislack: function (callback) {
+					req.server.getAPI('/api/feeds/tislack').execute(function (err, results) {
+						callback(null, results ? results[results.key] : null);
 					});
 				},
 				university: function (callback) {
 					req.server.getAPI('/api/feeds/university').execute(function (err, results) {
-						callback(null, results ? results[results.key].slice(0, 3) : null);
+						callback(null, results ? results[results.key] : null);
 					});
 				},
 				samples: function (callback) {
 					req.server.getAPI('/api/feeds/samples').execute(function (err, results) {
-						callback(null, results ? results[results.key].slice(0, 3) : null);
+						callback(null, results ? results[results.key] : null);
 					});
 				},
 				blog: function (callback) {
@@ -82,7 +87,7 @@ module.exports = Arrow.Router.extend({
 					}, function (err, results) {
 
 						if (results) {
-							results = results[results.key].slice(0, 3);
+							results = results[results.key];
 							results[0].image = utils.extractImageSrc(results[0].content);
 
 							// feed has square version, the one we want is without this suffix
@@ -98,14 +103,14 @@ module.exports = Arrow.Router.extend({
 					req.server.getAPI('/api/feeds/rss').execute({
 						url: 'http://gitt.io/rss.xml'
 					}, function (err, results) {
-						callback(null, results ? results[results.key].slice(0, 3) : null);
+						callback(null, results ? results[results.key] : null);
 					});
 				},
 				jira: function (callback) {
 					req.server.getAPI('/api/feeds/rss').execute({
 						url: 'https://jira.appcelerator.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+in+%28AC%2C+TC%29+AND+resolution+%3D+Unresolved+ORDER+BY+created+DESC%2C+updated+ASC%2C+priority+DESC&tempMax=1000'
 					}, function (err, results) {
-						callback(null, results ? results[results.key].slice(0, 3) : null);
+						callback(null, results ? results[results.key] : null);
 					});
 				},
 				medium: function (callback) {
@@ -114,7 +119,7 @@ module.exports = Arrow.Router.extend({
 					}, function (err, results) {
 
 						if (results) {
-							results = results[results.key].slice(0, 3);
+							results = results[results.key];
 							results[0].image = utils.extractImageSrc(results[0].content);
 						}
 
