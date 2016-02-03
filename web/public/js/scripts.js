@@ -517,7 +517,7 @@
 
 Appc.afterHeaderRender(function () {
 
-	$('#appc-unified-header-sitename').html('<a href="/">Developer</a>');
+	$('#appc-unified-header-sitename').addClass('active').html('<a href="/">Developer</a>');
 
 });
 
