@@ -6733,6 +6733,10 @@ button.close {
   background-image: url(/images/header-bg.png);
   background-size: cover;
 }
+.body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .well h2:first-child,
 .panel-body h2:first-child {
   margin-top: 0;
@@ -6758,10 +6762,6 @@ pre.code {
 #tpl-error .row .fa {
   font-size: 200px;
 }
-#tpl-help .body {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
 #tpl-help .body .questions > .panel-body {
   padding: 19px;
 }
@@ -6773,10 +6773,6 @@ pre.code {
 }
 #tpl-help .body .questions .media-object {
   width: 30px;
-}
-#tpl-home .body {
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 #tpl-home .body .sub-heading {
   border-top: 1px solid #ddd;
@@ -6824,10 +6820,6 @@ pre.code {
 }
 #tpl-home .jw-tab-focus:focus {
   outline: none;
-}
-#tpl-start .body {
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 #tpl-start .body > .nav {
   margin-bottom: 30px;

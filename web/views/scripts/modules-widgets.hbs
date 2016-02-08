@@ -1,0 +1,209 @@
+<div id="tpl-modules-widgets">
+
+  <div class="container body">
+
+    <div class="page-header">
+      <h1>{{title}}</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+
+        <ol>
+          <li><a href="https://www.appcelerator.com/wp-admin/edit.php?tag=twmw" target="_blank">Look up</a> the previous TWMW blog post.</li>
+          <li>Copy the timestamp in the comment the blog post starts with.</li>
+          <li>Paste it in the form on your right and press <em>Generate</em>.</li>
+          <li><a href="https://www.appcelerator.com/wp-admin/post-new.php" target="_blank">Add New Post</a> and copy-paste the following fields:</li>
+        </ol>
+
+      </div>
+      <div class="col-md-4">
+
+        <form method="GET">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" name="from" class="form-control" placeholder="Timestamp" value="{{from}}" />
+              <span class="input-group-btn">
+                <input type="submit" class="btn btn-primary" value="Generate" />
+              </span>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" value="This Week's Modules &amp; Widgets" />
+        </div>
+        <div class="form-group">
+          <label for="body">Body</label>
+
+<textarea class="form-control" id="body" rows="20"><!-- Generated: {{to}} -->
+
+<p>Every week we sum up all new and updated modules, widgets and other products listed on the <a href="https://marketplace.appcelerator.com/home">Appcelerator Marketplace</a> and found on GitHub by <a href="http://gitt.io" target="_blank">gitTio</a>.</p>
+
+<p>Here are the updates since {{formatDate from "MMMM Do YYYY"}}:</p>
+
+<h4 id="marketplace">Appcelerator Marketplace</h4>
+
+{{#compare marketplace.length ">" 0}}<p>New and updated modules and widgets on the <a href="https://marketplace.appcelerator.com/home">Appcelerator Marketplace</a>:</p>
+
+<table class="twmw-table">
+  <thead>
+    <tr>
+      <th style="width:1%;">Type</th>
+      <th>Title / Description</th>
+      <th style="width:1%;text-align:right;">Price</th>
+      <th style="width:1%;">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each marketplace}}
+      <tr>
+        <td>{{#if image}}<img src="{{image}}" width="24" height="24" alt="{{type}}" title="{{type}}" />{{else}}&nbsp;{{/if}}</td>
+        <td><p><a href="{{url}}" target="_blank">{{title}}</a></p><p>{{description}}</p></td>
+        <td style="text-align:right;">{{price}}</td>
+        <td><span class="twmw-label {{#compare event "===" "new"}}twmw-label-new{{/compare}}">{{event}}</span></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>{{else}}<p>No new or updated modules and widgets on the <a href="https://marketplace.appcelerator.com/home">Appcelerator Marketplace</a> this week.</p>{{/compare}}
+
+<h4 id="gittio">gitTio</h4>
+
+{{#compare gittio.length ">" 0}}<p>New and updated open-source modules and widgets found on GitHub by <a href="http://gitt.io" target="_blank">gitTio</a>:</p>
+
+<table class="twmw-table">
+  <thead>
+    <tr>
+      <th style="width:1%;">Type</th>
+      <th>Title / Description</th>
+      <th style="width:1%;">Version</th>
+      <th style="width:1%;">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each gittio}}
+      <tr>
+        <td><img src="{{image}}" width="24" height="24" alt="{{type}}" title="{{type}}" /></td>
+        <td><p><a href="{{url}}" target="_blank">{{title}}</a></p>{{#if description}}<p>{{description}}</p>{{/if}}</td>
+        <td>{{version}}</td>
+        <td><span class="twmw-label {{#compare event "===" "new"}}twmw-label-new{{/compare}}">{{event}}</span></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>{{else}}<p>No new or updated modules and widgets found on GitHub by <a href="http://gitt.io" target="_blank">gitTio</a> this week.</p>{{/compare}}
+
+<style type="text/css">
+
+.twmw-table {
+  margin-bottom: 1em;
+}
+
+.twmw-table thead {
+  border-bottom: 1px solid #999;
+  font-weight: bold;
+}
+
+.twmw-table thead th {
+  padding-bottom: 1em;
+}
+
+.twmw-table tbody td {
+  padding-top: 1em;
+}
+
+/* override site-style */
+.blog-posts-single .twmw-table tbody td p {
+  margin: 0;
+}
+
+/* override site-style */
+.blog-posts-single .post-content .twmw-table tbody td img {
+  margin: 0;
+  vertical-align: middle;
+}
+
+.twmw-table .twmw-label {
+  margin-left: 1em;
+  color:white;
+  background-color: #333;
+  padding:.3em;
+  display: inline-block;
+  font-weight: bold;
+  font-size:.7em;
+  text-transform: uppercase;
+}
+
+.twmw-table .twmw-label-new {
+  background-color: #3fb618;
+}
+
+</style></textarea>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="tags">Category</label>
+          <p class="help-block">Select <em class="select">Developer</em>.</p>
+        </div>
+        <div class="form-group">
+          <label for="tags">Tags</label>
+          <input type="text" class="form-control" id="tags" value="{{tags}}" />
+        </div>
+        <div class="form-group">
+          <label for="tags">Featured Image</label>
+          <p class="help-block">Search for <em class="select">devblog</em> in the Media Library.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+  $('#tpl-modules-widgets .select').click(function() {
+    selectElementText($(this).get(0));
+  });
+
+  $('#tpl-modules-widgets input, #tpl-modules-widgets textarea').click(function() {
+    $(this).select();
+  });
+
+});
+
+// Source: http://stackoverflow.com/a/10646148/4626813
+
+// Selects text inside an element node.
+function selectElementText(el) {
+    removeTextSelections();
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(el);
+        range.select();
+    }
+    else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(el);
+        window.getSelection().addRange(range);
+    }
+}
+
+// Deselects all text in the page.
+function removeTextSelections() {
+    if (document.selection) document.selection.empty();
+    else if (window.getSelection) window.getSelection().removeAllRanges();
+}
+
+</script>
