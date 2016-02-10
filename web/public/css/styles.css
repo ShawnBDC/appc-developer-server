@@ -6725,6 +6725,68 @@ button.close {
     display: none !important;
   }
 }
+.btn-appc-light {
+  color: #000;
+  background-color: #FFF;
+  border-color: #FFF;
+  color: #FFF;
+  background: transparent;
+  -webkit-transition: 0.75s;
+  -o-transition: 0.75s;
+  transition: 0.75s;
+}
+.btn-appc-light:focus,
+.btn-appc-light.focus {
+  color: #000;
+  background-color: #e6e6e6;
+  border-color: #bfbfbf;
+}
+.btn-appc-light:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  border-color: #e0e0e0;
+}
+.btn-appc-light:active,
+.btn-appc-light.active,
+.open > .dropdown-toggle.btn-appc-light {
+  color: #000;
+  background-color: #e6e6e6;
+  border-color: #e0e0e0;
+}
+.btn-appc-light:active:hover,
+.btn-appc-light.active:hover,
+.open > .dropdown-toggle.btn-appc-light:hover,
+.btn-appc-light:active:focus,
+.btn-appc-light.active:focus,
+.open > .dropdown-toggle.btn-appc-light:focus,
+.btn-appc-light:active.focus,
+.btn-appc-light.active.focus,
+.open > .dropdown-toggle.btn-appc-light.focus {
+  color: #000;
+  background-color: #d4d4d4;
+  border-color: #bfbfbf;
+}
+.btn-appc-light:active,
+.btn-appc-light.active,
+.open > .dropdown-toggle.btn-appc-light {
+  background-image: none;
+}
+.btn-appc-light.disabled:hover,
+.btn-appc-light[disabled]:hover,
+fieldset[disabled] .btn-appc-light:hover,
+.btn-appc-light.disabled:focus,
+.btn-appc-light[disabled]:focus,
+fieldset[disabled] .btn-appc-light:focus,
+.btn-appc-light.disabled.focus,
+.btn-appc-light[disabled].focus,
+fieldset[disabled] .btn-appc-light.focus {
+  background-color: #FFF;
+  border-color: #FFF;
+}
+.btn-appc-light .badge {
+  color: #FFF;
+  background-color: #000;
+}
 .header {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -6732,6 +6794,18 @@ button.close {
   background-color: #484950;
   background-image: url(/images/header-bg.png);
   background-size: cover;
+}
+.header .header-icon {
+  padding-left: 65px;
+}
+.header .header-icon i {
+  display: inline-block;
+  width: 50px;
+  margin-left: -50px;
+}
+.header .header-actions {
+  text-align: right;
+  padding-top: 20px;
 }
 .body {
   padding-top: 30px;
@@ -6773,6 +6847,9 @@ pre.code {
 }
 #tpl-help .body .questions .media-object {
   width: 30px;
+}
+#tpl-start .body > .nav {
+  margin-bottom: 30px;
 }
 #tpl-home .body .sub-heading {
   border-top: 1px solid #ddd;
@@ -6820,7 +6897,4 @@ pre.code {
 }
 #tpl-home .jw-tab-focus:focus {
   outline: none;
-}
-#tpl-start .body > .nav {
-  margin-bottom: 30px;
 }

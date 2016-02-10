@@ -517,8 +517,24 @@
 
 Appc.afterHeaderRender(function () {
 
-	$('#appc-unified-header-sitename').addClass('active').html('<a href="/">Developer</a>');
+	$('#appc-unified-header-sitename').html('<a href="/">Developer Portal</a>');
 
+	var $menu = $('#appc-unified-header-nav .pull-left').first();
+
+	var links = {
+		'/help': 'Help',
+		// '/updates': 'Updates'
+	};
+
+	for (var href in links) {
+		$menu.append('<a href="' + href + '">' + links[href] + '</a>');
+	}
+
+	if (app.activeNav) {
+		$menu.find('[href="' + app.activeNav + '"]').addClass('active');
+	} else {
+		$('#appc-unified-header-sitename').addClass('active');
+	}
 });
 
 Appc.afterFooterRender(function () {

@@ -13,6 +13,7 @@ module.exports = Arrow.Router.extend({
 		req.server.getAPI('/api/feeds/so_questions').execute(function (err, results) {
 
 			res.render('help', {
+				activeNav: '/help',
 				title: 'Get Help',
 				recentQuestions: results[results.key],
 				paidSupport: paidSupport,

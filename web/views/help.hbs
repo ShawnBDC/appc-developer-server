@@ -1,6 +1,22 @@
 <div id="tpl-help">
 
-  {{> header subtitle="Get Help"}}
+  <div class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 header-title header-icon">
+          <h1><i class="icon-lifebuoy"></i>Appcelerator Developer</h1>
+          <p class="lead">{{title}}</p>
+        </div>
+        <div class="col-sm-4 header-actions">
+          <a href="https://stackoverflow.com/tags/appcelerator" target="_blank" class="btn btn-appc-light"><i class="fa fa-stack-overflow"></i> Community</a>
+          {{#if paidSupport}}
+            &nbsp;
+            <a href="{{supportLink}}" target="_blank" class="btn btn-appc-light"><i class="fa fa-support"></i> Support</a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="container body">
 

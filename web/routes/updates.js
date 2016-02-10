@@ -8,13 +8,13 @@ var cachedAt;
 
 module.exports = Arrow.Router.extend({
 	name: __filename,
-	path: '/home',
+	path: '/updates',
 	method: 'GET',
 	action: function (req, res, next) {
 
 		// even if it's expired, we won't wait for the new data
 		if (cache) {
-			res.render('home', cache);
+			res.render('updates', cache);
 
 			next();
 		}
@@ -127,11 +127,13 @@ module.exports = Arrow.Router.extend({
 					});
 				}
 			}, function (err, results) {
-				results.title = 'Stay Informed';
+
+				results.activeNav = '/updates';
+				results.title = 'Get up to date';
 
 				// first time, so we still have to respond
 				if (!cache) {
-					res.render('home', results);
+					res.render('updates', results);
 				}
 
 				cachedAt = Date.now();
