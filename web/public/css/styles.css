@@ -6788,6 +6788,13 @@ fieldset[disabled] .btn-appc-light.focus {
   background-color: #000;
 }
 /** Unified Nav Overrides **/
+#appc-unified-header {
+  background-color: #FFF;
+  border-bottom: 1px solid #e7e7e7;
+  font-family: 'Open sans', 'Helvetica Neue', Arial;
+  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.125);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.125);
+}
 #appc-unified-header #appc-unified-header-nav {
   background-color: #FFF !important;
 }
