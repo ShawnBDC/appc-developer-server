@@ -6790,16 +6790,15 @@ fieldset[disabled] .btn-appc-light.focus {
 /** Unified Nav Overrides **/
 #appc-unified-header {
   background-color: #FFF;
-  border-bottom: 1px solid #e7e7e7;
-  font-family: 'Open sans', 'Helvetica Neue', Arial;
+  background-color: rgba(255, 255, 255, 0.95);
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.125);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.125);
 }
 #appc-unified-header #appc-unified-header-nav {
-  background-color: #FFF !important;
+  background-color: transparent !important;
 }
 #appc-unified-header #appc-unified-header-nav #appc-unified-header-toggle {
-  background-color: #FFF !important;
+  background-color: transparent !important;
 }
 #appc-unified-header #appc-unified-header-nav #appc-unified-header-toggle i {
   color: #b50d00;
@@ -6818,6 +6817,7 @@ fieldset[disabled] .btn-appc-light.focus {
 }
 #appc-unified-header #appc-unified-header-nav > div.pull-left > .active {
   background-color: #EEE !important;
+  background-color: rgba(239, 239, 239, 0.95) !important;
 }
 #appc-unified-header #appc-unified-header-nav #appc-unified-header-sitename a,
 #appc-unified-header #appc-unified-header-nav .pull-left a,
