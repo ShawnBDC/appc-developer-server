@@ -75,24 +75,30 @@
         }
       }
 
-      .panel-footer a {
-        display: block; // so that space between title and arrow is also clickable
+      .panel-footer {
+
+        // here so empty footers have same height
         font-size: .9em;
-        color: inherit;
-        position: relative;
-        padding-right: 1.25em;
+        line-height: 125%;
 
-        .ellipsis;
+        a {
+          display: block; // so that space between title and arrow is also clickable
+          color: inherit;
+          position: relative;
+          padding-right: 1.25em;
 
-        &:hover {
-          text-decoration: none;
-          color: @brand-danger;
-        }
+          .ellipsis;
 
-        i {
-          position: absolute;
-          right: 0;
-          line-height: inherit;
+          &:hover {
+            text-decoration: none;
+            color: @brand-danger;
+          }
+
+          i {
+            position: absolute;
+            right: 0;
+            line-height: inherit;
+          }
         }
       }
     }

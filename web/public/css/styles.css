@@ -6912,9 +6912,12 @@ pre.code {
 #tpl-home .body .panel table td:last-child {
   padding-right: 15px;
 }
+#tpl-home .body .panel .panel-footer {
+  font-size: .9em;
+  line-height: 125%;
+}
 #tpl-home .body .panel .panel-footer a {
   display: block;
-  font-size: .9em;
   color: inherit;
   position: relative;
   padding-right: 1.25em;
