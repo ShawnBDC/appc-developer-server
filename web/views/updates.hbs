@@ -9,7 +9,6 @@
         </div>
         <div class="col-sm-4 header-actions">
           <a href="https://twitter.com/appcdev" target="_blank" class="btn btn-appc-light"><i class="fa fa-twitter"></i> AppcDev</a>
-          &nbsp;
           <a href="/feed" target="_blank" class="btn btn-appc-light"><i class="fa fa-rss"></i> RSS</a>
         </div>
       </div>
@@ -22,8 +21,8 @@
 
       <div class="col-sm-4">
         <div class="panel-pre-heading">
-          <h2 class="panel-title">Official Blog <i class="fa fa-rss"></i></h2>
-          <small>Official posts from the Appcelerator Blog</small>
+          <h2 class="panel-title">Developer Blog <i class="fa fa-rss"></i></h2>
+          <small>Official source for Appcelerator News</small>
         </div>
         <div class="panel panel-default">
           <div class="equal-height">
@@ -38,8 +37,8 @@
               {{/each}}
               </ul>
             {{else}}
-              <div class="panel-body">
-                <p>Failed to fetch latest posts.</p>
+              <div class="panel-body text-danger">
+                <p>Failed to fetch latest updates.</p>
               </div>
             {{/if}}
           </div>
@@ -51,8 +50,8 @@
 
       <div class="col-sm-4">
         <div class="panel-pre-heading">
-          <h2 class="panel-title">Videos <i class="icon-graduation-cap"></i></h2>
-          <small>Official videos from Appcelerator University</small>
+          <h2 class="panel-title">Appcelerator University <i class="icon-graduation-cap"></i></h2>
+          <small>Video Tutorials</small>
         </div>
         <div id="university" class="panel panel-default">
           <div class="equal-height">
@@ -94,7 +93,7 @@
               {{/each}}
               </ul>
             {{else}}
-              <div class="panel-body">
+              <div class="panel-body text-danger">
                 <p>Failed to fetch latest updates.</p>
               </div>
             {{/if}}
@@ -107,8 +106,8 @@
 
       <div class="col-sm-4">
         <div class="panel-pre-heading">
-          <h2 class="panel-title">Community Blog <i class="fa fa-medium"></i></h2>
-          <small>Community posts on Medium</small>
+          <h2 class="panel-title">All Titanium <i class="fa fa-medium"></i></h2>
+          <small>Community Posts on Medium</small>
         </div>
         <div class="panel panel-default">
           <div class="equal-height">
@@ -123,13 +122,13 @@
             {{/each}}
             </ul>
           {{else}}
-            <div class="panel-body">
+            <div class="panel-body text-danger">
               <p>Failed to fetch latest updates.</p>
             </div>
           {{/if}}
           </div>
           <div class="panel-footer">
-            <a href="https://medium.com/all-titanium" target="_blank">More at All Titanium @ Medium <i class="icon-angle-right pull-right"></i></a>
+            <a href="https://medium.com/all-titanium" target="_blank">More at All Titanium <i class="icon-angle-right pull-right"></i></a>
           </div>
         </div>
       </div>
@@ -140,7 +139,7 @@
       <div class="col-sm-8">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title">Stack Overflow <i class="fa fa-stack-overflow pull-right"></i></h2>
+            <h2 class="panel-title">Stack Overflow <small>Community Support</small> <i class="fa fa-stack-overflow pull-right"></i></h2>
           </div>
           <div class="equal-height">
             {{#if so_questions}}
@@ -153,8 +152,8 @@
                 {{/each}}
               </ul>
             {{else}}
-              <div class="panel-body">
-                <p>Failed to fetch latest questions.</p>
+              <div class="panel-body text-danger">
+                <p>Failed to fetch latest updates.</p>
               </div>
             {{/if}}
           </div>
@@ -181,7 +180,7 @@
               {{/each}}
             </table>
           {{else}}
-            <div class="panel-body equal-height">
+            <div class="panel-body text-danger equal-height">
               <p>Failed to fetch latest updates.</p>
             </div>
           {{/if}}
@@ -197,7 +196,7 @@
       <div class="col-sm-4">
         <div class="panel panel-default well">
           <div class="panel-heading">
-            <h2 class="panel-title">TiSlack Leaderboard <i class="fa fa-slack pull-right"></i></h2>
+            <h2 class="panel-title">TiSlack Leaderboard <small>Community Chat</small> <i class="fa fa-slack pull-right"></i></h2>
           </div>
           {{#if tislack}}
             <table id="answerers" class="table equal-height">
@@ -211,7 +210,7 @@
               {{/each}}
             </table>
           {{else}}
-            <div class="panel-body equal-height">
+            <div class="panel-body text-danger equal-height">
               <p>Failed to fetch latest updates.</p>
             </div>
           {{/if}}
@@ -224,7 +223,7 @@
       <div class="col-sm-8">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title">JIRA Community Tickets <i class="fa fa-bug pull-right"></i></h2>
+            <h2 class="panel-title">JIRA Community Tickets <small>Bug Reports &amp; Feature Requests</small> <i class="fa fa-bug pull-right"></i></h2>
           </div>
           <div class="equal-height">
             {{#if jira}}
@@ -237,7 +236,7 @@
                 {{/each}}
               </ul>
             {{else}}
-              <div class="panel-body">
+              <div class="panel-body text-danger">
                 <p>Failed to fetch latest updates.</p>
               </div>
             {{/if}}
@@ -266,14 +265,13 @@
                     </div>
                     <div class="media-body">
                       <a href="{{url}}" target="_blank">{{name}}</a>
-                      {{blurb}}
                       <small class="text-muted"><date title="{{formatDate lastModified 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate lastModified 'MMMM Do, YYYY'}}</date>{{#ifAfter lastModified lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
                     </div>
                   </li>
                 {{/each}}
               </ul>
             {{else}}
-              <div class="panel-body">
+              <div class="panel-body text-danger">
                 <p>Failed to fetch latest updates.</p>
               </div>
             {{/if}}
@@ -305,12 +303,14 @@
                 {{/each}}
               </ul>
             {{else}}
-              <div class="panel-body">
+              <div class="panel-body text-danger">
                 <p>Failed to fetch latest updates.</p>
               </div>
             {{/if}}
           </div>
-          <div class="panel-footer attach">&nbsp;</div>
+          <div class="panel-footer">
+            <a href="https://web.appcelerator.com/product/studio" target="_blank">More in Appcelerator Studio <i class="icon-angle-right pull-right"></i></a>
+          </div>
         </div>
       </div>
 
@@ -330,7 +330,7 @@
                 {{/each}}
               </ul>
             {{else}}
-              <div class="panel-body">
+              <div class="panel-body text-danger">
                 <p>Failed to fetch latest updates.</p>
               </div>
             {{/if}}

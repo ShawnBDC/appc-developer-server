@@ -1,0 +1,45 @@
+/** Unified Nav Overrides **/
+
+#appc-unified-header {
+
+  #appc-unified-header-nav {
+    background-color: #FFF !important;
+
+    #appc-unified-header-toggle {
+        background-color: #FFF !important;
+
+        i {
+          color: @brand-danger;
+        }
+    }
+
+    #appc-unified-header-sitename a {
+      font-weight: bold;
+    }
+
+    > div.pull-left {
+      > a,
+      > span {
+        border-right-color: #FFF !important;
+      }
+    }
+
+    > div.pull-right {
+      > a,
+      > span,
+      > div {
+        border-left-color: #FFF !important;
+      }
+    }
+
+    > div.pull-left > .active {
+      background-color: #EEE !important;
+    }
+
+    #appc-unified-header-sitename a,
+    .pull-left a,
+    #appc-unified-profile > a {
+      color: @text-color !important;
+    }
+  }
+}

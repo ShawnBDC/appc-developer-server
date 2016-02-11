@@ -6787,25 +6787,35 @@ fieldset[disabled] .btn-appc-light.focus {
   color: #FFF;
   background-color: #000;
 }
-.header {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  color: white;
-  background-color: #484950;
-  background-image: url(/images/header-bg.png);
-  background-size: cover;
+/** Unified Nav Overrides **/
+#appc-unified-header #appc-unified-header-nav {
+  background-color: #FFF !important;
 }
-.header .header-icon {
-  padding-left: 65px;
+#appc-unified-header #appc-unified-header-nav #appc-unified-header-toggle {
+  background-color: #FFF !important;
 }
-.header .header-icon i {
-  display: inline-block;
-  width: 50px;
-  margin-left: -50px;
+#appc-unified-header #appc-unified-header-nav #appc-unified-header-toggle i {
+  color: #b50d00;
 }
-.header .header-actions {
-  text-align: right;
-  padding-top: 20px;
+#appc-unified-header #appc-unified-header-nav #appc-unified-header-sitename a {
+  font-weight: bold;
+}
+#appc-unified-header #appc-unified-header-nav > div.pull-left > a,
+#appc-unified-header #appc-unified-header-nav > div.pull-left > span {
+  border-right-color: #FFF !important;
+}
+#appc-unified-header #appc-unified-header-nav > div.pull-right > a,
+#appc-unified-header #appc-unified-header-nav > div.pull-right > span,
+#appc-unified-header #appc-unified-header-nav > div.pull-right > div {
+  border-left-color: #FFF !important;
+}
+#appc-unified-header #appc-unified-header-nav > div.pull-left > .active {
+  background-color: #EEE !important;
+}
+#appc-unified-header #appc-unified-header-nav #appc-unified-header-sitename a,
+#appc-unified-header #appc-unified-header-nav .pull-left a,
+#appc-unified-header #appc-unified-header-nav #appc-unified-profile > a {
+  color: #333333 !important;
 }
 .body {
   padding-top: 30px;
@@ -6831,6 +6841,30 @@ pre.code {
   text-overflow: ellipsis;
   overflow: hidden;
   line-height: 125%;
+}
+.header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+  background-color: #484950;
+  background-image: url(/images/header-bg.png);
+  background-size: cover;
+}
+.header .header-icon {
+  padding-left: 65px;
+}
+.header .header-icon i {
+  display: inline-block;
+  width: 50px;
+  margin-left: -50px;
+}
+.header .header-actions {
+  text-align: right;
+  padding-top: 20px;
+}
+.header .header-actions a {
+  margin-top: .5em;
+  margin-left: .5em;
 }
 #tpl-error .row {
   margin: 70px auto;
@@ -6889,6 +6923,9 @@ pre.code {
   line-height: inherit;
   color: #777777;
 }
+#tpl-home .body .panel-title small {
+  color: #777777;
+}
 #tpl-home .body .panel-pre-heading .panel-title {
   font-size: 24px;
   font-weight: lighter;
@@ -6896,8 +6933,8 @@ pre.code {
 }
 #tpl-home .body .panel-pre-heading small {
   display: block;
-  color: #777777;
   margin: 1em 0;
+  color: #777777;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -6916,7 +6953,7 @@ pre.code {
   font-size: .9em;
   line-height: 125%;
 }
-#tpl-home .body .panel .panel-footer a {
+#tpl-home .body .panel .panel-footer > * {
   display: block;
   color: inherit;
   position: relative;
@@ -6926,16 +6963,17 @@ pre.code {
   overflow: hidden;
   line-height: 125%;
 }
-#tpl-home .body .panel .panel-footer a:hover {
+#tpl-home .body .panel .panel-footer > *:hover {
   text-decoration: none;
   color: #b50d00;
 }
-#tpl-home .body .panel .panel-footer a i {
+#tpl-home .body .panel .panel-footer > * i {
   position: absolute;
   right: 0;
   line-height: inherit;
 }
-#tpl-home .body .panel .list-group .list-group-item > a {
+#tpl-home .body .panel .list-group .list-group-item > a,
+#tpl-home .body .panel .list-group .list-group-item > .media-body > a {
   display: block;
   overflow: hidden;
 }

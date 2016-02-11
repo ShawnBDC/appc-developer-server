@@ -39,6 +39,10 @@
         line-height: inherit;
         color: @gray-light;
       }
+
+      small {
+        .text-muted;
+      }
     }
 
     .panel-pre-heading {
@@ -51,9 +55,9 @@
 
       small {
         display: block;
-        color: @gray-light;
         margin: 1em 0;
 
+        .text-muted;
         .ellipsis;
       }
     }
@@ -81,7 +85,7 @@
         font-size: .9em;
         line-height: 125%;
 
-        a {
+        > * {
           display: block; // so that space between title and arrow is also clickable
           color: inherit;
           position: relative;
@@ -104,9 +108,12 @@
     }
 
     // deal with long titles
-    .panel .list-group .list-group-item > a {
-      display: block;
-      overflow: hidden;
+    .panel .list-group .list-group-item {
+      > a,
+      > .media-body > a {
+        display: block;
+        overflow: hidden;
+      }
     }
 
     .table-borderless td {

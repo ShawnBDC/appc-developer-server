@@ -1,0 +1,30 @@
+.header {
+  padding-top: floor((@grid-gutter-width / 2));
+  padding-bottom: floor((@grid-gutter-width / 2));
+
+  color: white;
+  background-color: #484950;
+  background-image: url(/images/header-bg.png);
+  background-size: cover;
+
+  .header-icon {
+    padding-left: 65px;
+
+    i {
+      display: inline-block;
+      width: 50px;
+      margin-left: -50px;
+    }
+  }
+
+  .header-actions {
+    .text-right;
+
+    padding-top: @line-height-computed;
+
+    a {
+      margin-top: .5em;
+      margin-left: .5em;
+    }
+  }
+}

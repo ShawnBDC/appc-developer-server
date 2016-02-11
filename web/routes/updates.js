@@ -15,17 +15,15 @@ module.exports = Arrow.Router.extend({
 
 		function render(context) {
 
-			if (rendered) {
-				return;
+			if (!rendered) {
+				rendered = true;
+
+				context.activeNav = '/updates';
+				context.title = 'Get up to date';
+				context.scripts = ['/js/jquery.matchHeight.js'];
+
+				res.render('updates', context);
 			}
-
-			rendered = true;
-
-			context.activeNav = '/updates';
-			context.title = 'Get up to date';
-			context.scripts = ['/js/jquery.matchHeight.js'];
-
-			res.render('updates', context);
 
 			next();
 		}
@@ -94,7 +92,7 @@ module.exports = Arrow.Router.extend({
 				},
 				samples: function (callback) {
 					req.server.getAPI('/api/feeds/samples').execute(function (err, results) {
-						callback(null, results ? results[results.key].slice(0, 4) : null);
+						callback(null, results ? results[results.key].slice(0, 3) : null);
 					});
 				},
 				devblog: function (callback) {
