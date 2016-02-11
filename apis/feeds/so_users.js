@@ -30,7 +30,7 @@ module.exports = Arrow.API.extend({
 				gzip: true
 			}, function (error, response, body) {
 				if (!error && _.isObject(body) && body.items && body.items.length > 0) {
-					var users = body.items.slice(0, 5);
+					var users = body.items.slice(0, 10);
 
 					// first time, so we still have to respond
 					if (!cache) {

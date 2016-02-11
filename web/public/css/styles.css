@@ -5456,7 +5456,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-footer {
   padding: 15px;
-  background-color: #f5f5f5;
+  background-color: transparent;
   border-top: 1px solid #ddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -6815,20 +6815,22 @@ fieldset[disabled] .btn-appc-light.focus {
 .panel-body h2:first-child {
   margin-top: 0;
 }
-.panel-default > .panel-heading > .panel-title > a {
-  display: block;
-  text-decoration: none;
-}
-.panel-default > .panel-heading > .panel-title > a > .fa-angle-right {
-  color: #ddd;
-}
 .panel-default > .panel-heading.attach {
   border-bottom-color: transparent;
+}
+.panel-default > .panel-footer.attach {
+  border-top-color: transparent;
 }
 pre.code {
   background-color: #222222;
   color: #eeeeee;
   border-color: #222222;
+}
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 125%;
 }
 #tpl-error .row {
   margin: 70px auto;
@@ -6851,47 +6853,102 @@ pre.code {
 #tpl-start .body > .nav {
   margin-bottom: 30px;
 }
-#tpl-home .body .sub-heading {
-  border-top: 1px solid #ddd;
+#tpl-home .body .row-gutterless {
+  margin-right: 0;
+  margin-left: 0;
+}
+#tpl-home .body .row-gutterless > [class^="col-"],
+#tpl-home .body .row-gutterless > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+@media (min-width: 768px) {
+  #tpl-home .body .row-gutterless > [class^="col-"]:first-child .panel,
+  #tpl-home .body .row-gutterless > [class*=" col-"]:first-child .panel {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+  }
+  #tpl-home .body .row-gutterless > [class^="col-"]:not(:first-child) .panel,
+  #tpl-home .body .row-gutterless > [class*=" col-"]:not(:first-child) .panel {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+#tpl-home .body .panel-title {
+  position: relative;
+  padding-right: 1.25em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 125%;
+}
+#tpl-home .body .panel-title i {
+  position: absolute;
+  right: 0;
+  line-height: inherit;
+  color: #777777;
+}
+#tpl-home .body .panel-pre-heading .panel-title {
+  font-size: 24px;
+  font-weight: lighter;
+  color: #b50d00;
+}
+#tpl-home .body .panel-pre-heading small {
+  display: block;
+  color: #777777;
+  margin: 1em 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 125%;
+}
+#tpl-home .body .panel.well {
+  padding: 0;
+}
+#tpl-home .body .panel table td:first-child {
+  padding-left: 15px;
+}
+#tpl-home .body .panel table td:last-child {
+  padding-right: 15px;
+}
+#tpl-home .body .panel .panel-footer a {
+  display: block;
+  font-size: .9em;
+  color: inherit;
+  position: relative;
+  padding-right: 1.25em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 125%;
+}
+#tpl-home .body .panel .panel-footer a:hover {
+  text-decoration: none;
+  color: #b50d00;
+}
+#tpl-home .body .panel .panel-footer a i {
+  position: absolute;
+  right: 0;
+  line-height: inherit;
+}
+#tpl-home .body .panel .list-group .list-group-item > a {
+  display: block;
+  overflow: hidden;
+}
+#tpl-home .body .table-borderless td {
+  border-top: 0;
 }
 #tpl-home .body .img-responsive {
   width: 100%;
 }
-#tpl-home .body #university .media-object,
-#tpl-home .body #samples .media-object,
-#tpl-home .body #marketplace .media-object {
+#tpl-home .body .media-object {
   width: 75px;
 }
-#tpl-home .body #videoPlayer,
-#tpl-home .body .highlight-image {
-  border-bottom: 1px solid #ddd;
-}
-#tpl-home .body .highlight {
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #ddd;
-}
-#tpl-home .body .highlight h3 {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
+#tpl-home .body .text-muted a {
   color: inherit;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
-  margin-top: 0;
-  margin-bottom: .2em;
 }
-#tpl-home .body .highlight h3 small,
-#tpl-home .body .highlight h3 .small {
-  font-weight: normal;
-  line-height: 1;
-  color: #777777;
-}
-#tpl-home .body .highlight h3 small,
-#tpl-home .body .highlight h3 .small {
-  font-size: 75%;
-}
-#tpl-home .body #answerers .img-thumbnail {
+#tpl-home .body table .img-thumbnail {
   width: 35px;
   max-width: none;
 }

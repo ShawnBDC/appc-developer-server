@@ -39,7 +39,7 @@ module.exports = Arrow.API.extend({
 
 				if (!error && _.isObject(body) && body.success && body[body.key] && body[body.key].length > 0) {
 
-					var videos = _.map(body[body.key].slice(0, 3), function(video) {
+					var videos = _.map(body[body.key].slice(0, 10), function(video) {
 						video.date = video.date * 1000;
 						return video;
 					});

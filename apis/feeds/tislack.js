@@ -30,7 +30,7 @@ module.exports = Arrow.API.extend({
 			}, function (error, response, body) {
 
 				if (!error && body && _.isArray(body) && body.length > 0) {
-					var slackers = body.slice(0, 5);
+					var slackers = body.slice(0, 10);
 
 					// first time, so we still have to respond
 					if (!cache) {

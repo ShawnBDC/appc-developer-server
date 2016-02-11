@@ -32,7 +32,7 @@ module.exports = Arrow.API.extend({
 
 				if (!error && _.isObject(body) && body.items && body.items.length > 0) {
 
-					var questions = _.map(body.items.slice(0, 9), function(question) {
+					var questions = _.map(body.items.slice(0, 10), function(question) {
 						question.creation_date = question.creation_date * 1000;
 						return question;
 					});

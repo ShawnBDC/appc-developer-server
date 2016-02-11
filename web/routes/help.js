@@ -15,7 +15,7 @@ module.exports = Arrow.Router.extend({
 			res.render('help', {
 				activeNav: '/help',
 				title: 'Get Help',
-				recentQuestions: results[results.key],
+				recentQuestions: results[results.key].slice(0, 9),
 				paidSupport: paidSupport,
 				supportLink: supportLink
 			});

@@ -33,7 +33,7 @@ module.exports = Arrow.API.extend({
 				if (!error && body && _.isArray(body) && body.length > 0) {
 					body.reverse();
 
-					var products = body.slice(0, 3);
+					var products = body.slice(0, 10);
 
 					// first time, so we still have to respond
 					if (!cache) {

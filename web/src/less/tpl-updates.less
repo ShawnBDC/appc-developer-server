@@ -2,38 +2,124 @@
 
   .body {
 
-    .sub-heading {
-      border-top: 1px solid @table-border-color;
+    .row-gutterless {
+    	margin-right: 0;
+    	margin-left: 0;
+
+      & > [class^="col-"],
+      & > [class*=" col-"] {
+      	padding-right: 0;
+      	padding-left: 0;
+
+        @media (min-width: @screen-sm-min) {
+
+          &:first-child .panel {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+          }
+
+          &:not(:first-child) .panel {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+      }
+    }
+
+    .panel-title {
+      position: relative;
+      padding-right: 1.25em;
+
+      .ellipsis;
+
+      i {
+        position: absolute;
+        right: 0;
+        line-height: inherit;
+        color: @gray-light;
+      }
+    }
+
+    .panel-pre-heading {
+
+      .panel-title {
+        font-size: 24px;
+        font-weight: lighter;
+        color: @brand-danger;
+      }
+
+      small {
+        display: block;
+        color: @gray-light;
+        margin: 1em 0;
+
+        .ellipsis;
+      }
+    }
+
+    .panel {
+
+      &.well {
+        padding: 0;
+      }
+
+      table {
+
+        td:first-child {
+          padding-left: @panel-body-padding;
+        }
+
+        td:last-child {
+          padding-right: @panel-body-padding;
+        }
+      }
+
+      .panel-footer a {
+        display: block; // so that space between title and arrow is also clickable
+        font-size: .9em;
+        color: inherit;
+        position: relative;
+        padding-right: 1.25em;
+
+        .ellipsis;
+
+        &:hover {
+          text-decoration: none;
+          color: @brand-danger;
+        }
+
+        i {
+          position: absolute;
+          right: 0;
+          line-height: inherit;
+        }
+      }
+    }
+
+    // deal with long titles
+    .panel .list-group .list-group-item > a {
+      display: block;
+      overflow: hidden;
+    }
+
+    .table-borderless td {
+      border-top: 0;
     }
 
     .img-responsive {
       width: 100%;
     }
 
-    #university .media-object,
-    #samples .media-object,
-    #marketplace .media-object {
+    .media-object {
       width: 75px;
     }
 
-    #videoPlayer,
-    .highlight-image {
-      border-bottom: 1px solid @table-border-color;
+    .text-muted a {
+      color: inherit;
     }
 
-    .highlight {
-      background-color: @well-bg;
-      border-bottom: 1px solid @table-border-color;
-
-      h3 {
-        .h4;
-
-        margin-top: 0;
-        margin-bottom: .2em;
-      }
-    }
-
-    #answerers .img-thumbnail {
+    table .img-thumbnail {
       width: 35px;
       max-width: none;
     }

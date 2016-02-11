@@ -19,7 +19,7 @@
 
   .header-actions {
     .text-right;
-    
+
     padding-top: @line-height-computed;
   }
 }
@@ -37,20 +37,14 @@
   }
 }
 
-// transparent panel heading
-.panel-default > .panel-heading {
+.panel-default {
 
-  > .panel-title > a {
-    display: block;
-    text-decoration: none;
-
-    > .fa-angle-right {
-      color: @table-border-color;
-    }
+  > .panel-heading.attach {
+    border-bottom-color: transparent;
   }
 
-  &.attach {
-    border-bottom-color: transparent;
+  > .panel-footer.attach {
+    border-top-color: transparent;
   }
 }
 
@@ -58,4 +52,11 @@ pre.code {
   background-color: @gray-darker;
   color: @gray-lighter;
   border-color: @gray-darker;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  line-height: 125%;
 }
