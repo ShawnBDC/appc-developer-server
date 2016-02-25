@@ -24,7 +24,7 @@
     > div.pull-left {
       > a,
       > span {
-        border-right-color: #FFF !important;
+        border: 0;
       }
     }
 
@@ -32,7 +32,7 @@
       > a,
       > span,
       > div {
-        border-left-color: #FFF !important;
+        border: 0;
       }
     }
 
@@ -43,7 +43,8 @@
 
     #appc-unified-header-sitename a,
     .pull-left a,
-    #appc-unified-profile > a {
+    #appc-unified-profile > a,
+    a#appc-sign-in {
       color: @text-color !important;
     }
   }

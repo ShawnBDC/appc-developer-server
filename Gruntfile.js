@@ -61,6 +61,7 @@ module.exports = function (grunt) {
 			default: {
 				src: [
 					'node_modules/bootstrap/js/tooltip.js',
+					'node_modules/bootstrap/js/carousel.js',
 					'web/src/js/**/*.js'
 				],
 				dest: 'web/public/js/scripts.js'

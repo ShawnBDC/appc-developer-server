@@ -34,3 +34,20 @@ pre.code {
   overflow:hidden;
   line-height: 125%;
 }
+
+/*
+centered columns styles
+http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-centered-columns
+*/
+.row-centered {
+  text-align:center;
+
+  > div {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+  }
+}

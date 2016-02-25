@@ -6808,12 +6808,12 @@ fieldset[disabled] .btn-appc-light.focus {
 }
 #appc-unified-header #appc-unified-header-nav > div.pull-left > a,
 #appc-unified-header #appc-unified-header-nav > div.pull-left > span {
-  border-right-color: #FFF !important;
+  border: 0;
 }
 #appc-unified-header #appc-unified-header-nav > div.pull-right > a,
 #appc-unified-header #appc-unified-header-nav > div.pull-right > span,
 #appc-unified-header #appc-unified-header-nav > div.pull-right > div {
-  border-left-color: #FFF !important;
+  border: 0;
 }
 #appc-unified-header #appc-unified-header-nav > div.pull-left > .active {
   background-color: #EEE !important;
@@ -6821,7 +6821,8 @@ fieldset[disabled] .btn-appc-light.focus {
 }
 #appc-unified-header #appc-unified-header-nav #appc-unified-header-sitename a,
 #appc-unified-header #appc-unified-header-nav .pull-left a,
-#appc-unified-header #appc-unified-header-nav #appc-unified-profile > a {
+#appc-unified-header #appc-unified-header-nav #appc-unified-profile > a,
+#appc-unified-header #appc-unified-header-nav a#appc-sign-in {
   color: #333333 !important;
 }
 .body {
@@ -6849,12 +6850,27 @@ pre.code {
   overflow: hidden;
   line-height: 125%;
 }
+/*
+centered columns styles
+http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-centered-columns
+*/
+.row-centered {
+  text-align: center;
+}
+.row-centered > div {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px;
+}
 .header {
   padding-top: 15px;
   padding-bottom: 15px;
   color: white;
   background-color: #484950;
-  background-image: url(/images/header-bg.png);
+  background-image: url(/images/header-thin-sm-1.png);
   background-size: cover;
 }
 .header .header-icon {
@@ -6890,6 +6906,223 @@ pre.code {
 }
 #tpl-help .body .questions .media-object {
   width: 30px;
+}
+#tpl-index {
+  /*CAROUSEL*/
+  /* PRODUCTS */
+}
+#tpl-index .bg-triangles-light {
+  background-color: #f7f7f7;
+  background-image: url(/images/triangles-bg-light.png);
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 25px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+#tpl-index .bg-colors {
+  background-color: #121212 !important;
+  color: white;
+}
+#tpl-index .bg-red {
+  background-color: #b50d00;
+  background-image: linear-gradient(#b50d00, #9d1000);
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 25px;
+  padding-left: 70px;
+  padding-right: 70px;
+  color: white;
+}
+#tpl-index .bg-colors hr,
+#tpl-index .bg-red hr {
+  border: 0;
+  line-height: 1px;
+  height: 1px;
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+}
+#tpl-index .img-shadow {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.125);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.125);
+}
+#tpl-index .img-shadow:hover {
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+#tpl-index .title {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+#tpl-index .title small,
+#tpl-index .title .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777777;
+}
+#tpl-index .title small,
+#tpl-index .title .small {
+  font-size: 65%;
+}
+#tpl-index .subtitle {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+#tpl-index .subtitle small,
+#tpl-index .subtitle .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777777;
+}
+#tpl-index .subtitle small,
+#tpl-index .subtitle .small {
+  font-size: 75%;
+}
+#tpl-index .title,
+#tpl-index .subtitle {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: lighter;
+}
+#tpl-index a.clean {
+  color: inherit;
+  text-decoration: none;
+}
+#tpl-index #carousel .carousel-control:hover,
+#tpl-index #carousel .carousel-control:focus {
+  color: #fff;
+  text-decoration: none;
+  filter: alpha(opacity=90);
+  outline: 0;
+  opacity: 0.75;
+}
+#tpl-index #carousel .carousel-control .icon-prev,
+#tpl-index #carousel .carousel-control .icon-next {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+  margin-top: -10px;
+}
+#tpl-index #carousel .carousel-control .icon-prev {
+  left: 25%;
+  margin-left: -10px;
+}
+#tpl-index #carousel .carousel-control .icon-next {
+  right: 25%;
+  margin-right: -10px;
+}
+#tpl-index #carousel .carousel-content {
+  position: absolute;
+  right: 15%;
+  bottom: 20%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+#tpl-index #carousel .carousel-inner > .item > img {
+  width: 100%;
+}
+#tpl-index #carousel .carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  text-align: center;
+  list-style: none;
+}
+#tpl-index #carousel .carousel-indicators li {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+#tpl-index #carousel .carousel-indicators .active {
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  background-color: #fff;
+}
+#tpl-index #products > .container {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+#tpl-index #products .products-icon {
+  font-size: 75px;
+}
+#tpl-index #start > .container {
+  padding-bottom: 30px;
+}
+#tpl-index #start .step {
+  display: block;
+  padding: 10px 0;
+}
+#tpl-index #start .step .circle {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #555555;
+  font-size: 25px;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+}
+#tpl-index #start .step .title {
+  margin-left: 75px;
+  color: #b50d00;
+}
+#tpl-index #start .step p {
+  margin-left: 75px;
+}
+#tpl-index #start .step .arrow {
+  font-size: 25px;
+}
+#tpl-index #start .step:hover .circle {
+  background-color: #b50d00;
+}
+#tpl-index #start .step:hover .arrow {
+  color: #b50d00;
+}
+#tpl-index #developers > .container {
+  padding-bottom: 30px;
+}
+#tpl-index #developers .dev {
+  text-align: center;
+}
+#tpl-index #developers .dev img {
+  width: 60%;
+  max-width: 200px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
 }
 #tpl-start .body > .nav {
   margin-bottom: 30px;

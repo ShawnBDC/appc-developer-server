@@ -7,8 +7,8 @@ Appc.afterHeaderRender(function () {
 	var $menu = $('#appc-unified-header-nav .pull-left').first();
 
 	var links = {
+		'/updates': 'Updates',
 		'/help': 'Help',
-		// '/updates': 'Updates'
 	};
 
 	for (var href in links) {
