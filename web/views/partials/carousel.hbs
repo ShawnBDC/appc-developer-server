@@ -1,0 +1,67 @@
+<!-- CAROUSEL -->
+<div id="carousel" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+    <li data-target="#carousel" data-slide-to="3"></li>
+  </ol>
+
+  <div class="carousel-inner" role="listbox">
+
+    <div class="item active">
+      <div class="carousel-content">
+        <i class="icon-appc px24"></i>
+        </p>
+        </span>
+        <h2 class="text-fancy2 mg-t-none">DEV PORTAL</h2>
+      </div>
+      <img src="/images/header-lg-bg-1.png" alt="...">
+    </div>
+
+    <div class="item">
+      <div class="carousel-content">
+        <h2 class="text-fancy">FANCY TEXT</h2>
+        <p>Text can go here as well...</p>
+      </div>
+      <img src="/images/header-lg-bg-2.png" alt="...">
+    </div>
+
+    <div class="item">
+      <div class="carousel-content">
+        <span class="icon-arrow_mark px96"></span>
+        <p>Include and icon up there if you want.</p>
+      </div>
+      <img src="/images/header-lg-bg-3.png" alt="...">
+    </div>
+
+    <div class="item">
+      <div class="carousel-content">
+        <h2>Yo dawg... you like buttons?</h2>
+        <p>We have room for them here</p>
+        <a href="dev.html" class="btn btn-appc-light">Look Ma, I'm a button!</a>
+      </div>
+      <img src="/images/header-lg-bg-4.png" alt="...">
+    </div>
+
+  </div>
+
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="icon-prev icon-angle-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="icon-next icon-angle-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 5000
+    });
+  });
+</script>

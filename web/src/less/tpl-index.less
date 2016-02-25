@@ -35,7 +35,8 @@
   }
 
   .bg-colors hr,
-  .bg-red hr {
+  .bg-red hr,
+  .carousel hr {
     border: 0;
     line-height: 1px;
     height: 1px;
@@ -70,6 +71,7 @@
   }
 
   a.clean {
+    display: block;
     color: inherit;
     text-decoration: none;
   }
@@ -143,6 +145,106 @@
       margin: 0;
       background-color: #fff;
     }
+
+    .btn {
+      text-shadow: none;
+      width: 75px;
+    }
+
+    .blog {
+      text-align: left;
+
+      p, h1 {
+        font-weight: lighter;
+        color: white;
+
+        padding-right: 100px;
+      }
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          .btn {
+            background-color: white;
+            color: black;
+          }
+        }
+      }
+
+      .btn-rss {
+        color: white;
+
+        &:hover {
+          color: black;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  /* UPDATES */
+
+  #updates {
+    padding-top: 40px;
+    padding-bottom: 20px;
+
+    .title a {
+      color: inherit;
+
+      &:hover {
+        color: @appc-red;
+        text-decoration: none;
+      }
+    }
+
+    .btn-rss {
+      color: #ff6600;
+
+      &:hover {
+        color: white;
+        background-color: #ff6600;
+      }
+    }
+
+    .btn-twitter {
+      color: #0088cc;
+
+      &:hover {
+        color: white;
+        background-color: #0088cc;
+      }
+    }
+
+    .update {
+      margin-bottom: 2em;
+
+      > div {
+        margin-right: 20px;
+      }
+
+      &:hover {
+
+        .subtitle,
+        .arrow {
+          color: @appc-red;
+        }
+      }
+
+      .title {
+        .ellipsis;
+      }
+
+      .meta {
+        color: @gray-light;
+        .small;
+
+        .author {
+          color: @gray;
+        }
+      }
+    }
+
   }
 
   /* PRODUCTS */

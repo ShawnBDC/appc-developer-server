@@ -3,129 +3,70 @@
   <!-- CAROUSEL -->
   <div id="carousel" class="carousel slide" data-ride="carousel">
 
-    <ol class="carousel-indicators">
-      <li data-target="#carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel" data-slide-to="1"></li>
-      <li data-target="#carousel" data-slide-to="2"></li>
-      <li data-target="#carousel" data-slide-to="3"></li>
-    </ol>
-
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-        <div class="carousel-content">
-          <i class="icon-appc px24"></i>
-          </p>
-          </span>
-          <h2 class="text-fancy2 mg-t-none">DEV PORTAL</h2>
-        </div>
-        <img src="/images/header-lg-bg-1.png" alt="...">
-      </div>
-
-      <div class="item">
-        <div class="carousel-content">
-          <h2 class="text-fancy">FANCY TEXT</h2>
-          <p>Text can go here as well...</p>
-        </div>
-        <img src="/images/header-lg-bg-2.png" alt="...">
-      </div>
-
-      <div class="item">
-        <div class="carousel-content">
-          <span class="icon-arrow_mark px96"></span>
-          <p>Include and icon up there if you want.</p>
-        </div>
-        <img src="/images/header-lg-bg-3.png" alt="...">
-      </div>
-
-      <div class="item">
-        <div class="carousel-content">
-          <h2>Yo dawg... you like buttons?</h2>
-          <p>We have room for them here</p>
-          <a href="dev.html" class="btn btn-appc-light">Look Ma, I'm a button!</a>
-        </div>
-        <img src="/images/header-lg-bg-4.png" alt="...">
+        <div class="carousel-content blog">
+          <a href="http://www.appcelerator.com/cat/developer/feed" target="_blank" class="btn btn-rss pull-right"><i class="fa fa-rss"></i> RSS</a>
+					<p><date title="{{formatDate devblog.[0].published 'MMMM Do YYYY, h:mm:ss a'}}">Latest Developer Blog by {{devblog.[0].author}} on {{formatDate devblog.[0].published 'MMMM Do, YYYY'}}</p>
+					<hr />
+					<a href="{{devblog.[0].link}}">
+            <span class="btn btn-appc-light pull-right">Read</span>
+            <h1>{{devblog.[0].title}}</h1>
+          </a>
+				</div>
+				<img src="/images/header-lg-bg-laptop.jpg" />
       </div>
 
     </div>
 
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="icon-prev icon-angle-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="icon-next icon-angle-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-
   </div>
 
-  <!-- Stay Informed & Blogs -->
-  <div class="bg bg-triangles-light">
+  <!-- UPDATES -->
+  <div id="updates" class="bg">
     <div class="row">
-      <div class="col-md-6 pd-l-none">
-        <div>
-          <a class="btn btn-sm btn-appc-rss pull-right mg-t-s mg-r-l" href="https://developer.appcelerator.com/feed" role="button"><i class="icon-rss pd-r-s "></i>RSS</a>
-          <a href="dev.html" class="px24 wt-300 dpgry">Blogs
-          <p class="px12">From the Appcelerator Community</p>
-          <hr />
-          </a>
-        </div>
-        <div class="pd-l-none">
-          <div class="list-group">
-            <a href="#" class="list-group-item pd-l-none bg-special ">
-              <i class="icon-angle-right pull-right"></i><span class="px24 wt-300"><i class="fa fa-bookmark px36 pull-left pd-r-s pd-t-s"></i>Dash for offline API reference with Stack Overflow fallback</span>
-              <p class="px12 ltgry">
-                February 11, 2016 by <span class="mdgry">Fokke Zandbergen</span>
-              </p>
-            </a>
-            <a href="#" class="list-group-item pd-l-none">
-              <i class="icon-angle-right pull-right"></i>Appcelerator Arrow Two-Factor Authentication
-              <p class="px12 ltgry">
-                February 10, 2016 by <span class="mdgry">Leor Brenman</span>
-              </p>
-            </a>
-            <a href="#" class="list-group-item pd-l-none">
-              <i class="icon-angle-right pull-right"></i>Using Stack Overflow effectively
-              <p class="px12 ltgry">
-                February 5, 2016 <span class="mdgry">Fokke Zandbergen</span>
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 pd-l-none">
-        <div>
-          <a class="btn btn-sm btn-twitter pull-right mg-t-s mg-r-l" href="https://developer.appcelerator.com/feed" role="button"><i class="icon-twitter pd-r-s "></i>AppcDev</a>
-          <a href="dev.html" class="px24 wt-300 dpgry">Stay Informed
-              <p class="px12">The latest Appcelerator news and happenings...</p>
-            </a>
-          <hr />
-        </div>
-        <div class="pd-l-none">
-          <div class="list-group">
 
-            <a href="#" class="list-group-item pd-l-none">
-              <i class="icon-angle-right pull-right"></i><span class="px24 wt-300"><i class="fa fa-medium px36 pull-left pd-r-s pd-t-s"></i>Setting contentType <br /> on AudioStreamer</span>
-              <p class="px12 ltgry">
-                January 21, 2016 by <span class="mdgry">abada</span>
-              </p>
-            </a>
-            <a href="#" class="list-group-item pd-l-none">
-              <i class="icon-angle-right pull-right"></i>Indexing for iOS9 Spotlight Search
-              <p class="px12 ltgry">
-                January 21, 2016 at <span class="mdgry">Appcelerator University</span>
-              </p>
-            </a>
-            <a href="#" class="list-group-item pd-l-none">
-              <i class="icon-angle-right pull-right"></i>[TC-5849] iPhone 6 splash screen faild
-              <p class="px12 ltgry">
-                January 21, 2016 on <span class="mdgry">JIRA</span>
-              </p>
-            </a>
-          </div>
-        </div>
+      <div class="col-md-6">
+
+        <a href="https://twitter.com/appcdev" target="_blank" class="btn btn-sm btn-twitter pull-right"><i class="fa fa-twitter"></i> @AppcDev</a>
+        <h2 class="title"><a href="http://www.appcelerator.com/cat/developer" target="_blank">Developer Blog</a></h2>
+        <p><small>The latest Appcelerator News for Developers</small></p>
+
+        <hr />
+
+        {{#each devblog}}
+          {{#unless @first}}
+          <a href="{{link}}" target="_blank" class="update clean">
+            <i class="arrow icon-angle-right pull-right"></i>
+            <div>
+              <h3 class="subtitle">{{title}}</h3>
+              <p class="meta"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by <span class="author">{{author}}</span></p>
+            </div>
+          </a>
+          {{/unless}}
+        {{/each}}
+
       </div>
+
+      <div class="col-md-6">
+
+        <h2 class="title"><a href="/updates" target="_blank">Get Up to Date</a></h2>
+        <p><small>The latest updates from around the Appcelerator universe</small></p>
+
+        <hr />
+
+        {{#each updates}}
+          <a href="{{link}}" target="_blank" class="update clean">
+            <i class="arrow icon-angle-right pull-right"></i>
+            <div>
+              <h3 class="subtitle">{{title}}</h3>
+              <p class="meta"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> at <span class="author">{{author}}</span></p>
+            </div>
+          </a>
+        {{/each}}
+
+      </div>
+
     </div>
   </div>
 
@@ -134,11 +75,11 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-sm-8">
           <h2 class="title">The Appcelerator Eco-system</h2>
           <p><small>Everything you need to create great, native mobile apps—all from a single JavaScript code base.</small></p>
         </div>
-        <div class="col-md-3 text-right">
+        <div class="col-sm-4 text-right">
           <a href="http://www.appcelerator.com/mobile-app-development-products/" target="_blank" class="btn btn-md btn-appc-light">Explore our products... <i class="icon-angle-right"></i></a>
         </div>
       </div>
@@ -261,7 +202,7 @@
       <div class="row">
 
         {{#each footerTop}}
-          <div class="col-md-2">
+          <div class="col-sm-2">
             <dl>
               <dt>{{title}}</dt>
               {{#each links}}
@@ -271,7 +212,7 @@
           </div>
         {{/each}}
 
-        <div class="col-md-4 social">
+        <div class="col-sm-4 social">
           <h2 class="subtitle">Reach out &amp; stay in touch!</h2>
           <p>
             <a href="https://twitter.com/AppcDev" class="btn btn-link btn-xs" role="button"><i class="fa fa-twitter"></i></a>
@@ -283,20 +224,20 @@
       <div class="row">
 
         {{#each footerBottom}}
-          <div class="col-md-2">
+          <div class="col-sm-2">
             <dl>
               <dt>{{title}}</dt>
               {{#each links}}
-                <dd><a href="{{href}}">{{title}}</a></dd>
+                <dd><a href="{{href}}" {{#if external}}target="_blank"{{/if}}>{{title}}</a></dd>
               {{/each}}
             </dl>
           </div>
         {{/each}}
 
-        <div class="col-md-4 legal">
+        <div class="col-sm-4 legal">
           <img src="/images/appc-logo.png" class="logo" alt="Appcelerator - Now Part Of AxWay" />
           <p>&copy; 2008-2016 Appcelerator Inc. All rights reserved. Appcelerator and Titanium are registered <a href="http://www.appcelerator.com/legal/trademark-policy/" target="_blank">trademarks</a>.</p>
-          <p class="links"><a href="/help">Help &amp; Support</a> <a href="http://www.appcelerator.com/privacy/">Privacy Policy</a> <a href="http://www.appcelerator.com/legal/">Legal Information</a></p>
+          <p class="links"><a href="/help">Help &amp; Support</a> <a href="http://www.appcelerator.com/privacy/" target="_blank">Privacy Policy</a> <a href="http://www.appcelerator.com/legal/" target="_blank">Legal Information</a></p>
         </div>
 
       </div>
@@ -308,12 +249,6 @@
 
 <script>
   $(document).ready(function() {
-
-    $('.carousel').carousel({
-      interval: 5000
-    });
-
     crazyColors('.bg-colors', new Array([181, 13, 0], [0, 136, 204], [72, 72, 80], [255, 31, 31]));
-
   });
 </script>

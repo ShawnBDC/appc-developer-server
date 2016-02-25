@@ -6731,9 +6731,9 @@ button.close {
   border-color: #FFF;
   color: #FFF;
   background: transparent;
-  -webkit-transition: 0.75s;
-  -o-transition: 0.75s;
-  transition: 0.75s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 .btn-appc-light:focus,
 .btn-appc-light.focus {
@@ -6870,7 +6870,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   padding-bottom: 15px;
   color: white;
   background-color: #484950;
-  background-image: url(/images/header-thin-sm-1.png);
+  background-image: url(/images/header-sm-bg-1.png);
   background-size: cover;
 }
 .header .header-icon {
@@ -6909,6 +6909,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
 }
 #tpl-index {
   /*CAROUSEL*/
+  /* UPDATES */
   /* PRODUCTS */
 }
 #tpl-index .bg {
@@ -6938,7 +6939,8 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   color: white;
 }
 #tpl-index .bg-colors hr,
-#tpl-index .bg-red hr {
+#tpl-index .bg-red hr,
+#tpl-index .carousel hr {
   border: 0;
   line-height: 1px;
   height: 1px;
@@ -7001,6 +7003,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   font-weight: lighter;
 }
 #tpl-index a.clean {
+  display: block;
   color: inherit;
   text-decoration: none;
 }
@@ -7070,6 +7073,81 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   height: 8px;
   margin: 0;
   background-color: #fff;
+}
+#tpl-index #carousel .btn {
+  text-shadow: none;
+  width: 75px;
+}
+#tpl-index #carousel .blog {
+  text-align: left;
+}
+#tpl-index #carousel .blog p,
+#tpl-index #carousel .blog h1 {
+  font-weight: lighter;
+  color: white;
+  padding-right: 100px;
+}
+#tpl-index #carousel .blog a {
+  text-decoration: none;
+}
+#tpl-index #carousel .blog a:hover .btn {
+  background-color: white;
+  color: black;
+}
+#tpl-index #carousel .blog .btn-rss {
+  color: white;
+}
+#tpl-index #carousel .blog .btn-rss:hover {
+  color: black;
+  background-color: white;
+}
+#tpl-index #updates {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+#tpl-index #updates .title a {
+  color: inherit;
+}
+#tpl-index #updates .title a:hover {
+  color: #b50d00;
+  text-decoration: none;
+}
+#tpl-index #updates .btn-rss {
+  color: #ff6600;
+}
+#tpl-index #updates .btn-rss:hover {
+  color: white;
+  background-color: #ff6600;
+}
+#tpl-index #updates .btn-twitter {
+  color: #0088cc;
+}
+#tpl-index #updates .btn-twitter:hover {
+  color: white;
+  background-color: #0088cc;
+}
+#tpl-index #updates .update {
+  margin-bottom: 2em;
+}
+#tpl-index #updates .update > div {
+  margin-right: 20px;
+}
+#tpl-index #updates .update:hover .subtitle,
+#tpl-index #updates .update:hover .arrow {
+  color: #b50d00;
+}
+#tpl-index #updates .update .title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 125%;
+}
+#tpl-index #updates .update .meta {
+  color: #777777;
+  font-size: 85%;
+}
+#tpl-index #updates .update .meta .author {
+  color: #555555;
 }
 #tpl-index #products > .container {
   padding-top: 30px;
