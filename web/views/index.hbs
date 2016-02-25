@@ -61,7 +61,7 @@
   </div>
 
   <!-- Stay Informed & Blogs -->
-  <div class="bg-triangles-light">
+  <div class="bg bg-triangles-light">
     <div class="row">
       <div class="col-md-6 pd-l-none">
         <div>
@@ -130,7 +130,7 @@
   </div>
 
   <!-- PRODUCTS -->
-  <div id="products" class="bg-colors">
+  <div id="products" class="bg bg-colors">
     <div class="container">
 
       <div class="row">
@@ -177,7 +177,7 @@
   </div>
 
   <!-- GET STARTED -->
-  <div id="start" class="bg-triangles-light">
+  <div id="start" class="bg bg-triangles-light">
     <div class="container">
 
       <div class="text-center">
@@ -225,7 +225,7 @@
   </div>
 
   <!-- DEVELOPERS -->
-  <div id="developers" class="bg-red">
+  <div id="developers" class="bg bg-red">
     <div class="container">
 
       <div class="text-center">
@@ -251,86 +251,56 @@
 
       </div>
 
+    </div>
   </div>
-</div>
 
-  <!-- Large Footer -->
-  <div class="containerDarkGrey">
-    <div class="row">
-      <div class="col-md-2">
-        <div class="list-group px12 subgry">
-          <span href="#" class="list-group-item-heading red">
-            Products</span>
-          <a href="#" class="list-group-item subgry pd-b-none">Appcelerator Platform</a>
-          <a href="#" class="list-group-item subgry">
-            Plans & Pricing</a>
-          <br />
-          <span href="#" class="list-group-item-heading red">
-            Customers</span>
-          <a href="#" class="list-group-item subgry pd-b-none">Our Customers</a>
-          <a href="#" class="list-group-item subgry pd-b-none">
-            Case Studies</a>
-          <a href="#" class="list-group-item subgry pd-b-none">App Showcase</a>
-          <br />
-          <span href="#" class="list-group-item-heading red">
-            Enterprise</span>
-          <a href="#" class="list-group-item subgry">Overview</a>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="list-group px12">
-          <span href="#" class="list-group-item-heading red">
-            Developers</span>
-          <a href="#" class="list-group-item subgry pd-b-none">App U</a>
-          <a href="#" class="list-group-item subgry pd-b-none">
-            Get Help</a>
-          <a href="#" class="list-group-item subgry pd-b-none">Documentation</a>
-          <a href="#" class="list-group-item subgry pd-b-none">
-            Marketplace</a>
-          <a href="#" class="list-group-item subgry">Events</a>
-          <br />
-          <span href="#" class="list-group-item-heading red">
-            Open Source</span>
-          <a href="#" class="list-group-item subgry pd-b-none">Titanium<sup>&reg;</sup></a>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="list-group px12">
-          <span href="#" class="list-group-item-heading red">
-            Blogs</span>
-          <a href="#" class="list-group-item subgry pd-b-none">Developer</a>
-          <a href="#" class="list-group-item subgry pd-b-none">
-            Enterprise</a>
-          <a href="#" class="list-group-item subgry pd-b-none">Product Updates</a>
-          <br />
-          <span href="#" class="list-group-item-heading red">
-            About</span>
-          <a href="#" class="list-group-item subgry pd-b-none pd-b-none">Company</a>
-          <a href="#" class="list-group-item subgry pd-b-none">
-            Careers</a>
-          <a href="#" class="list-group-item subgry pd-b-none pd-b-none">Leadership</a>
-          <a href="#" class="list-group-item subgry pd-b-none">
-            White Papers</a>
-          <a href="#" class="list-group-item subgry pd-b-none">Research</a>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="px18 wt-300 wht pd-b-s" id="foot-block">
-          Reach out &amp; stay in touch!
-        </div>
-        <!-- Button farm -->
-        <p><a href="#" class="btn btn-xs btn-foot mg-r-m brdr-none" role="button"><i class="icon-twitter px18"></i></a> <a href="#" class="btn btn-xs btn-foot mg-r-m brdr-none" role="button"><i class="icon-github px18"></i></a>
-          <a href="#" class="btn btn-xs btn-foot mg-r-m brdr-none" role="button"><i class="icon-linkedin px18"></i></a>
-        </p>
-        <div id="foot-paragraph">
-          <img src="../images/appc-axway-logo-sm.png" class="img-responsive" alt="appc axway logo" />
-          <p class="wht pd-t-m">
-            &copy; 2008-2016 Appcelerator Inc. All rights reserved. Appcelerator and Titanium are registered <a href="#" class="wht">trademarks</a>
-          </p>
-          <p><a href="#" class="btn btn-xs btn-link pd-l-none" role="button">Help &amp; Support</a> <a href="#" class="btn btn-xs btn-link" role="button">Privacy Policy</a> <a href="#" class="btn btn-xs btn-link" role="button">Legal Information</a>
+  <!-- FOOTER -->
+  <div id="footer" class="bg-triangles-dark">
+    <div class="container">
+
+      <div class="row">
+
+        {{#each footerTop}}
+          <div class="col-md-2">
+            <dl>
+              <dt>{{title}}</dt>
+              {{#each links}}
+                <dd><a href="{{href}}">{{title}}</a></dd>
+              {{/each}}
+            </dl>
+          </div>
+        {{/each}}
+
+        <div class="col-md-4 social">
+          <h2 class="subtitle">Reach out &amp; stay in touch!</h2>
+          <p>
+            <a href="https://twitter.com/AppcDev" class="btn btn-link btn-xs" role="button"><i class="fa fa-twitter"></i></a>
+            <a href="https://github.com/appcelerator-developer-relations" class="btn btn-link btn-xs" role="button"><i class="fa fa-github"></i></a>
           </p>
         </div>
+
       </div>
+      <div class="row">
+
+        {{#each footerBottom}}
+          <div class="col-md-2">
+            <dl>
+              <dt>{{title}}</dt>
+              {{#each links}}
+                <dd><a href="{{href}}">{{title}}</a></dd>
+              {{/each}}
+            </dl>
+          </div>
+        {{/each}}
+
+        <div class="col-md-4 legal">
+          <img src="/images/appc-logo.png" class="logo" alt="Appcelerator - Now Part Of AxWay" />
+          <p>&copy; 2008-2016 Appcelerator Inc. All rights reserved. Appcelerator and Titanium are registered <a href="http://www.appcelerator.com/legal/trademark-policy/" target="_blank">trademarks</a>.</p>
+          <p class="links"><a href="/help">Help &amp; Support</a> <a href="http://www.appcelerator.com/privacy/">Privacy Policy</a> <a href="http://www.appcelerator.com/legal/">Legal Information</a></p>
+        </div>
+
+      </div>
+
     </div>
   </div>
 

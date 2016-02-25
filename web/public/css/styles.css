@@ -6911,15 +6911,22 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   /*CAROUSEL*/
   /* PRODUCTS */
 }
-#tpl-index .bg-triangles-light {
-  background-color: #f7f7f7;
-  background-image: url(/images/triangles-bg-light.png);
+#tpl-index .bg {
   height: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-top: 25px;
   padding-left: 70px;
   padding-right: 70px;
+}
+#tpl-index .bg-triangles-light {
+  background-color: #f7f7f7;
+  background-image: url(/images/bg-triangles-light.png);
+}
+#tpl-index .bg-triangles-dark {
+  background-color: #121212;
+  background-image: url(/images/bg-triangles-dark.png);
+  color: white;
 }
 #tpl-index .bg-colors {
   background-color: #121212 !important;
@@ -6928,12 +6935,6 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
 #tpl-index .bg-red {
   background-color: #b50d00;
   background-image: linear-gradient(#b50d00, #9d1000);
-  height: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 25px;
-  padding-left: 70px;
-  padding-right: 70px;
   color: white;
 }
 #tpl-index .bg-colors hr,
@@ -7123,6 +7124,53 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   margin: 0 auto;
   display: block;
   margin-bottom: 20px;
+}
+#tpl-index #footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#tpl-index #footer dt {
+  margin-top: 1em;
+  color: #b50d00;
+}
+#tpl-index #footer dd {
+  line-height: 2;
+  font-size: .9em;
+}
+#tpl-index #footer dd a {
+  color: inherit;
+  text-decoration: none;
+}
+#tpl-index #footer .social {
+  padding-top: 1em;
+}
+#tpl-index #footer .social a {
+  color: white;
+  font-size: 1.5em;
+}
+#tpl-index #footer .social a:hover {
+  background-color: #b50d00;
+}
+#tpl-index #footer .legal {
+  padding-top: 1em;
+  color: #777777;
+  font-size: .9em;
+}
+#tpl-index #footer .legal a {
+  color: white;
+}
+#tpl-index #footer .legal a:hover {
+  color: #b50d00;
+  text-decoration: none;
+}
+#tpl-index #footer .legal .links a {
+  margin-right: 1em;
+}
+#tpl-index #footer .logo {
+  width: 150px;
+  height: 31px;
+  margin-bottom: 10px;
+  opacity: 0.5;
 }
 #tpl-start .body > .nav {
   margin-bottom: 30px;
