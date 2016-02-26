@@ -1,8 +1,20 @@
 .btn-appc-light {
-  .button-variant(#000; #FFF; #FFF);
+  .button-variant(@text-color; #FFF; #FFF);
 
   color: #FFF;
   background: transparent;
+}
 
-  .transition(.5s);
+.btn-appc-dark {
+  .button-variant(#FFF; @text-color; @text-color);
+
+  color: @text-color;
+  background: transparent;
+}
+
+.btn-appc-dark-clean {
+  .button-variant(#FFF; @text-color; transparent);
+
+  color: @text-color;
+  background: transparent;
 }

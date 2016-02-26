@@ -1175,7 +1175,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 200;
   line-height: 1.1;
   color: inherit;
 }
@@ -1259,11 +1259,11 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 26px;
 }
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 20px;
 }
 h4,
 .h4 {
@@ -6726,30 +6726,27 @@ button.close {
   }
 }
 .btn-appc-light {
-  color: #000;
+  color: #333333;
   background-color: #FFF;
   border-color: #FFF;
   color: #FFF;
   background: transparent;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
 }
 .btn-appc-light:focus,
 .btn-appc-light.focus {
-  color: #000;
+  color: #333333;
   background-color: #e6e6e6;
   border-color: #bfbfbf;
 }
 .btn-appc-light:hover {
-  color: #000;
+  color: #333333;
   background-color: #e6e6e6;
   border-color: #e0e0e0;
 }
 .btn-appc-light:active,
 .btn-appc-light.active,
 .open > .dropdown-toggle.btn-appc-light {
-  color: #000;
+  color: #333333;
   background-color: #e6e6e6;
   border-color: #e0e0e0;
 }
@@ -6762,7 +6759,7 @@ button.close {
 .btn-appc-light:active.focus,
 .btn-appc-light.active.focus,
 .open > .dropdown-toggle.btn-appc-light.focus {
-  color: #000;
+  color: #333333;
   background-color: #d4d4d4;
   border-color: #bfbfbf;
 }
@@ -6785,7 +6782,125 @@ fieldset[disabled] .btn-appc-light.focus {
 }
 .btn-appc-light .badge {
   color: #FFF;
-  background-color: #000;
+  background-color: #333333;
+}
+.btn-appc-dark {
+  color: #FFF;
+  background-color: #333333;
+  border-color: #333333;
+  color: #333333;
+  background: transparent;
+}
+.btn-appc-dark:focus,
+.btn-appc-dark.focus {
+  color: #FFF;
+  background-color: #1a1a1a;
+  border-color: #000000;
+}
+.btn-appc-dark:hover {
+  color: #FFF;
+  background-color: #1a1a1a;
+  border-color: #141414;
+}
+.btn-appc-dark:active,
+.btn-appc-dark.active,
+.open > .dropdown-toggle.btn-appc-dark {
+  color: #FFF;
+  background-color: #1a1a1a;
+  border-color: #141414;
+}
+.btn-appc-dark:active:hover,
+.btn-appc-dark.active:hover,
+.open > .dropdown-toggle.btn-appc-dark:hover,
+.btn-appc-dark:active:focus,
+.btn-appc-dark.active:focus,
+.open > .dropdown-toggle.btn-appc-dark:focus,
+.btn-appc-dark:active.focus,
+.btn-appc-dark.active.focus,
+.open > .dropdown-toggle.btn-appc-dark.focus {
+  color: #FFF;
+  background-color: #080808;
+  border-color: #000000;
+}
+.btn-appc-dark:active,
+.btn-appc-dark.active,
+.open > .dropdown-toggle.btn-appc-dark {
+  background-image: none;
+}
+.btn-appc-dark.disabled:hover,
+.btn-appc-dark[disabled]:hover,
+fieldset[disabled] .btn-appc-dark:hover,
+.btn-appc-dark.disabled:focus,
+.btn-appc-dark[disabled]:focus,
+fieldset[disabled] .btn-appc-dark:focus,
+.btn-appc-dark.disabled.focus,
+.btn-appc-dark[disabled].focus,
+fieldset[disabled] .btn-appc-dark.focus {
+  background-color: #333333;
+  border-color: #333333;
+}
+.btn-appc-dark .badge {
+  color: #333333;
+  background-color: #FFF;
+}
+.btn-appc-dark-clean {
+  color: #FFF;
+  background-color: #333333;
+  border-color: transparent;
+  color: #333333;
+  background: transparent;
+}
+.btn-appc-dark-clean:focus,
+.btn-appc-dark-clean.focus {
+  color: #FFF;
+  background-color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-appc-dark-clean:hover {
+  color: #FFF;
+  background-color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-appc-dark-clean:active,
+.btn-appc-dark-clean.active,
+.open > .dropdown-toggle.btn-appc-dark-clean {
+  color: #FFF;
+  background-color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-appc-dark-clean:active:hover,
+.btn-appc-dark-clean.active:hover,
+.open > .dropdown-toggle.btn-appc-dark-clean:hover,
+.btn-appc-dark-clean:active:focus,
+.btn-appc-dark-clean.active:focus,
+.open > .dropdown-toggle.btn-appc-dark-clean:focus,
+.btn-appc-dark-clean:active.focus,
+.btn-appc-dark-clean.active.focus,
+.open > .dropdown-toggle.btn-appc-dark-clean.focus {
+  color: #FFF;
+  background-color: #080808;
+  border-color: rgba(0, 0, 0, 0);
+}
+.btn-appc-dark-clean:active,
+.btn-appc-dark-clean.active,
+.open > .dropdown-toggle.btn-appc-dark-clean {
+  background-image: none;
+}
+.btn-appc-dark-clean.disabled:hover,
+.btn-appc-dark-clean[disabled]:hover,
+fieldset[disabled] .btn-appc-dark-clean:hover,
+.btn-appc-dark-clean.disabled:focus,
+.btn-appc-dark-clean[disabled]:focus,
+fieldset[disabled] .btn-appc-dark-clean:focus,
+.btn-appc-dark-clean.disabled.focus,
+.btn-appc-dark-clean[disabled].focus,
+fieldset[disabled] .btn-appc-dark-clean.focus {
+  background-color: #333333;
+  border-color: transparent;
+}
+.btn-appc-dark-clean .badge {
+  color: #333333;
+  background-color: #FFF;
 }
 /** Unified Nav Overrides **/
 #appc-unified-header {
@@ -6865,13 +6980,21 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   /* inline-block space fix */
   margin-right: -4px;
 }
+.btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
 .header {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   color: white;
   background-color: #484950;
-  background-image: url(/images/header-sm-bg-1.png);
+  background-image: url(/images/header-sm-bg-2.png);
   background-size: cover;
+}
+.header p {
+  font-weight: 200;
 }
 .header .header-icon {
   padding-left: 65px;
@@ -6913,17 +7036,12 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   /* PRODUCTS */
 }
 #tpl-index .bg {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 #tpl-index .bg-triangles-light {
   background-color: #f7f7f7;
   background-image: url(/images/bg-triangles-light.png);
-}
-#tpl-index .bg-triangles-dark {
-  background-color: #121212;
-  background-image: url(/images/bg-triangles-dark.png);
-  color: white;
 }
 #tpl-index .bg-colors {
   background-color: #121212 !important;
@@ -6938,6 +7056,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   background-color: #121212;
   background-image: url(/images/header-lg-bg-laptop-top.png);
   background-size: cover;
+  color: white;
 }
 #tpl-index .bg-colors hr,
 #tpl-index .bg-red hr,
@@ -6959,49 +7078,13 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-#tpl-index .title {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-#tpl-index .title small,
-#tpl-index .title .small {
-  font-weight: normal;
-  line-height: 1;
-  color: #777777;
-}
-#tpl-index .title small,
-#tpl-index .title .small {
-  font-size: 65%;
-}
-#tpl-index .subtitle {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-#tpl-index .subtitle small,
-#tpl-index .subtitle .small {
-  font-weight: normal;
-  line-height: 1;
-  color: #777777;
-}
-#tpl-index .subtitle small,
-#tpl-index .subtitle .small {
-  font-size: 75%;
-}
-#tpl-index .title,
-#tpl-index .subtitle {
+#tpl-index h2,
+#tpl-index h3 {
   margin-top: 0;
   margin-bottom: 5px;
-  font-weight: lighter;
+}
+#tpl-index .subtitle {
+  font-weight: 200;
 }
 #tpl-index a.clean {
   display: block;
@@ -7012,20 +7095,21 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   padding-top: 100px;
   padding-bottom: 100px;
 }
+#tpl-index #latest .meta a {
+  color: inherit;
+  font-weight: bold;
+}
 #tpl-index #latest .btn {
   text-shadow: none;
   width: 75px;
 }
-#tpl-index #latest p,
-#tpl-index #latest h1 {
-  font-weight: lighter;
-  color: white;
-  padding-right: 100px;
-}
-#tpl-index #latest a {
+#tpl-index #latest .clean {
   text-decoration: none;
 }
-#tpl-index #latest a:hover .btn {
+#tpl-index #latest .clean > div {
+  padding-right: 100px;
+}
+#tpl-index #latest .clean:hover .btn {
   background-color: white;
   color: black;
 }
@@ -7037,12 +7121,12 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   background-color: white;
 }
 #tpl-index #updates {
-  padding-bottom: 0;
+  padding-bottom: 10px;
 }
-#tpl-index #updates .title a {
+#tpl-index #updates h2 a {
   color: inherit;
 }
-#tpl-index #updates .title a:hover {
+#tpl-index #updates h2 a:hover {
   color: #b50d00;
   text-decoration: none;
 }
@@ -7066,11 +7150,11 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
 #tpl-index #updates .update > div {
   margin-right: 20px;
 }
-#tpl-index #updates .update:hover .subtitle,
+#tpl-index #updates .update:hover h3,
 #tpl-index #updates .update:hover .arrow {
   color: #b50d00;
 }
-#tpl-index #updates .update .title {
+#tpl-index #updates .update h3 {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -7085,6 +7169,9 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
 }
 #tpl-index #products .products-icon {
   font-size: 75px;
+}
+#tpl-index #products h3 {
+  margin-bottom: 15px;
 }
 #tpl-index #start .step {
   display: block;
@@ -7101,7 +7188,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   text-align: center;
   color: white;
 }
-#tpl-index #start .step .title {
+#tpl-index #start .step h3 {
   margin-left: 75px;
   color: #b50d00;
 }
@@ -7124,49 +7211,6 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   margin: 0 auto;
   display: block;
   margin-bottom: 20px;
-}
-#tpl-index #footer dt {
-  margin-top: 1em;
-  color: #b50d00;
-}
-#tpl-index #footer dd {
-  line-height: 2;
-  font-size: .9em;
-}
-#tpl-index #footer dd a {
-  color: inherit;
-  text-decoration: none;
-}
-#tpl-index #footer .social {
-  padding-top: 1em;
-}
-#tpl-index #footer .social a {
-  color: white;
-  font-size: 1.5em;
-}
-#tpl-index #footer .social a:hover {
-  background-color: #b50d00;
-}
-#tpl-index #footer .legal {
-  padding-top: 1em;
-  color: #777777;
-  font-size: .9em;
-}
-#tpl-index #footer .legal a {
-  color: white;
-}
-#tpl-index #footer .legal a:hover {
-  color: #b50d00;
-  text-decoration: none;
-}
-#tpl-index #footer .legal .links a {
-  margin-right: 1em;
-}
-#tpl-index #footer .logo {
-  width: 150px;
-  height: 31px;
-  margin-bottom: 10px;
-  opacity: 0.5;
 }
 #tpl-start .body > .nav {
   margin-bottom: 30px;
@@ -7279,4 +7323,54 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
 }
 #tpl-home .jw-tab-focus:focus {
   outline: none;
+}
+#footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #121212;
+  background-image: url(/images/bg-triangles-dark.png);
+  color: white;
+}
+#footer dt {
+  margin-top: 1em;
+  color: #b50d00;
+}
+#footer dd {
+  line-height: 2;
+  font-size: .9em;
+}
+#footer dd a {
+  color: inherit;
+  text-decoration: none;
+}
+#footer .social {
+  padding-top: 1em;
+}
+#footer .social a {
+  color: white;
+  font-size: 1.5em;
+}
+#footer .social a:hover {
+  background-color: #b50d00;
+}
+#footer .legal {
+  padding-top: 1em;
+  color: #777777;
+  font-size: .9em;
+}
+#footer .legal a {
+  color: white;
+}
+#footer .legal a:hover {
+  color: #b50d00;
+  text-decoration: none;
+}
+#footer .legal .links a {
+  margin-right: 1em;
+}
+#footer .logo {
+  width: 150px;
+  height: 31px;
+  margin-bottom: 10px;
+  opacity: 0.5;
 }

@@ -19,7 +19,7 @@ module.exports = Arrow.Router.extend({
 				rendered = true;
 
 				context.activeNav = '/updates';
-				context.title = 'Get up to Date';
+				context.title = 'Updates';
 				context.scripts = ['/js/jquery.matchHeight.js'];
 
 				res.render('updates', context);

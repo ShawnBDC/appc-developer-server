@@ -5,14 +5,16 @@
     <div class="container">
 
       <a href="http://www.appcelerator.com/cat/developer/feed" target="_blank" class="btn btn-rss pull-right"><i class="fa fa-rss"></i> RSS</a>
-			<p><date title="{{formatDate devblog.[0].published 'MMMM Do YYYY, h:mm:ss a'}}">Latest Developer Blog by {{devblog.[0].author}} on {{formatDate devblog.[0].published 'MMMM Do, YYYY'}}</p>
+			<p class="meta"><small><date title="{{formatDate devblog.[0].published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate devblog.[0].published 'MMMM Do, YYYY'}}</date> by {{devblog.[0].author}} on <a href="http://www.appcelerator.com/cat/developer" target="_blank">Developer Blog</a></small></p>
 
 			<hr />
 
-			<a href="{{devblog.[0].link}}" target="_blank">
+			<a href="{{devblog.[0].link}}" target="_blank" class="clean">
         <span class="btn btn-appc-light pull-right">Read</span>
-        <h1>{{devblog.[0].title}}</h1>
-        <p>{{truncateStringTo (stripTags devblog.[0].content) 300}}</p>
+        <div>
+          <h1>{{devblog.[0].title}}</h1>
+          <p class="subtitle">{{truncateStringTo (stripTags devblog.[0].content) 300}}</p>
+        </div>
       </a>
 
     </div>
@@ -25,9 +27,9 @@
 
         <div class="col-md-6">
 
-          <a href="https://twitter.com/appcdev" target="_blank" class="btn btn-sm btn-twitter pull-right"><i class="fa fa-twitter"></i> @AppcDev</a>
-          <h2 class="title"><a href="http://www.appcelerator.com/cat/developer" target="_blank">Developer Blog</a></h2>
-          <p><small>The latest Appcelerator News for Developers</small></p>
+          <a href="https://twitter.com/appcdev" target="_blank" class="btn btn-sm btn-twitter pull-right"><i class="fa fa-twitter"></i> AppcDev</a>
+          <h2><a href="http://www.appcelerator.com/cat/developer" target="_blank">Earlier on the Developer Blog</a></h2>
+          <p><small>The latest News for Developers by Appcelerator</small></p>
 
           <hr />
 
@@ -36,7 +38,7 @@
             <a href="{{link}}" target="_blank" class="update clean">
               <i class="arrow icon-angle-right pull-right"></i>
               <div>
-                <h3 class="subtitle">{{title}}</h3>
+                <h3>{{title}}</h3>
                 <p class="meta"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by <span class="author">{{author}}</span></p>
               </div>
             </a>
@@ -47,8 +49,9 @@
 
         <div class="col-md-6">
 
-          <h2 class="title"><a href="/updates" target="_blank">Get Up to Date</a></h2>
-          <p><small>The latest updates from around the Appcelerator universe</small></p>
+          <a href="/updates" class="btn btn-appc-dark-clean btn-sm pull-right">More</a>
+          <h2><a href="/updates" target="_blank">Updates from elsewhere</a></h2>
+          <p><small>The latest from around the Appcelerator Universe</small></p>
 
           <hr />
 
@@ -56,7 +59,7 @@
             <a href="{{link}}" target="_blank" class="update clean">
               <i class="arrow icon-angle-right pull-right"></i>
               <div>
-                <h3 class="subtitle">{{title}}</h3>
+                <h3>{{title}}</h3>
                 <p class="meta"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> at <span class="author">{{author}}</span></p>
               </div>
             </a>
@@ -74,11 +77,11 @@
 
       <div class="row">
         <div class="col-sm-8">
-          <h2 class="title">The Appcelerator Eco-system</h2>
-          <p><small>Everything you need to create great, native mobile apps—all from a single JavaScript code base.</small></p>
+          <h2>Apps, APIs and Analytics</h2>
+          <p class="subtitle">Everything you need for Cross-Platform <strong>Native</strong> Mobile Apps — All from a single <strong>JavaScript</strong> codebase.</p>
         </div>
         <div class="col-sm-4 text-right">
-          <a href="http://www.appcelerator.com/mobile-app-development-products/" target="_blank" class="btn btn-md btn-appc-light">Explore our products... <i class="icon-angle-right"></i></a>
+          <a href="http://www.appcelerator.com/mobile-app-development-products/" target="_blank" class="btn btn-md btn-appc-light">Explore <i class="icon-angle-right"></i></a>
         </div>
       </div>
 
@@ -89,24 +92,24 @@
         <div class="col-md-4">
           <a href="http://www.appcelerator.com/mobile-app-development-products/#AppsSect" target="_blank" class="clean text-center">
             <p><i class="products-icon icon-ti"></i></p>
-            <h3 class="title">Titanium</h3>
-            <p>Single JavaScript codebase. <strong>Native</strong> Apps for iOS, Android and Windows.</p>
+            <h3>Titanium</h3>
+            <p class="subtitle">Single <strong>JavaScript</strong> codebase. Truly <strong>Native</strong> Mobile Apps for iOS, Android and Windows.</p>
           </a>
         </div>
 
         <div class="col-md-4">
           <a href="http://www.appcelerator.com/mobile-app-development-products/mbaas-arrow/" target="_blank" class="clean text-center">
             <p><i class="products-icon icon-arrow_mark"></i></p>
-            <h3 class="title">Arrow</h3>
-            <p>Your very own MBaaS. Opinionated API framework. Scalable Cloud Services.</p>
+            <h3>Arrow</h3>
+            <p class="subtitle">Your very own <strong>MBaaS</strong>. Opinionated <strong>API</strong> framework. Scalable <strong>Cloud</strong> Services &amp; <strong>Notifications</strong>.</p>
           </a>
         </div>
 
         <div class="col-md-4">
           <a href="http://www.appcelerator.com/mobile-app-development-products/#AnalyticsSect" target="_blank" class="clean text-center">
             <p><i class="products-icon icon-appc_logo-white-2"></i></p>
-            <h3 class="title">Appcelerator Platform</h3>
-            <p>Mobile Test Automation, App Analytics, Performance &amp; Crash Analytics, Professional Support and more.</p>
+            <h3>Appcelerator Platform</h3>
+            <p class="subtitle">App <strong>Analytics</strong>, Mobile <strong>Test</strong> Automation, Performance &amp; <strong>Crash Analytics</strong>, Professional Support and more.</p>
           </a>
         </div>
 
@@ -120,8 +123,8 @@
     <div class="container">
 
       <div class="text-center">
-        <h2 class="title"><i class="icon-flash"></i> Get up and running quickly</a></h2>
-        <small class="text-muted">Sign-up, set-up, &amp; build</small>
+        <h2><i class="icon-flash"></i> Get Started FREE and Fast</a></h2>
+        <small class="text-muted">From Zero to App &amp; API</small>
       </div>
 
       <hr />
@@ -129,7 +132,7 @@
       <a href="http://www.appcelerator.com/signup/" target="_blank" class="step clean">
         <span class="circle pull-left">1</span>
         <i class="arrow icon-angle-right pull-right"></i>
-        <h3 class="title">Sign-up for free!</h3>
+        <h3>Sign-up for FREE!</h3>
         <p class="text-muted">Pay only when you decide to take your first app live</p>
       </a>
 
@@ -138,7 +141,7 @@
       <a href="https://web.appcelerator.com/product/studio" target="_blank" class="step clean">
         <span class="circle pull-left">2</span>
         <i class="arrow icon-angle-right pull-right"></i>
-        <h3 class="title">Get set-up</h3>
+        <h3>Get Set-up</h3>
         <p class="text-muted">Install Studio or get our CLI from NPM</p>
       </a>
 
@@ -147,8 +150,8 @@
       <a href="http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start" target="_blank" class="step clean">
         <span class="circle pull-left">3</span>
         <i class="arrow icon-angle-right pull-right"></i>
-        <h3 class="title">Getting Started</h3>
-        <p class="text-muted">Follow our quick start guides for Titanium and Arrow</p>
+        <h3>Get Started</h3>
+        <p class="text-muted">Follow our Quick Start guides for Titanium and Arrow</p>
       </a>
 
       <hr />
@@ -156,7 +159,7 @@
       <a href="https://developer.appcelerator.com/help" target="_blank" class="step clean">
         <span class="circle pull-left">4</span>
         <i class="arrow icon-angle-right pull-right"></i>
-        <h3 class="title">Join the community</h3>
+        <h3>Join our Developer Community</h3>
         <p class="text-muted">Get help, and help others</p>
       </a>
 
@@ -168,8 +171,8 @@
     <div class="container">
 
       <div class="text-center">
-        <h2 class="title"><i class="fa fa-twitter"></i> Brought to you by Developers</a></h2>
-        <small>Follow us on Twitter</small>
+        <h2><i class="fa fa-twitter"></i> Brought to you by Developers</a></h2>
+        <small>We eat our own dogfood - This site runs on Arrow</small>
       </div>
 
       <hr />
@@ -181,7 +184,7 @@
           <div class="col-sm-2">
             <a href="https://twitter.com/{{username}}" target="_blank" title="@{{username}}" class="dev clean">
               <img src="https://twitter.com/{{username}}/profile_image?size=bigger" class="img-circle img-shadow" />
-              <h3 class="subtitle ellipsis">{{name}}</h3>
+              <h3 class="ellipsis">{{name}}</h3>
               <p class="ellipsis"><small>{{title}}</small></p>
             </a>
           </div>
@@ -193,55 +196,7 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <div id="footer" class="bg bg-triangles-dark">
-    <div class="container">
-
-      <div class="row">
-
-        {{#each footerTop}}
-          <div class="col-sm-2">
-            <dl>
-              <dt>{{title}}</dt>
-              {{#each links}}
-                <dd><a href="{{href}}" {{#if external}}target="_blank"{{/if}}>{{title}}</a></dd>
-              {{/each}}
-            </dl>
-          </div>
-        {{/each}}
-
-        <div class="col-sm-4 social">
-          <h2 class="subtitle">Reach out &amp; stay in touch!</h2>
-          <p>
-            <a href="https://twitter.com/AppcDev" class="btn btn-link btn-xs" role="button"><i class="fa fa-twitter"></i></a>
-            <a href="https://github.com/appcelerator-developer-relations" class="btn btn-link btn-xs" role="button"><i class="fa fa-github"></i></a>
-          </p>
-        </div>
-
-      </div>
-      <div class="row">
-
-        {{#each footerBottom}}
-          <div class="col-sm-2">
-            <dl>
-              <dt>{{title}}</dt>
-              {{#each links}}
-                <dd><a href="{{href}}" {{#if external}}target="_blank"{{/if}}>{{title}}</a></dd>
-              {{/each}}
-            </dl>
-          </div>
-        {{/each}}
-
-        <div class="col-sm-4 legal">
-          <img src="/images/appc-logo.png" class="logo" alt="Appcelerator - Now Part Of AxWay" />
-          <p>&copy; 2008-2016 Appcelerator Inc. All rights reserved. Appcelerator and Titanium are registered <a href="http://www.appcelerator.com/legal/trademark-policy/" target="_blank">trademarks</a>.</p>
-          <p class="links"><a href="/help">Help &amp; Support</a> <a href="http://www.appcelerator.com/privacy/" target="_blank">Privacy Policy</a> <a href="http://www.appcelerator.com/legal/" target="_blank">Legal Information</a></p>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
+  {{> footer}}
 
 </div>
 
