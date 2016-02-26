@@ -6848,7 +6848,7 @@ pre.code {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  line-height: 125%;
+  line-height: 1.5 !important;
 }
 /*
 centered columns styles
@@ -6908,17 +6908,13 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   width: 30px;
 }
 #tpl-index {
-  /*CAROUSEL*/
+  /* LATEST */
   /* UPDATES */
   /* PRODUCTS */
 }
 #tpl-index .bg {
-  height: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 25px;
-  padding-left: 70px;
-  padding-right: 70px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 #tpl-index .bg-triangles-light {
   background-color: #f7f7f7;
@@ -6938,9 +6934,14 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   background-image: linear-gradient(#b50d00, #9d1000);
   color: white;
 }
+#tpl-index .bg-photo {
+  background-color: #121212;
+  background-image: url(/images/header-lg-bg-laptop-top.png);
+  background-size: cover;
+}
 #tpl-index .bg-colors hr,
 #tpl-index .bg-red hr,
-#tpl-index .carousel hr {
+#tpl-index .bg-photo hr {
   border: 0;
   line-height: 1px;
   height: 1px;
@@ -7007,103 +7008,36 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   color: inherit;
   text-decoration: none;
 }
-#tpl-index #carousel .carousel-control:hover,
-#tpl-index #carousel .carousel-control:focus {
-  color: #fff;
-  text-decoration: none;
-  filter: alpha(opacity=90);
-  outline: 0;
-  opacity: 0.75;
+#tpl-index #latest {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
-#tpl-index #carousel .carousel-control .icon-prev,
-#tpl-index #carousel .carousel-control .icon-next {
-  position: absolute;
-  top: 50%;
-  z-index: 5;
-  display: inline-block;
-  margin-top: -10px;
-}
-#tpl-index #carousel .carousel-control .icon-prev {
-  left: 25%;
-  margin-left: -10px;
-}
-#tpl-index #carousel .carousel-control .icon-next {
-  right: 25%;
-  margin-right: -10px;
-}
-#tpl-index #carousel .carousel-content {
-  position: absolute;
-  right: 15%;
-  bottom: 20%;
-  left: 15%;
-  z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-#tpl-index #carousel .carousel-inner > .item > img {
-  width: 100%;
-}
-#tpl-index #carousel .carousel-indicators {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  z-index: 15;
-  width: 60%;
-  padding-left: 0;
-  text-align: center;
-  list-style: none;
-}
-#tpl-index #carousel .carousel-indicators li {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin: 1px;
-  text-indent: -999px;
-  cursor: pointer;
-  background-color: #000 \9;
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid #fff;
-  border-radius: 5px;
-}
-#tpl-index #carousel .carousel-indicators .active {
-  width: 8px;
-  height: 8px;
-  margin: 0;
-  background-color: #fff;
-}
-#tpl-index #carousel .btn {
+#tpl-index #latest .btn {
   text-shadow: none;
   width: 75px;
 }
-#tpl-index #carousel .blog {
-  text-align: left;
-}
-#tpl-index #carousel .blog p,
-#tpl-index #carousel .blog h1 {
+#tpl-index #latest p,
+#tpl-index #latest h1 {
   font-weight: lighter;
   color: white;
   padding-right: 100px;
 }
-#tpl-index #carousel .blog a {
+#tpl-index #latest a {
   text-decoration: none;
 }
-#tpl-index #carousel .blog a:hover .btn {
+#tpl-index #latest a:hover .btn {
   background-color: white;
   color: black;
 }
-#tpl-index #carousel .blog .btn-rss {
+#tpl-index #latest .btn-rss {
   color: white;
 }
-#tpl-index #carousel .blog .btn-rss:hover {
+#tpl-index #latest .btn-rss:hover {
   color: black;
   background-color: white;
 }
 #tpl-index #updates {
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 0;
 }
 #tpl-index #updates .title a {
   color: inherit;
@@ -7127,7 +7061,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   background-color: #0088cc;
 }
 #tpl-index #updates .update {
-  margin-bottom: 2em;
+  margin-bottom: 30px;
 }
 #tpl-index #updates .update > div {
   margin-right: 20px;
@@ -7140,7 +7074,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  line-height: 125%;
+  line-height: 1.5 !important;
 }
 #tpl-index #updates .update .meta {
   color: #777777;
@@ -7149,15 +7083,8 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
 #tpl-index #updates .update .meta .author {
   color: #555555;
 }
-#tpl-index #products > .container {
-  padding-top: 30px;
-  padding-bottom: 50px;
-}
 #tpl-index #products .products-icon {
   font-size: 75px;
-}
-#tpl-index #start > .container {
-  padding-bottom: 30px;
 }
 #tpl-index #start .step {
   display: block;
@@ -7190,22 +7117,13 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
 #tpl-index #start .step:hover .arrow {
   color: #b50d00;
 }
-#tpl-index #developers > .container {
-  padding-bottom: 30px;
-}
 #tpl-index #developers .dev {
   text-align: center;
 }
 #tpl-index #developers .dev img {
-  width: 60%;
-  max-width: 200px;
   margin: 0 auto;
   display: block;
   margin-bottom: 20px;
-}
-#tpl-index #footer {
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 #tpl-index #footer dt {
   margin-top: 1em;
@@ -7281,7 +7199,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  line-height: 125%;
+  line-height: 1.5 !important;
 }
 #tpl-home .body .panel-title i {
   position: absolute;
@@ -7304,7 +7222,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  line-height: 125%;
+  line-height: 1.5 !important;
 }
 #tpl-home .body .panel.well {
   padding: 0;
@@ -7327,7 +7245,7 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  line-height: 125%;
+  line-height: 1.5 !important;
 }
 #tpl-home .body .panel .panel-footer > *:hover {
   text-decoration: none;

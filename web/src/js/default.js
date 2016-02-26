@@ -7,12 +7,21 @@ Appc.afterHeaderRender(function () {
 	var $menu = $('#appc-unified-header-nav .pull-left').first();
 
 	var links = {
+		'http://www.appcelerator.com/cat/developer': 'Blog',
 		'/updates': 'Updates',
 		'/help': 'Help',
 	};
 
 	for (var href in links) {
-		$menu.append('<a href="' + href + '">' + links[href] + '</a>');
+		var link = '<a href="' + href + '"';
+
+		if (link.indexOf('://') !== -1) {
+			link += ' target="_blank"';
+		}
+
+		link += '>' + links[href] + '</a>';
+		
+		$menu.append(link);
 	}
 
 	if (app.activeNav) {

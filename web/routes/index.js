@@ -15,6 +15,9 @@ module.exports = Arrow.Router.extend({
 	action: function (req, res, next) {
 		var rendered = false;
 
+		// res.redirect('/help');
+		// return next();
+
 		function render(context) {
 
 			if (!rendered) {
@@ -50,16 +53,6 @@ module.exports = Arrow.Router.extend({
 				updates: function (callback) {
 
 					async.parallel([
-						function so_questions(callback) {
-							req.server.getAPI('/api/feeds/so_questions').execute(function (err, results) {
-								callback(null, results ? {
-									title: results[results.key][0].title,
-									link: results[results.key][0].link,
-									published: results[results.key][0].creation_date,
-									author: 'Stack Overflow'
-								} : null);
-							});
-						},
 						function marketplace(callback) {
 							req.server.getAPI('/api/feeds/marketplace').execute(function (err, results) {
 								callback(null, results ? {
@@ -99,18 +92,6 @@ module.exports = Arrow.Router.extend({
 									link: results[results.key][0].link,
 									published: results[results.key][0].published,
 									author: 'gitTio'
-								} : null);
-							});
-						},
-						function jira(callback) {
-							req.server.getAPI('/api/feeds/rss').execute({
-								url: 'https://jira.appcelerator.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+in+%28AC%2C+TC%29+AND+resolution+%3D+Unresolved+ORDER+BY+created+DESC%2C+updated+ASC%2C+priority+DESC&tempMax=1000'
-							}, function (err, results) {
-								callback(null, results ? {
-									title: results[results.key][0].title,
-									link: results[results.key][0].link,
-									published: results[results.key][0].published,
-									author: 'JIRA'
 								} : null);
 							});
 						},

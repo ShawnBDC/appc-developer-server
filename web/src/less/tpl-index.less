@@ -1,12 +1,8 @@
 #tpl-index {
 
   .bg {
-    height: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 25px;
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .bg-triangles-light {
@@ -34,9 +30,15 @@
     color: white;
   }
 
+  .bg-photo {
+    background-color: #121212;
+    background-image: url(/images/header-lg-bg-laptop-top.png);
+    background-size: cover;
+  }
+
   .bg-colors hr,
   .bg-red hr,
-  .carousel hr {
+  .bg-photo hr {
     border: 0;
     line-height: 1px;
     height: 1px;
@@ -76,109 +78,40 @@
     text-decoration: none;
   }
 
-  /*CAROUSEL*/
-  #carousel {
-    .carousel-control:hover,
-    .carousel-control:focus {
-      color: #fff;
-      text-decoration: none;
-      filter:alpha(opacity=90);
-      outline: 0;
-      opacity: 0.75;
-    }
-    .carousel-control .icon-prev,
-    .carousel-control .icon-next {
-      position: absolute;
-      top: 50%;
-      z-index: 5;
-      display: inline-block;
-      margin-top: -10px;
-    }
-    .carousel-control .icon-prev {
-      left: 25%;
-      margin-left: -10px;
-    }
-    .carousel-control .icon-next {
-      right: 25%;
-      margin-right: -10px;
-    }
-    .carousel-content {
-      position: absolute;
-      right: 15%;
-      bottom: 20%;
-      left: 15%;
-      z-index: 10;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      color: #fff;
-      text-align: center;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, .3);
-    }
-    .carousel-inner > .item > img {
-      width: 100%;
-    }
-    .carousel-indicators {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      z-index: 15;
-      width: 60%;
-      padding-left: 0;
-      text-align: center;
-      list-style: none;
-    }
-    .carousel-indicators li {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      margin: 1px;
-      text-indent: -999px;
-      cursor: pointer;
-      background-color: #000 \9;
-      background-color: rgba(0, 0, 0, 0);
-      border: 1px solid #fff;
-      border-radius: 5px;
-    }
-    .carousel-indicators .active {
-      width: 8px;
-      height: 8px;
-      margin: 0;
-      background-color: #fff;
-    }
+  /* LATEST */
+  #latest {
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     .btn {
       text-shadow: none;
       width: 75px;
     }
 
-    .blog {
-      text-align: left;
+    p, h1 {
+      font-weight: lighter;
+      color: white;
 
-      p, h1 {
-        font-weight: lighter;
-        color: white;
+      padding-right: 100px;
+    }
 
-        padding-right: 100px;
-      }
+    a {
+      text-decoration: none;
 
-      a {
-        text-decoration: none;
-
-        &:hover {
-          .btn {
-            background-color: white;
-            color: black;
-          }
-        }
-      }
-
-      .btn-rss {
-        color: white;
-
-        &:hover {
-          color: black;
+      &:hover {
+        .btn {
           background-color: white;
+          color: black;
         }
+      }
+    }
+
+    .btn-rss {
+      color: white;
+
+      &:hover {
+        color: black;
+        background-color: white;
       }
     }
   }
@@ -186,8 +119,7 @@
   /* UPDATES */
 
   #updates {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
 
     .title a {
       color: inherit;
@@ -217,7 +149,7 @@
     }
 
     .update {
-      margin-bottom: 2em;
+      margin-bottom: 30px;
 
       > div {
         margin-right: 20px;
@@ -252,8 +184,7 @@
   #products {
 
     > .container {
-      padding-top: 30px;
-      padding-bottom: 50px;
+      // padding-bottom: 50px;
     }
 
     .products-icon {
@@ -263,10 +194,6 @@
   }
 
   #start {
-
-    > .container {
-      padding-bottom: 30px;
-    }
 
     .step {
       display: block;
@@ -312,16 +239,10 @@
 
   #developers {
 
-    > .container {
-      padding-bottom: 30px;
-    }
-
     .dev {
       .text-center;
 
       img {
-        width: 60%;
-        max-width: 200px;
         margin: 0 auto;
         display: block;
         margin-bottom: 20px;
@@ -331,8 +252,6 @@
   }
 
   #footer {
-    padding-top: 30px;
-    padding-bottom: 30px;
 
     dt {
       margin-top: 1em;

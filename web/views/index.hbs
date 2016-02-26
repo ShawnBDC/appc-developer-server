@@ -1,25 +1,20 @@
 <div id="tpl-index">
 
-  <!-- CAROUSEL -->
-  <div id="carousel" class="carousel slide" data-ride="carousel">
+  <!-- LATEST -->
+  <div id="latest" class="bg bg-photo">
+    <div class="container">
 
-    <div class="carousel-inner" role="listbox">
+      <a href="http://www.appcelerator.com/cat/developer/feed" target="_blank" class="btn btn-rss pull-right"><i class="fa fa-rss"></i> RSS</a>
+			<p><date title="{{formatDate devblog.[0].published 'MMMM Do YYYY, h:mm:ss a'}}">Latest Developer Blog by {{devblog.[0].author}} on {{formatDate devblog.[0].published 'MMMM Do, YYYY'}}</p>
 
-      <div class="item active">
-        <div class="carousel-content blog">
-          <a href="http://www.appcelerator.com/cat/developer/feed" target="_blank" class="btn btn-rss pull-right"><i class="fa fa-rss"></i> RSS</a>
-					<p><date title="{{formatDate devblog.[0].published 'MMMM Do YYYY, h:mm:ss a'}}">Latest Developer Blog by {{devblog.[0].author}} on {{formatDate devblog.[0].published 'MMMM Do, YYYY'}}</p>
-					<hr />
-					<a href="{{devblog.[0].link}}">
-            <span class="btn btn-appc-light pull-right">Read</span>
-            <h1>{{devblog.[0].title}}</h1>
-          </a>
-				</div>
-				<img src="/images/header-lg-bg-laptop.jpg" />
-      </div>
+			<hr />
+
+			<a href="{{devblog.[0].link}}" target="_blank">
+        <span class="btn btn-appc-light pull-right">Read</span>
+        <h1>{{devblog.[0].title}}</h1>
+      </a>
 
     </div>
-
   </div>
 
   <!-- UPDATES -->
@@ -198,7 +193,7 @@
   </div>
 
   <!-- FOOTER -->
-  <div id="footer" class="bg-triangles-dark">
+  <div id="footer" class="bg bg-triangles-dark">
     <div class="container">
 
       <div class="row">
@@ -208,7 +203,7 @@
             <dl>
               <dt>{{title}}</dt>
               {{#each links}}
-                <dd><a href="{{href}}">{{title}}</a></dd>
+                <dd><a href="{{href}}" {{#if external}}target="_blank"{{/if}}>{{title}}</a></dd>
               {{/each}}
             </dl>
           </div>

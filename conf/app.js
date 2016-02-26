@@ -50,11 +50,15 @@ module.exports = {
 					href: 'http://university.appcelerator.com/',
 					external: true
 				}, {
-					title: 'Q&amp;A Support',
+					title: 'Help',
 					href: '/help'
 				}, {
 					title: 'Documentation',
 					href: 'http://docs.appcelerator.com/',
+					external: true
+				}, {
+					title: 'Marketplace',
+					href: 'http://marketplace.appcelerator.com/',
 					external: true
 				}, {
 					title: 'Events',
@@ -75,7 +79,7 @@ module.exports = {
 					href: 'http://www.appcelerator.com/company/',
 					external: true
 				}, {
-					title: 'Jobs',
+					title: 'Careers',
 					href: 'http://www.appcelerator.com/company/jobs/',
 					external: true
 				}, {
@@ -95,12 +99,16 @@ module.exports = {
 			footerBottom: [{
 				title: 'Customers',
 				links: [{
+					title: 'Our Customers',
+					href: 'http://www.appcelerator.com/customers/',
+					external: true
+				}, {
 					title: 'Case Studies',
 					href: 'http://www.appcelerator.com/resource-center/case-studies/',
 					external: true
 				}, {
 					title: 'App Showcase',
-					href: 'http://www.appcelerator.com/company/app-showcase/',
+					href: 'http://www.appcelerator.com/customers/app-showcase/',
 					external: true
 				}]
 			}, {
@@ -144,7 +152,7 @@ module.exports = {
 			}, {
 				title: 'Open Source',
 				links: [{
-					title: 'Titanium',
+					title: 'Titanium®',
 					href: 'http://www.appcelerator.org/',
 					external: true
 				}]
