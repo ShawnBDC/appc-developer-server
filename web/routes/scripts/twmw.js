@@ -6,7 +6,7 @@ var request = require('request');
 
 module.exports = Arrow.Router.extend({
 	name: __filename,
-	path: '/scripts/modules-widgets',
+	path: '/scripts/twmw',
 	method: 'GET',
 	action: function (req, res, next) {
 
@@ -124,7 +124,7 @@ module.exports = Arrow.Router.extend({
 				tags.push('gittio');
 			}
 
-			res.render('scripts/modules-widgets', {
+			res.render('scripts/twmw', {
 				title: "This Week's Modules & Widgets",
 				from: (new Date(from)).toString(),
 				to: (new Date()).toString(),
