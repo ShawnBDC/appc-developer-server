@@ -12,6 +12,7 @@
 			<a href="{{devblog.[0].link}}" target="_blank">
         <span class="btn btn-appc-light pull-right">Read</span>
         <h1>{{devblog.[0].title}}</h1>
+        <p>{{truncateStringTo (stripTags devblog.[0].content) 300}}</p>
       </a>
 
     </div>

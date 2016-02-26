@@ -3,7 +3,6 @@ var async = require('async');
 var Arrow = require('arrow');
 var helpers = require('../../../lib/helpers');
 var request = require('request');
-var utils = require('../../../lib/utils');
 
 module.exports = Arrow.Router.extend({
 	name: __filename,
@@ -52,7 +51,7 @@ module.exports = Arrow.Router.extend({
 
 						item.url = product.url;
 						item.title = product.name;
-						item.description = helpers.escape(utils.stripTags(product.overview));
+						item.description = helpers.escape(helpers.stripTags(product.overview));
 						item.price = product.startingPrice;
 
 						item.type = product.productType.toLowerCase().replace('_', ' ');
