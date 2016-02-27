@@ -30,7 +30,7 @@ module.exports = Arrow.Router.extend({
 
 		// even if it's expired, we won't wait for the new data
 		if (cache) {
-			return render(cache);
+			render(cache);
 		}
 
 		// time to request (new) data (random to not do all together)

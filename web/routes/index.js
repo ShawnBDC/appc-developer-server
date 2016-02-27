@@ -34,7 +34,7 @@ module.exports = Arrow.Router.extend({
 
 		// even if it's expired, we won't wait for the new data
 		if (cache) {
-			return render(cache);
+			render(cache);
 		}
 
 		// time to request (new) data
@@ -53,9 +53,9 @@ module.exports = Arrow.Router.extend({
 				updates: function (callback) {
 
 					async.parallel([
-						function marketplace(callback) {
+						function marketplace(nextSource) {
 							req.server.getAPI('/api/feeds/marketplace').execute(function (err, results) {
-								callback(null, results ? {
+								nextSource(null, results ? {
 									title: results[results.key][0].name,
 									link: results[results.key][0].url,
 									published: results[results.key][0].lastModified,
@@ -63,9 +63,9 @@ module.exports = Arrow.Router.extend({
 								} : null);
 							});
 						},
-						function university(callback) {
+						function university(nextSource) {
 							req.server.getAPI('/api/feeds/university').execute(function (err, results) {
-								callback(null, results ? {
+								nextSource(null, results ? {
 									title: results[results.key][0].title,
 									link: 'http://university.appcelerator.com/video/' + results[results.key][0].id + '/' + helpers.slug(results[results.key][0].title),
 									published: results[results.key][0].date,
@@ -73,9 +73,9 @@ module.exports = Arrow.Router.extend({
 								} : null);
 							});
 						},
-						function samples(callback) {
+						function samples(nextSource) {
 							req.server.getAPI('/api/feeds/samples').execute(function (err, results) {
-								callback(null, results ? {
+								nextSource(null, results ? {
 									title: results[results.key][0].name,
 									link: results[results.key][0].location,
 									published: results[results.key][0].created_at,
@@ -83,11 +83,11 @@ module.exports = Arrow.Router.extend({
 								} : null);
 							});
 						},
-						function gittio(callback) {
+						function gittio(nextSource) {
 							req.server.getAPI('/api/feeds/rss').execute({
 								url: 'http://gitt.io/rss.xml'
 							}, function (err, results) {
-								callback(null, results ? {
+								nextSource(null, results ? {
 									title: results[results.key][0].title,
 									link: results[results.key][0].link,
 									published: results[results.key][0].published,
@@ -95,11 +95,11 @@ module.exports = Arrow.Router.extend({
 								} : null);
 							});
 						},
-						function medium(callback) {
+						function medium(nextSource) {
 							req.server.getAPI('/api/feeds/rss').execute({
 								url: 'https://medium.com/feed/all-titanium'
 							}, function (err, results) {
-								callback(null, results ? {
+								nextSource(null, results ? {
 									title: results[results.key][0].title,
 									link: results[results.key][0].link,
 									published: results[results.key][0].published,

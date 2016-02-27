@@ -7054,7 +7054,8 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
 }
 #tpl-index .bg-photo {
   background-color: #121212;
-  background-image: url(/images/header-lg-bg-laptop-top.png);
+  background-image: url(/images/header-lg-bg-laptop-front.jpg);
+  background-position: center;
   background-size: cover;
   color: white;
 }
