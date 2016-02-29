@@ -6944,6 +6944,10 @@ fieldset[disabled] .btn-appc-dark-clean.focus {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+.content [class^="icon-"]:before,
+.content [class*=" icon-"]:before {
+  margin-right: 0;
+}
 .well h2:first-child,
 .panel-body h2:first-child {
   margin-top: 0;
