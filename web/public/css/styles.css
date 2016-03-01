@@ -7217,6 +7217,9 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
   display: block;
   margin-bottom: 20px;
 }
+#tpl-index #developers .dev h3 {
+  font-size: 16px;
+}
 #tpl-start .body > .nav {
   margin-bottom: 30px;
 }
