@@ -1,5 +1,6 @@
 var Arrow = require('arrow');
-var mdwp = require('lib/mdwp.js');
+var HttpError = require('lib/HttpError');
+var mdwp = require('lib/mdwp');
 var request = require('request');
 
 module.exports = Arrow.Router.extend({
@@ -9,7 +10,7 @@ module.exports = Arrow.Router.extend({
 	action: function (req, res, next) {
 
 		if (!req.session.user || req.session.user.email.indexOf('@appcelerator.com') === -1) {
-			return this.unauthorized(next);
+			return next(new HttpError(401, 'Unauthorized'));
 		}
 
 		var url, markdown, title, html;
@@ -64,7 +65,7 @@ module.exports = Arrow.Router.extend({
 
 				respond();
 			});
-			
+
 		} else {
 			respond();
 		}

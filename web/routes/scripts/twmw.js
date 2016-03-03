@@ -2,6 +2,7 @@ var _ = require('lodash');
 var async = require('async');
 var Arrow = require('arrow');
 var helpers = require('../../../lib/helpers');
+var HttpError = require('lib/HttpError');
 var request = require('request');
 
 module.exports = Arrow.Router.extend({
@@ -11,7 +12,7 @@ module.exports = Arrow.Router.extend({
 	action: function (req, res, next) {
 
 		if (!req.session.user || req.session.user.email.indexOf('@appcelerator.com') === -1) {
-			return this.unauthorized(next);
+			return next(new HttpError(401, 'Unauthorized'));
 		}
 
 		var from;
