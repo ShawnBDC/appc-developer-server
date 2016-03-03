@@ -1,0 +1,89 @@
+<p>Android 5.0 (API level 21) introduced <a href="http://developer.android.com/design/material/index.html" target="_blank">Material Design</a>: a vision, <a href="http://www.google.com/design/spec/material-design/introduction.html" target="_blank">design guidelines</a> as well as new components and animations. Earlier in Titanium 5.1.0 we added support for <a href="https://github.com/appcelerator-developer-relations/appc-sample-ti510#cardview" target="_blank">CardView</a>, the <a href="https://github.com/appcelerator-developer-relations/appc-sample-ti510#reveal-effect" target="_blank">Reveal Effect</a> animation as additional support for the <a href="https://github.com/appcelerator-developer-relations/appc-sample-ti510#progressbar-color" target="_blank">material design theme</a>.</p>
+<p>Now in <a href="/blog/2016/02/ga-release-of-cli-5-2-titanium-5-2-and-studio-4-5/">Titanium 5.2.0</a> we add support for customized <a href="https://developer.android.com/training/material/animations.html#Transitions" target="_blank">Activity &amp; Shared Element Transitions</a>. In this blog post I'll walk you through this using the new <a href="http://github.com/appcelerator-developer-relations/appc-sample-ti520" target="_blank">Titanium 5.2.0 Sample App</a>:</p>
+https://www.youtube.com/watch?v=Cg8HmQBP4jk
+<h4 id="what-is-an-activity">What is an Activity?</h4>
+<p>In Titanium each Window or TabGroup creates and is linked to a new <a href="http://developer.android.com/guide/components/activities.html" target="_blank">Activity</a>. When the user presses the <a href="http://developer.android.com/training/implementing-navigation/temporal.html" target="_blank">system back button</a> he will return to the previous activity on the stack. You can access the Activity via the <a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-activity" target="_blank">activity property</a>.</p>
+<h4 id="what-activity-transitions-are-there">What Activity Transitions are there?</h4>
+<p>It's important to understand the difference between the different transitions an activity goes through that you can customize. You can see all four of them explained in the following diagram:</p>
+<p><img src="https://github.com/appcelerator-developer-relations/appc-sample-ti520/raw/master/docs/assets/transitions.png" alt="Transition Lifecycle"></p>
+<p>As you go from Window A to B, Window A will <strong>exit</strong> and B will <strong>enter</strong>. When you press the system back button to return to Window A, then Window B will <strong>return</strong> and A will <strong>reenter</strong>.</p>
+<blockquote>
+<p><strong>NOTE:</strong> It's a known issue that when you programmatically close a Window using its <code>close()</code> the <strong>return</strong> and <strong>reenter</strong> transitions are ignored (<a href="https://jira.appcelerator.org/browse/TIMOB-20451" target="_blank">TIMOB-20451</a>). The system back button shows the expected behaviour.</p>
+</blockquote>
+<p>For more details I recommend Alex Lockwood's <a href="http://www.androiddesignpatterns.com/2014/12/activity-fragment-transitions-in-android-lollipop-part1.html" target="_blank">Getting Started with Activity &amp; Fragment Transitions</a>.</p>
+<h4 id="how-to-customize-activity-transitions">How to customize Activity Transitions?</h4>
+<p>First of all, the Android APIs are designed in such a way that as soon as you define shared elements, both the <code>activity*Transition</code>s and <code>sharedElement*Transition</code>s get defaults (which I'll get to soon) that you're unlikely to need to change at all.</p>
+<blockquote>
+<p><strong>NOTE:</strong> Currently Activity Transitions will only work if you have declared shared elements. We're looking into making them work without as well (<a href="https://jira.appcelerator.org/browse/TIMOB-20507" target="_blank">TIMOB-20507</a>).</p>
+</blockquote>
+<p>To customize the transitions you can use the following properties:</p>
+<ul>
+<li><code>Ti.UI.Window.activityExitTransition</code></li>
+<li><code>Ti.UI.Window.activityEnterTransition</code></li>
+<li><code>Ti.UI.Window.activityReturnTransition</code></li>
+<li><code>Ti.UI.Window.activityReenterTransition</code></li>
+</ul>
+<blockquote>
+<p><strong>NOTE:</strong> Unfortunately the API reference of these properties currently has them located under the Window <code>open()</code> and <code>close()</code> <a href="http://docs.appcelerator.com/platform/latest/#!/api/openWindowParams" target="_blank">parameters</a> (<a href="https://jira.appcelerator.org/browse/TIDOC-2454" target="_blank">TIDOC-2454</a>).</p>
+</blockquote>
+<p>The above properties can be set to the following constants:</p>
+<ul>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_EXPLODE" target="_blank"><code>Ti.UI.Android.TRANSITION_EXPLODE</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_FADE_IN" target="_blank"><code>Ti.UI.Android.TRANSITION_FADE_IN</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_FADE_OUT" target="_blank"><code>Ti.UI.Android.TRANSITION_FADE_OUT</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_SLIDE_TOP" target="_blank"><code>Ti.UI.Android.TRANSITION_SLIDE_TOP</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-SLIDE_RIGHT" target="_blank"><code>Ti.UI.Android.TRANSITION_SLIDE_RIGHT</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-SLIDE_BOTTOM" target="_blank"><code>Ti.UI.Android.TRANSITION_SLIDE_BOTTOM</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-SLIDE_LEFT" target="_blank"><code>Ti.UI.Android.TRANSITION_SLIDE_LEFT</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_NONE" target="_blank"><code>Ti.UI.Android.TRANSITION_NONE</code></a></li>
+</ul>
+<p>The sample lets you <a href="https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/app/views/android/transitions_a.xml#L8" target="_blank">set these properties</a> from within the app to play with the options.</p>
+<h5 id="transition-defaults">Transition defaults</h5>
+<p>In most cases you will only set <strong>enter</strong> and <strong>exit</strong> because <strong>reenter</strong> will default to <strong>exit</strong> as will <strong>return</strong> to <strong>enter</strong>. In turn, <strong>exit</strong> defaults to no animation and <strong>enter</strong> to <code>FADE_INT</code>.</p>
+<h5 id="disable-transitions">Disable transitions</h5>
+<p>You can disable transitions at all time by passing <code>{animated:false}</code> to the Window <code>open()</code> or <code>close()</code> method. As mentioned, they will currently also not be used if you don't declare any shared elements.</p>
+<h4 id="what-shared-element-transitions-are-there">What Shared Element Transitions are there?</h4>
+<p>Again, Alex Lockwood does a great job at explaining working with <a href="http://www.androiddesignpatterns.com/2015/01/activity-fragment-shared-element-transitions-in-depth-part3a.html" target="_blank">Shared Elements</a>.</p>
+<p>What it comes down to is that as you transition from one Window to the next you can link individual related views between both Windows and have them animate from one to the other as if they were one.</p>
+<p>If you scroll back to the screenrecording of our Sample App you can see that the Appcelerator logo and the next underneath display this behaviour. Again, the sample allows you to change the transition style for these shared elements.</p>
+<h4 id="how-to-customize-shared-element-transitions">How to customize Shared Element Transitions?</h4>
+<p>Like I said the Android APIs are designed in such a way that you're unlikely to want to change the defaults. But as with Activity Transitions, we have four properties we can use to do so anyway. Their names might be very similar to those for the Activity Transitions, but their meaning is slightly different.</p>
+<blockquote>
+<p><strong>NOTE:</strong> Unfortunately the API reference of these properties currently has them located under the Window <code>open()</code> and <code>close()</code> <a href="http://docs.appcelerator.com/platform/latest/#!/api/openWindowParams" target="_blank">parameters</a> (<a href="https://jira.appcelerator.org/browse/TIDOC-2454" target="_blank">TIDOC-2454</a>).</p>
+</blockquote>
+<p>Let's start with two properties you can set on Window B:</p>
+<ul>
+<li><code>Ti.UI.Window.activitySharedElementEnterTransition</code> to determine how shared elements animate from A to B. Defaults to all of them in parallel.</li>
+<li><code>Ti.UI.Window.activitySharedElementReturnTransition</code> to determine how shared elements animate form B to A. Defaults to all of them in parallel.</li>
+</ul>
+<p>Additionally you can also set two properties on Window A. Now as Alex <a href="http://www.androiddesignpatterns.com/2015/01/activity-fragment-shared-element-transitions-in-depth-part3a.html#footnote1" target="_blank">points out</a>  there are very use cases for these two. In fact, the animations Titanium currently exposes would not be noticeable.</p>
+<ul>
+<li><code>Ti.UI.Window.activitySharedElementExitTransition</code> animates shared elements <strong>before</strong> they use B's <strong>enter</strong> transition to animate from A to B.</li>
+<li><code>Ti.UI.Window.activitySharedElementReeenterTransition</code> animated shared elements <strong>after</strong> they use B's <strong>return</strong> transition to animate from B to A. Defaults to the <strong>exit</strong> transition.</li>
+</ul>
+<p>You can set these four properties to the following constants:</p>
+<ul>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_CHANGE_BOUNDS" target="_blank"><code>Ti.UI.Android.TRANSITION_CHANGE_BOUNDS</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_CLIP_BOUNDS" target="_blank"><code>Ti.UI.Android.TRANSITION_CHANGE_CLIP_BOUNDS</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_CHANGE_TRANSFORM" target="_blank"><code>Ti.UI.Android.TRANSITION_CHANGE_TRANSFORM</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_CHANGE_IMAGE_TRANSFORM" target="_blank"><code>Ti.UI.Android.TRANSITION_CHANGE_IMAGE_TRANSFORM</code></a></li>
+<li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Android-property-TRANSITION_NONE" target="_blank"><code>Ti.UI.Android.TRANSITION_NONE</code></a></li>
+</ul>
+<h4 id="how-to-define-shared-elements-to-enable-these-transitions">How to define Shared Elements to enable these Transitions?</h4>
+<p>Now how do we put all these properties and constants into use and actually define Shared Elements so that we can see both the Activity and Shared Element Transitions in action?</p>
+<ol>
+<li>In both Windows we need to set the new <a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.View-property-transitionName" target="_blank">transitionName</a> property to the same value for each shared element. You can see we've done this in <a href="https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/app/views/android/transitions_a.xml#L66-L67" target="_blank">Window A</a> and <a href="https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/app/views/android/transitions_b.xml#L7-L9" target="_blank">Window B</a> of our Sample App. The name should be unique within each Window.</li>
+<li>Before we open Window B we then need to use its new <a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-method-addSharedElement" target="_blank">addSharedElement()</a> method. This method takes two properties. The first should be a reference to the shared view in Window A. The second is the value of <code>transitionName</code> as it can be found in Window B.</li>
+</ol>
+<p>Sounds confusing?</p>
+<p>Have a look at the Sample's <a href="https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/app/views/android/transitions_a.xml#L66-L67" target="_blank">transitions_a.xml</a>, <a href="https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/app/views/android/transitions_b.xml#L7-L9" target="_blank">transitions_b.xml</a> and <a href="https://github.com/appcelerator-developer-relations/appc-sample-ti520/blob/master/app/controllers/android/transitions_a.js#L30-L31" target="_blank">transition_a.js</a>. In the end, when you rely on the default transition animations, this is all you need to set.</p>
+<p>In both views:</p>
+<pre><code class="xml">&lt;ImageView transitionName=&quot;logo&quot; .. /&gt;
+&lt;Label transitionName=&quot;text&quot;&gt; .. &lt;/Label&gt;
+</code></pre>
+<p>In the controller for Window A, before opening Window B:</p>
+<pre><code class="js">win.addSharedElement($.logo, 'logo');
+win.addSharedElement($.text, 'text');
+</code></pre>
+<p>Let's make some truly <em>animating</em> Titanium Android apps!</p>
+<p>- Code Strong 🚀</p>

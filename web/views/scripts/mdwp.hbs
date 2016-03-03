@@ -1,0 +1,66 @@
+<div id="tpl-scripts-mdwp">
+  <div class="container body">
+
+    <div class="page-header">
+      <h1>{{title}}</h1>
+    </div>
+
+    <ol>
+      <li>Use your <a href="http://macdown.uranusjr.com/" target="_blank">favourite</a> MarkDown editor.</li>
+      <li>Start with heading level 1 (<code>#</code>) as the blog post title.</li>
+      <li>Use relative links to link repository folders, files and embed images.</li>
+      <li>Use absolute links to link other blog posts or pages on appcelerator.com.</li>
+      <li>Embed (YouTube) videos as: <code>[![{TITLE}](http://img.youtube.com/vi/{ID}/0.jpg)](https://www.youtube.com/watch?v={ID})</code>.</li>
+      <li>Enter the URL to the MD version to resolve relative links and fetch it from GitHub.</li>
+      <li>Optionally paste the MD in the TextArea or leave it blank to fetch it if the URL is from GitHub.</li>
+      <li>Press <em>Generate</em> and check the result before you publish 😛</li>
+    </ol>
+
+    <hr />
+
+    <form method="GET">
+
+      <div class="row">
+        <div class="col-md-6">
+
+          <div class="form-group">
+            <label for="url">MarkDown URL</label>
+            <input type="text" class="form-control" id="url" name="url" value="{{url}}" placeholder="https://github.com/[owner]/[repo]/blob/master/[path].md" />
+          </div>
+          <div class="form-group">
+            <label for="markdown">MarkDown body</label>
+            <textarea class="form-control" id="markdown" name="markdown" rows="20">{{markdown}}</textarea>
+          </div>
+
+          <input type="submit" class="btn btn-primary" value="Generate" />
+
+        </div>
+        <div class="col-md-6">
+
+          <div class="form-group">
+            <label for="wpTitle">Wordpress title</label>
+            <input type="text" class="form-control select" id="wpTitle" name="wpTitle" value="{{wpTitle}}" />
+          </div>
+          <div class="form-group">
+            <label for="html">WordPress body</label>
+            <textarea class="form-control select" id="html" rows="20">{{html}}</textarea>
+          </div>
+
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+  $('#tpl-scripts-mdwp .select').click(function() {
+    $(this).select();
+  });
+
+});
+
+</script>
