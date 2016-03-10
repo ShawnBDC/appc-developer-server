@@ -7220,6 +7220,9 @@ http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-cente
 #tpl-index #developers .dev h3 {
   font-size: 16px;
 }
+#tpl-scripts-mdwp textarea {
+  font-family: monospace;
+}
 #tpl-start .body > .nav {
   margin-bottom: 30px;
 }
