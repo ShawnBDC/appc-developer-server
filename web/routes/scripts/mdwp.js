@@ -54,7 +54,7 @@ module.exports = Arrow.Router.extend({
 
 			respond();
 
-		} else if (url.indexOf('/blob/') !== -1) {
+		} else if (url && url.indexOf('/blob/') !== -1) {
 			request(url.replace('/blob/', '/raw/'), function (error, response, body) {
 
 				if (error) {
