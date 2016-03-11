@@ -18,8 +18,8 @@ describe('mdwp', function () {
 		should(wordpress.title).eql('Titanium 5.2.0: Android Activity &amp; Shared Element Transitions');
 
 		if (wordpress.html !== output) {
-			// fs.writeFileSync(path.join(__dirname, 'fixtures', 'mdwp-output.html'), wordpress.html, 'utf8
-			// ');
+			// fs.writeFileSync(path.join(__dirname, 'fixtures', 'mdwp-output.html'), wordpress.html, 'utf8');
+
 			var err = new Error('expected output to match');
 			err.expected = output;
 			err.actual = wordpress.html;
