@@ -117,7 +117,7 @@ module.exports = Arrow.Router.extend({
 				},
 				jira: function (callback) {
 					req.server.getAPI('/api/feeds/rss').execute({
-						url: 'https://jira.appcelerator.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+in+%28AC%2C+TC%29+AND+resolution+%3D+Unresolved+ORDER+BY+created+DESC%2C+updated+ASC%2C+priority+DESC&tempMax=1000'
+						url: 'https://jira.appcelerator.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+in+%28AC%29+AND+resolution+%3D+Unresolved+ORDER+BY+created+DESC%2C+updated+ASC%2C+priority+DESC&tempMax=1000'
 					}, function (err, results) {
 						callback(null, results ? results[results.key].slice(0, 4) : null);
 					});
