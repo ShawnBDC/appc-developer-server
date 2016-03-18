@@ -1,5 +1,6 @@
 var Arrow = require('arrow');
-var feed = require('feed-read');
+var FeedParser = require('feedparser');
+var request = require('request');
 
 var utils = require('../../lib/utils');
 
@@ -55,3 +56,32 @@ module.exports = Arrow.API.extend({
 		}
 	}
 });
+
+function feed(url, callback) {
+	var req = request(url);
+	var feedparser = new FeedParser();
+
+	var items = [];
+
+	req.on('error', callback);
+	req.on('response', function (res) {
+
+		if (res.statusCode !== 200) {
+			return this.emit('error', new Error('Bad status code'));
+		}
+
+		res.pipe(feedparser);
+	});
+
+	feedparser.on('error', callback);
+	feedparser.on('end', function (err) {
+		callback(err, items);
+	});
+	feedparser.on('readable', function () {
+		var item;
+
+		while ((item = this.read())) {
+			items.push(item);
+		}
+	});
+}

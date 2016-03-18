@@ -102,7 +102,10 @@ module.exports = Arrow.Router.extend({
 
 						if (results) {
 							results = results[results.key].slice(0, 3);
-							results[0].image = utils.extractImageSrc(results[0].content);
+
+							// console.log(results);
+
+							results[0].image = utils.extractImageSrc(results[0].description);
 						}
 
 						callback(null, results);
@@ -117,7 +120,7 @@ module.exports = Arrow.Router.extend({
 				},
 				jira: function (callback) {
 					req.server.getAPI('/api/feeds/rss').execute({
-						url: 'https://jira.appcelerator.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+in+%28AC%29+AND+resolution+%3D+Unresolved+ORDER+BY+created+DESC%2C+updated+ASC%2C+priority+DESC&tempMax=1000'
+						url: 'https://jira.appcelerator.org/sr/jira.issueviews:searchrequest-rss/temp/SearchRequest.xml?jqlQuery=project+in+%28AC%29+AND+resolution+%3D+Unresolved+ORDER+BY+created+DESC%2C+updated+ASC%2C+priority+DESC&tempMax=4'
 					}, function (err, results) {
 						callback(null, results ? results[results.key].slice(0, 4) : null);
 					});
@@ -129,7 +132,7 @@ module.exports = Arrow.Router.extend({
 
 						if (results) {
 							results = results[results.key].slice(0, 3);
-							results[0].image = utils.extractImageSrc(results[0].content);
+							results[0].image = utils.extractImageSrc(results[0].description);
 						}
 
 						callback(null, results);
@@ -137,9 +140,29 @@ module.exports = Arrow.Router.extend({
 				},
 				guides: function (callback) {
 					req.server.getAPI('/api/feeds/rss').execute({
-						url: 'https://wiki.appcelerator.org/spaces/createrssfeed.action?types=page&spaces=guides2&maxResults=15&title=%5BDocumentation+%26+Guides+-+2.0%5D+Pages+Feed&amp;publicFeed=false&amp;os_authType=basic'
+						url: 'https://wiki.appcelerator.org/spaces/createrssfeed.action?types=page&spaces=guides2&maxResults=4&title=%5BDocumentation+%26+Guides+-+2.0%5D+Pages+Feed&amp;publicFeed=false&amp;os_authType=basic'
 					}, function (err, results) {
-						callback(null, results ? results[results.key].slice(0, 4) : null);
+
+						if (results) {
+							results = results[results.key].slice(0, 4).map(function(result) {
+								var match = result.guid.match(/page-([0-9]+)-([0-9]+)$/);
+
+								if (match) {
+									var pageId = match[1];
+									var current = parseInt(match[2], 10);
+
+									if (current > 1) {
+										var previous = current - 1;
+
+										result.link = 'https://wiki.appcelerator.org/pages/diffpagesbyversion.action?pageId=' + pageId + '&selectedPageVersions=' + current + '&selectedPageVersions=' + previous;
+									}
+								}
+
+								return result;
+							});
+						}
+
+						callback(null, results);
 					});
 				},
 			}, function (err, results) {
