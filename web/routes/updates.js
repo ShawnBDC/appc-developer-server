@@ -134,7 +134,14 @@ module.exports = Arrow.Router.extend({
 
 						callback(null, results);
 					});
-				}
+				},
+				guides: function (callback) {
+					req.server.getAPI('/api/feeds/rss').execute({
+						url: 'https://wiki.appcelerator.org/spaces/createrssfeed.action?types=page&spaces=guides2&maxResults=15&title=%5BDocumentation+%26+Guides+-+2.0%5D+Pages+Feed&amp;publicFeed=false&amp;os_authType=basic'
+					}, function (err, results) {
+						callback(null, results ? results[results.key].slice(0, 4) : null);
+					});
+				},
 			}, function (err, results) {
 
 				cachedAt = Date.now();
