@@ -56,6 +56,10 @@ module.exports = Arrow.Router.extend({
 
 		} else {
 
+			if (!url) {
+				return respond();
+			}
+
 			var match = url.match(/^https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/(.+)$/);
 
 			if (!match) {
