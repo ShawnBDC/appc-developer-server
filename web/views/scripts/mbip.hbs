@@ -1,0 +1,46 @@
+<div id="tpl-scripts-mbip">
+  <div class="container body">
+
+    <div class="page-header">
+      <h1>{{title}}</h1>
+    </div>
+
+    <ol>
+      <li>Remove the posts that are featured elsewhere in the email.</li>
+      <li>Remove the posts that have been featured in the previous email.</li>
+      <li>Remove the description where you don't want one.</li>
+      <li>Press <em>Preview</em> to get an idea of the result.</li>
+      <li>Copy paste the HTML in the text area in Mailchimp.</li>
+    </ol>
+
+    <hr />
+
+    <textarea class="form-control select" rows="20" id="source">&amp;nbsp;
+<h2 style="color:#555555 !important; font-size:22px; text-transform:uppercase; border-bottom:1px solid #cccccc;">Additional Highlights of the Month</h2>
+<style type="text/css">.list-articles li { margin-bottom:8px; }
+</style>
+<ul class="list-articles">
+{{#each posts}}{{#unless (contains ./title "This Week’s Modules & Widgets")}}
+<li><a href="{{link}}" style="color:#ca2127;">{{title}}</a><br />
+{{stripTags description}}</li>
+{{/unless}}{{/each}}
+</ul></textarea>
+
+    <div style="text-align:center;margin-top:1em;margin-bottom:1em">
+      <button class="btn btn-primary" id="previewBtn">Preview</button>
+    </div>
+
+    <div class="panel panel-default" id="preview"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#previewBtn').on('click', function() {
+      $('#preview').html($('#source').val());
+    }).trigger('click');
+
+  });
+</script>
