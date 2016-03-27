@@ -20,9 +20,8 @@
 <style type="text/css">.list-articles li { margin-bottom:8px; }
 </style>
 <ul class="list-articles">
-{{#each posts}}{{#unless (contains ./title "This Week’s Modules & Widgets")}}
-<li><a href="{{link}}" style="color:#ca2127;">{{title}}</a><br />
-{{stripTags description}}</li>
+{{#each posts}}{{#unless (contains ./title "This Week’s Modules & Widgets")}}  <li><a href="{{link}}" style="color:#ca2127;">{{title}}</a><br />
+  {{stripTags description}}</li>
 {{/unless}}{{/each}}
 </ul></textarea>
 

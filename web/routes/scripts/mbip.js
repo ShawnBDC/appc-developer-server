@@ -1,10 +1,8 @@
 var Arrow = require('arrow');
 var HttpError = require('lib/HttpError');
-var mdwp = require('lib/mdwp');
-var request = require('request');
+var utils = require('lib/utils');
 
-// FIXME: https://github.com/appcelerator/appc_web_com/pull/368
-var URL = 'https://www.appcelerator.com/feed/?cat=9%2C12';
+var URL = 'http://www.appcelerator.com/social-rss-feed/?numposts=30&cat=9%2C12';
 
 module.exports = Arrow.Router.extend({
 	name: __filename,
@@ -16,19 +14,15 @@ module.exports = Arrow.Router.extend({
 			return next(new HttpError(401, 'Unauthorized'));
 		}
 
-		req.server.getAPI('/api/feeds/rss').execute({
-			url: URL
-		}, function (err, results) {
+		utils.readFeed(URL, function (err, items) {
 
-			if (!results) {
+			if (!items) {
 				return next(err || 'Failed to fetch posts');
 			}
 
-			var posts = results[results.key];
-
 			res.render('scripts/mbip', {
 				title: 'Mobile Impact',
-				posts: posts
+				posts: items
 			});
 
 			next();
