@@ -220,10 +220,10 @@
         </div>
       </div>
 
-      <div class="col-sm-8">
+      <div class="col-sm-4">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title">JIRA Community Tickets <small>Bug Reports &amp; Feature Requests</small> <i class="fa fa-bug pull-right"></i></h2>
+            <h2 class="panel-title">JIRA Tickets <small>Bug Reports &amp; Feature Requests</small> <i class="fa fa-bug pull-right"></i></h2>
           </div>
           <div class="equal-height">
             {{#if jira}}
@@ -243,6 +243,33 @@
           </div>
           <div class="panel-footer">
             <a href="https://jira.appcelerator.org/issues/?filter=17271" target="_blank">More on JIRA <i class="icon-angle-right pull-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Guides <small>Continuous Integration Wiki</small> <i class="fa fa-book pull-right"></i></i></a></h2>
+          </div>
+          <div class="equal-height">
+            {{#if guides}}
+              <ul class="list-group">
+                {{#each guides}}
+                  <li class="list-group-item">
+                    <a href="{{link}}" target="_blank">{{title}}</a>
+                    <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                  </li>
+                {{/each}}
+              </ul>
+            {{else}}
+              <div class="panel-body text-danger">
+                <p>Failed to fetch latest updates.</p>
+              </div>
+            {{/if}}
+          </div>
+          <div class="panel-footer">
+            <a href="https://wiki.appcelerator.org/pages/recentlyupdated.action?key=guides2" target="_blank">More on the Wiki <i class="icon-angle-right pull-right"></i></a>
           </div>
         </div>
       </div>
@@ -337,36 +364,6 @@
           </div>
           <div class="panel-footer">
             <a href="http://gitt.io/" target="_blank">More on gitTio <i class="icon-angle-right pull-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="row">
-
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Guides <small>Continuous Integration Wiki</small> <i class="fa fa-book pull-right"></i></i></a></h2>
-          </div>
-          <div class="equal-height">
-            {{#if guides}}
-              <ul class="list-group">
-                {{#each guides}}
-                  <li class="list-group-item">
-                    <a href="{{link}}" target="_blank">{{title}}</a>
-                    <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
-                  </li>
-                {{/each}}
-              </ul>
-            {{else}}
-              <div class="panel-body text-danger">
-                <p>Failed to fetch latest updates.</p>
-              </div>
-            {{/if}}
-          </div>
-          <div class="panel-footer">
-            <a href="https://wiki.appcelerator.org/pages/recentlyupdated.action?key=guides2" target="_blank">More on the Wiki <i class="icon-angle-right pull-right"></i></a>
           </div>
         </div>
       </div>
