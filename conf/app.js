@@ -1,5 +1,8 @@
 module.exports = {
 	app: {
+		redirects: {
+			'/cla': 'https://cla.appcelerator.com/'
+		},
 		index: {
 			developers: [{
 					username: 'AppcDev',
