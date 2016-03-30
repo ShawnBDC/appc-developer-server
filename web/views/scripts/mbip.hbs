@@ -5,41 +5,72 @@
       <h1>{{title}}</h1>
     </div>
 
-    <ol>
-      <li>Remove the posts that are featured elsewhere in the email.</li>
-      <li>Remove the posts that have been featured in the previous email.</li>
-      <li>Remove the description where you don't want one.</li>
-      <li>Press <em>Preview</em> to get an idea of the result.</li>
-      <li>Copy paste the HTML in the text area in Mailchimp.</li>
-    </ol>
+    <div class="row">
+      <div class="col-md-6">
 
-    <hr />
+        <ol>
+          <li>Look up the date of the previous <em>Mobile Impact</em> and enter it as <code>YYYY-MM-DD</code>.</li>
+          <li>Hit <em>Generate</em> (this might take a while).</li>
+          <li>Remove the HTML for the posts that are featured elsewhere in the email.</li>
+          <li>Press <em>Preview</em> to get an idea of the result.</li>
+          <li>Copy paste the HTML into Mailchimp.</li>
+        </ol>
 
-    <textarea class="form-control select" rows="20" id="source">&amp;nbsp;
+      </div>
+      <div class="col-md-6">
+
+        <form method="GET">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" name="from" class="form-control" placeholder="YYYY-MM-DD" value="{{from}}" />
+              <span class="input-group-btn">
+                <input type="submit" class="btn btn-primary" value="Generate" />
+              </span>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+
+    {{#if posts}}
+
+      <hr />
+
+      <div class="row">
+        <div class="col-md-6">
+
+          <textarea class="form-control select" rows="20" id="source">&amp;nbsp;
 <h2 style="color:#555555 !important; font-size:22px; text-transform:uppercase; border-bottom:1px solid #cccccc;">Additional Highlights of the Month</h2>
 <style type="text/css">.list-articles li { margin-bottom:8px; }
 </style>
 <ul class="list-articles">
-{{#each posts}}{{#unless (contains ./title "This Week’s Modules & Widgets")}}  <li><a href="{{link}}" style="color:#ca2127;">{{title}}</a><br />
-  {{stripTags description}}</li>
-{{/unless}}{{/each}}
-</ul></textarea>
+{{#each posts}}{{#unless (contains ./title "This Week’s Modules & Widgets")}}  <li><a href="{{link}}" style="color:#ca2127;">{{title}}</a></li>
+{{/unless}}{{/each}}</ul></textarea>
 
-    <div style="text-align:center;margin-top:1em;margin-bottom:1em">
-      <button class="btn btn-primary" id="previewBtn">Preview</button>
+          <div style="text-align:center;margin-top:1em;margin-bottom:1em">
+            <button class="btn btn-primary" id="previewBtn">Preview</button>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+
+          <div class="panel panel-default" id="preview"></div>
+
+        </div>
+
+    {{/if}}
+
     </div>
-
-    <div class="panel panel-default" id="preview"></div>
-
   </div>
-</div>
 
-<script type="text/javascript">
-  $(document).ready(function() {
+  <script type="text/javascript">
+    $(document).ready(function() {
 
-    $('#previewBtn').on('click', function() {
-      $('#preview').html($('#source').val());
-    }).trigger('click');
+      $('#previewBtn').on('click', function() {
+        $('#preview').html($('#source').val());
+      }).trigger('click');
 
-  });
-</script>
+    });
+  </script>
