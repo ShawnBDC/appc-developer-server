@@ -6,6 +6,10 @@ Now in [Titanium 5.2.0](http://www.appcelerator.com/blog/2016/02/ga-release-of-c
 
 [![video](http://img.youtube.com/vi/Cg8HmQBP4jk/0.jpg)](https://www.youtube.com/watch?v=Cg8HmQBP4jk)
 
+Another video:
+
+https://www.youtube.com/watch?v=Cg8HmQBP4jk
+
 ## What is an Activity?
 In Titanium each Window or TabGroup creates and is linked to a new [Activity](http://developer.android.com/guide/components/activities.html). When the user presses the [system back button](http://developer.android.com/training/implementing-navigation/temporal.html) he will return to the previous activity on the stack. You can access the Activity via the [activity property](http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.Window-property-activity).
 
