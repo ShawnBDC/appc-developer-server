@@ -44,8 +44,8 @@ module.exports = Arrow.Router.extend({
 
 						if (product.publishedOn > from) {
 							item.event = 'new';
-						} else if (product.lastModified > from) {
-							item.event = 'updated';
+						// } else if (product.lastModified > from) {
+							// item.event = 'updated';
 						} else {
 							return;
 						}
