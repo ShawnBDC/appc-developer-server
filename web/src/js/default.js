@@ -20,7 +20,7 @@ Appc.afterHeaderRender(function () {
 		}
 
 		link += '>' + links[href] + '</a>';
-		
+
 		$menu.append(link);
 	}
 

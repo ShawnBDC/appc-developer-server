@@ -9,6 +9,7 @@
         </div>
         <div class="col-sm-4 header-actions">
           <a href="https://stackoverflow.com/tags/appcelerator" target="_blank" class="btn btn-appc-light"><i class="fa fa-stack-overflow"></i> Community</a>
+          <a href="javascript:void(0);" target="_blank" class="btn btn-appc-light"><i class="fa fa-question-circle"></i> Questions</a>
           {{#if paidSupport}}
             <a href="{{supportLink}}" target="_blank" class="btn btn-appc-light"><i class="fa fa-support"></i> Support</a>
           {{/if}}
@@ -26,10 +27,26 @@
       <div class="col-sm-8">
 
         <div class="well">
-          <h2>Ask the Community <a href="https://stackoverflow.com/questions/ask/?tags=appcelerator" class="btn btn-danger pull-right">Ask a Question <i class="fa fa-stack-overflow"></i></a></h2>
+          <h2>Ask the Community</h2>
           <br />
-          <p>Join Stack Overflow - the biggest and brightest Q&amp;A for programmers! Always include <a href="https://stackoverflow.com/tags/appcelerator" target="_blank" title="Go to our tag on Stack Overflow">#appcelerator</a> and add <a href="https://stackoverflow.com/tags/appcelerator/info" target="_blank" title="Read about suggested additional tags on Stack Overflow">additional tags</a>. <em>Help Yourself</em> and <em>Check for Known Issues</em> before <a href="http://stackoverflow.com/help/how-to-ask" target="_blank" title="Learn how to ask a good question on Stack Overflow">asking a good question</a>.</p>
+          <p>Join Stack Overflow - the biggest and brightest Q&amp;A for programmers! <em>Help Yourself</em> and <em>Check for Known Issues</em> before <a href="http://stackoverflow.com/help/how-to-ask" target="_blank" title="Learn how to ask a good question on Stack Overflow">asking a good question</a>. Always include <a href="https://stackoverflow.com/tags/appcelerator" target="_blank" title="Go to our tag on Stack Overflow">#appcelerator</a> and other <a href="https://stackoverflow.com/tags/appcelerator/info" target="_blank" title="Read about suggested additional tags on Stack Overflow">relevant tags</a>.</p>
+          <form id="help-form">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="search" class="form-control" id="help-query" placeholder="Your question" />
+                <span class="input-group-btn">
+                  <input class="btn btn-default" type="submit" value="Search" />
+                </span>
+              </div>
+            </div>
+            <label class="radio-inline"><input type="radio" name="help-via" checked="checked" value="google"> Smart via Google</label>
+            <label class="radio-inline"><input type="radio" name="help-via" id="help-so" value="so"> Simple (<code>AND</code>) on Stack Overflow</label>
+          </form>
+
+          <hr />
+
           <p>To chat with other Appcelerator developers, join the community initiative <a href="http://tislack.org" target="_blank" title="Go to TiSlack">TiSlack</a>.</p>
+          <!-- <a href="https://stackoverflow.com/questions/ask/?tags=appcelerator" class="btn btn-danger">Ask a Question <i class="fa fa-stack-overflow"></i></a> -->
         </div>
 
         <div class="panel panel-default questions">
@@ -103,6 +120,18 @@
 
         <div class="panel panel-default">
           <div class="panel-heading attach">
+            <h2 class="panel-title">Ask a Question <i class="fa fa-question-circle pull-right"></i></h2>
+          </div>
+          <div class="panel-body intercom-off">
+            <p>Do you have issues getting started, with your account or another non-technical question? Send an email to <a href="mailto:support@appcelerator.com">support@appcelerator.com</a>.</p>
+          </div>
+          <div class="panel-body intercom-on hidden">
+            <p>Do you have issues getting started, with your account or another non-technical question? Click on the <i class="fa fa-question-circle text-danger"></i> on the bottom right of the screen.</p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading attach">
             <h2 class="panel-title">Ask our Support <i class="fa fa-support pull-right"></i></h2>
           </div>
           <div class="panel-body">
@@ -131,3 +160,30 @@
   {{> footer}}
 
 </div>
+
+<script>
+  $(document).ready(function() {
+
+    setTimeout(function() {
+      if (window.intercomSettings && window.intercomSettings.is_intercom_bubble_enabled) {
+        $('.intercom-off').addClass('hidden');
+        $('.intercom-on').removeClass('hidden');
+      }
+    }, 2500);
+
+    $('#help-form').submit(function(e) {
+      e.preventDefault();
+
+      var query = $('#help-query').val();
+
+      if ($('#help-so').is(':checked')) {
+        href = 'https://stackoverflow.com/search?q=' + encodeURIComponent('[appcelerator]' + (query ? ' ' + query : ''));
+      } else {
+        href = 'https://www.google.nl/search?q=' + encodeURIComponent('site:stackoverflow.com +appcelerator' + (query ? ' ' + query : ''));
+      }
+
+      window.location.href = href;
+    });
+
+  });
+</script>
