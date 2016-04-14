@@ -2,6 +2,8 @@
 
 Android 5.0 (API level 21) introduced [Material Design](http://developer.android.com/design/material/index.html): a vision, [design guidelines](http://www.google.com/design/spec/material-design/introduction.html) as well as new components and animations. Earlier in Titanium 5.1.0 we added support for [CardView](https://github.com/appcelerator-developer-relations/appc-sample-ti510#cardview), the [Reveal Effect](https://github.com/appcelerator-developer-relations/appc-sample-ti510#reveal-effect) animation as additional support for the [material design theme](https://github.com/appcelerator-developer-relations/appc-sample-ti510#progressbar-color).
 
+<b>some HTML</b>
+
 Now in [Titanium 5.2.0](http://www.appcelerator.com/blog/2016/02/ga-release-of-cli-5-2-titanium-5-2-and-studio-4-5/) we add support for customized [Activity & Shared Element Transitions](https://developer.android.com/training/material/animations.html#Transitions). In this blog post I'll walk you through this using the new [Titanium 5.2.0 Sample App](http://github.com/appcelerator-developer-relations/appc-sample-ti520):
 
 [![video](http://img.youtube.com/vi/Cg8HmQBP4jk/0.jpg)](https://www.youtube.com/watch?v=Cg8HmQBP4jk)
