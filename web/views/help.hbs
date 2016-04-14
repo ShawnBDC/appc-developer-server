@@ -161,12 +161,29 @@
 <script>
   $(document).ready(function() {
 
-    setTimeout(function() {
-      if (window.intercomSettings && window.intercomSettings.is_intercom_bubble_enabled) {
+    function afterIntercom() {
+      if (window.intercomSettings && window.intercomSettings.is_intercom_bubble_enabled && window.intercomSettings.is_intercom_twoway_enabled) {
         $('.intercom-off').addClass('hidden');
         $('.intercom-on').removeClass('hidden');
       }
-    }, 2500);
+    }
+
+    if (window.intercomSettings) {
+      afterIntercom();
+    } else {
+      Object.defineProperty(window, 'intercomSettings', {
+        configurable: true,
+        enumerable: true,
+        writeable: true,
+        get: function() {
+          return this._intercomSettings;
+        },
+        set: function(val) {
+          this._intercomSettings = val;
+          afterIntercom();
+        }
+      });
+    }
 
     $('#help-form').submit(function(e) {
       e.preventDefault();
