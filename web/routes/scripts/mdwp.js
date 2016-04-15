@@ -92,7 +92,7 @@ module.exports = Arrow.Router.extend({
 					return next(new HttpError(400, 'File not found on GitHub'));
 				}
 
-				markdown = new Buffer(body.content, 'base64').toString('ascii');
+				markdown = new Buffer(body.content, body.encoding).toString();
 
 				respond();
 			});
