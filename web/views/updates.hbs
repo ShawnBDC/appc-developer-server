@@ -32,7 +32,7 @@
               {{#each devblog}}
                 <li class="list-group-item">
                   <a href="{{link}}" target="_blank">{{title}}</a>
-                  <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                  <small class="text-muted"><date title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
                 </li>
               {{/each}}
               </ul>
@@ -117,7 +117,7 @@
             {{#each medium}}
               <li class="list-group-item">
                 <a href="{{link}}" target="_blank">{{title}}</a>
-                <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                <small class="text-muted"><date title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
               </li>
             {{/each}}
             </ul>
@@ -231,7 +231,7 @@
                 {{#each jira}}
                   <li class="list-group-item">
                     <a href="{{link}}" target="_blank">{{title}}</a>
-                    <small class="text-muted" title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY @ h:mm a'}} by {{author}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
+                    <small class="text-muted" title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY @ h:mm a'}} by {{author}}{{#ifAfter published lastViewedHome}} <span class="label label-info">NEW</label>{{/ifAfter}}</small>
                   </li>
                 {{/each}}
               </ul>
@@ -258,7 +258,7 @@
                 {{#each guides}}
                   <li class="list-group-item">
                     <a href="{{link}}" target="_blank">{{title}}</a>
-                    <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                    <small class="text-muted"><date title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY'}}</date> by {{author}}{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
                   </li>
                 {{/each}}
               </ul>
@@ -352,7 +352,7 @@
                 {{#each gittio}}
                   <li class="list-group-item">
                     <a href="{{link}}" target="_blank">{{title}}</a>
-                    <small class="text-muted"><date title="{{formatDate published 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate published 'MMMM Do, YYYY'}}</date>{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
+                    <small class="text-muted"><date title="{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}">{{formatDate date 'MMMM Do, YYYY'}}</date>{{#ifAfter published lastViewedHome}} <small class="label label-info">NEW</small>{{/ifAfter}}</small>
                   </li>
                 {{/each}}
               </ul>
