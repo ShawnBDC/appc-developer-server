@@ -25,9 +25,9 @@ module.exports = {
 					name: 'Hans Knoechel',
 					title: 'iOS Engineer'
 				}, {
-					username: 'RBlalock',
-					name: 'Rick Blalock',
-					title: 'Mobile Architect'
+					username: 'grantges',
+					name: 'Bert Grantges',
+					title: 'Titanium PM'
 				}
 				/*, {
 								username: 'Appcelerator',
