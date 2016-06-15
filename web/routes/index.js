@@ -111,7 +111,7 @@ module.exports = Arrow.Router.extend({
 					], function (err, results) {
 
 						if (results) {
-							results = _.sortBy(results, function (o) {
+							results = _.sortBy(_.filter(results), function (o) {
 								return moment(o.published).valueOf();
 							}).reverse().slice(0, 3);
 						}

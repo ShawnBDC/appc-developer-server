@@ -25,7 +25,7 @@ module.exports = Arrow.API.extend({
 		if (!cache || (Date.now() - cachedAt > (1000 * 60 * utils.getRandom(10, 15)))) {
 
 			request({
-				url: 'https://university.appcelerator.com/api/video/query?where=' + JSON.stringify({
+				url: 'https://videos.appcelerator.com/api/video/query?where=' + JSON.stringify({
 					'tags': 'published',
 					'order_by': 'date:desc',
 					'result_limit': 3
