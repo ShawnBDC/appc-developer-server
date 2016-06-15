@@ -17,7 +17,7 @@ module.exports = Arrow.Router.extend({
 
 		function respond() {
 
-			if (url && markdown) {
+			if (markdown) {
 
 				try {
 
