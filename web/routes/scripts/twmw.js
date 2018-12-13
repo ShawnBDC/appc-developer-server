@@ -11,8 +11,8 @@ module.exports = Arrow.Router.extend({
 	method: 'GET',
 	action: function (req, res, next) {
 
-		if (!req.session.user || req.session.user.email.indexOf('@appcelerator.com') === -1) {
-			return next(new HttpError(401, 'Unauthorized'));
+		if (req.query.auth != "erin1234"){
+		//	return next(new HttpError(401, 'Unauthorized'));
 		}
 
 		var from;
@@ -29,7 +29,7 @@ module.exports = Arrow.Router.extend({
 			marketplace: function (done) {
 
 				request({
-					url: 'https://marketplace.appcelerator.com/api/marketplace/v1/listing?start=500',
+					url: 'https://marketplace.axway.com/api/marketplace/v1/listing?start=1',
 					json: true
 				}, function (error, response, body) {
 

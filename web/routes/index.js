@@ -59,7 +59,7 @@ module.exports = Arrow.Router.extend({
 									title: results[results.key][0].name,
 									link: results[results.key][0].url,
 									published: results[results.key][0].lastModified,
-									author: 'Appcelerator Marketplace'
+									author: 'Axway AMPLIFY Marketplace'
 								} : null);
 							});
 						},
